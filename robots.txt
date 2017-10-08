@@ -1,1 +1,1 @@
-Sitemap: http://www.tiepphan.com/sitemap.xml
+Sitemap: https://www.tiepphan.com/sitemap.xml
