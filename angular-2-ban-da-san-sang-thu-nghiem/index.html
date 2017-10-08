@@ -112,7 +112,7 @@
 
 <p><a href="https://angular.io/" target="_blank">Angular 2</a> đã phát hành chính thức, tính tới thời điểm viết bài này, nó đã ra đến phiên bản 2.2.x, hầu hết các blog đều có những lời đánh tiếng về nó và cũng có vô vàn các hướng dẫn để bạn có thể tiếp cận với Angular 2. Vậy bạn đã sẵn sàng để bắt đầu với nền tảng hot này chưa? Hãy cùng mình thử nghiệm với nó nhé.</p>
 
-<p class="text-center"><a href="http://www.tiepphan.com/assets/uploads/2016/12/angular-angular.png" target="_blank"><img class="img-responsive" src="http://www.tiepphan.com/assets/uploads/2016/12/angular-angular.png" alt="Angular 2 repository Github" /></a></p>
+<p class="text-center"><a href="/assets/uploads/2016/12/angular-angular.png" target="_blank"><img class="img-responsive" src="/assets/uploads/2016/12/angular-angular.png" alt="Angular 2 repository Github" /></a></p>
 
 <p class="text-center"><em>Hình 1: Repository của Angular 2 trên Github</em></p>
 
@@ -195,7 +195,7 @@ ng new contact-application <span class="nt">--style</span><span class="o">=</spa
 
 <p>Sau khi hoàn thành việc khởi tạo project, chúng ta sẽ có một project với cấu trúc dạng như sau:</p>
 
-<p class="text-center"><img src="http://www.tiepphan.com/assets/uploads/2016/12/1-project-structure.png" alt="Angular project structure" class="img-responsive" /></p>
+<p class="text-center"><img src="/assets/uploads/2016/12/1-project-structure.png" alt="Angular project structure" class="img-responsive" /></p>
 
 <p class="text-center"><em>Hình 2: Project structure</em></p>
 
@@ -209,7 +209,7 @@ ng new contact-application <span class="nt">--style</span><span class="o">=</spa
 
 <p>Để dễ hiểu thì Component là tất cả những gì mà end-user có thể nhận biết, nó có thể được sử dụng lại nhiều lần trong một ứng dụng. Sau khi tạo xong một project với Angular CLI, chúng ta đã có một Component có tên: <code class="highlighter-rouge">AppComponent</code> trong file <code class="highlighter-rouge">src/app/app.component.ts</code>.</p>
 
-<p class="text-center"><img src="http://www.tiepphan.com/assets/uploads/2016/12/2-app-comp.png" alt="AppComponent" class="img-responsive" /></p>
+<p class="text-center"><img src="/assets/uploads/2016/12/2-app-comp.png" alt="AppComponent" class="img-responsive" /></p>
 
 <p class="text-center"><em>Hình 3: AppComponent</em></p>
 
@@ -226,7 +226,7 @@ ng new contact-application <span class="nt">--style</span><span class="o">=</spa
 
 <p>Nó là một khai báo (Decorator) cho class ngay sau đó, để chỉ ra rằng class đó là một Angular component, bên cạnh đó nó còn cung cấp các configuration metadata để Angular 2 biết cách tạo ra Component tương ứng.</p>
 
-<p class="text-center"><img src="http://www.tiepphan.com/assets/uploads/2016/12/3-at-component.png" alt="@Component" class="img-responsive" /></p>
+<p class="text-center"><img src="/assets/uploads/2016/12/3-at-component.png" alt="@Component" class="img-responsive" /></p>
 
 <p class="text-center"><em>Hình 4: <code class="highlighter-rouge">@Component</code></em></p>
 
@@ -234,7 +234,7 @@ ng new contact-application <span class="nt">--style</span><span class="o">=</spa
 
 <p>Dòng 4: là <code class="highlighter-rouge">selector</code> hay mục đích chỉ ra rằng, khi trong template có một thẻ dạng như thẻ HTML có tên <code class="highlighter-rouge">app-root</code> thì Angular sẽ hiển thị Component khai báo bên dưới vào đó. Bạn có thể nhìn thấy thẻ này trong file <code class="highlighter-rouge">src/index.html</code>. Trong trường hợp component này, khi render sẽ thay thế phần Text Node <code class="highlighter-rouge">Loading&amp;#8230</code>.</p>
 
-<p class="text-center"><img src="http://www.tiepphan.com/assets/uploads/2016/12/app-root.png" alt="app-root" class="img-responsive" /></p>
+<p class="text-center"><img src="/assets/uploads/2016/12/app-root.png" alt="app-root" class="img-responsive" /></p>
 
 <p class="text-center"><em>Hình 5: Custom tag <code class="highlighter-rouge">&lt;app-root&gt;</code> – selector</em></p>
 
@@ -244,11 +244,11 @@ ng new contact-application <span class="nt">--style</span><span class="o">=</spa
   <p>Lưu ý, nếu bạn dùng property <code class="highlighter-rouge">template</code>, bạn có thể sử dụng <code class="highlighter-rouge">multi-line string</code> bằng việc bao đóng string trong cặp dấu <code>``</code>.</p>
 </blockquote>
 
-<p class="text-center"><img src="http://www.tiepphan.com/assets/uploads/2016/12/templateUrl.png" alt="templateUrl" class="img-responsive" /></p>
+<p class="text-center"><img src="/assets/uploads/2016/12/templateUrl.png" alt="templateUrl" class="img-responsive" /></p>
 
 <p class="text-center"><em>Hình 6: templateUrl content</em></p>
 
-<p class="text-center"><img src="http://www.tiepphan.com/assets/uploads/2016/12/template.png" alt="template" class="img-responsive" /></p>
+<p class="text-center"><img src="/assets/uploads/2016/12/template.png" alt="template" class="img-responsive" /></p>
 
 <p class="text-center"><em>Hình 7: inline template content</em></p>
 
@@ -302,7 +302,7 @@ ng new contact-application <span class="nt">--style</span><span class="o">=</spa
 
 <p>Thông thường nó được đặt tên là <code class="highlighter-rouge">AppModule</code>, nhưng bạn hoàn toàn có thể đặt bất kỳ tên nào nếu muốn. Bạn có thể tìm thấy Module đó trong file <code class="highlighter-rouge">src/app/app.module.ts</code>.</p>
 
-<p class="text-center"><img src="http://www.tiepphan.com/assets/uploads/2016/12/NgModule-root-Module-1.png" alt="NgModule root Module" class="img-responsive" /></p>
+<p class="text-center"><img src="/assets/uploads/2016/12/NgModule-root-Module-1.png" alt="NgModule root Module" class="img-responsive" /></p>
 
 <p class="text-center"><em>Hình 8: <code class="highlighter-rouge">AppModule</code> – root Module</em></p>
 
@@ -356,7 +356,7 @@ ng new contact-application <span class="nt">--style</span><span class="o">=</spa
 
 <p>Các bạn có thể tìm thấy câu trả lời trong file <code class="highlighter-rouge">src/main.ts</code>.</p>
 
-<p class="text-center"><img src="http://www.tiepphan.com/assets/uploads/2016/12/main-1.png" alt="Angular 2 main" class="img-responsive" /></p>
+<p class="text-center"><img src="/assets/uploads/2016/12/main-1.png" alt="Angular 2 main" class="img-responsive" /></p>
 
 <p class="text-center"><em>Hình 9: <code class="highlighter-rouge">main.ts</code></em></p>
 
@@ -366,23 +366,23 @@ ng new contact-application <span class="nt">--style</span><span class="o">=</spa
 
 <p>Các bạn vào Command Prompt/Terminal sau đó gõ lệnh <code class="highlighter-rouge">ng serve</code> và nhấn enter để Angular CLI thực hiện công việc của nó.</p>
 
-<p class="text-center"><img src="http://www.tiepphan.com/assets/uploads/2016/12/ng-serve.png" alt="ng serve" class="img-responsive" /></p>
+<p class="text-center"><img src="/assets/uploads/2016/12/ng-serve.png" alt="ng serve" class="img-responsive" /></p>
 
 <p class="text-center"><em>Hình 10: ng serve</em></p>
 
 <p>Sau đó, các bạn mở trình duyệt vào truy cập vào địa chỉ <a href="http://localhost:4200/" target="_blank">http://localhost:4200/</a>. Kết quả có dạng như sau.</p>
 
-<p class="text-center"><img src="http://www.tiepphan.com/assets/uploads/2016/12/first-app.png" alt="first app" class="img-responsive" /></p>
+<p class="text-center"><img src="/assets/uploads/2016/12/first-app.png" alt="first app" class="img-responsive" /></p>
 
 <p class="text-center"><em>Hình 11: first app</em></p>
 
 <p>Bây giờ, chúng ta thay đổi chút, mình sẽ thay đổi title trong AppComponent thành một chuỗi khác, và xem kết quả.</p>
 
-<p class="text-center"><img src="http://www.tiepphan.com/assets/uploads/2016/12/change-app-component.png" alt="Change AppComponent" class="img-responsive" /></p>
+<p class="text-center"><img src="/assets/uploads/2016/12/change-app-component.png" alt="Change AppComponent" class="img-responsive" /></p>
 
 <p class="text-center"><em>Hình 12: edit AppComponent</em></p>
 
-<p class="text-center"><img src="http://www.tiepphan.com/assets/uploads/2016/12/result.png" alt="result" class="img-responsive" /></p>
+<p class="text-center"><img src="/assets/uploads/2016/12/result.png" alt="result" class="img-responsive" /></p>
 
 <p class="text-center"><em>Hình 13: result</em></p>
 
