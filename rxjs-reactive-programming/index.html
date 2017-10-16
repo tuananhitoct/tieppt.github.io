@@ -1355,7 +1355,7 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 
 </code></pre></div></div>
 
-<p>Operation nhận đầu vào là một Observable, sau đó xử lý và tạo mới mội Observable để trả về, và giữ Observable đầu vào không bị thay đổi gì.</p>
+<p>Operator nhận đầu vào là một Observable, sau đó xử lý và tạo mới mội Observable để trả về, và giữ Observable đầu vào không bị thay đổi gì.</p>
 
 <p>Ví dụ, chúng ta tạo một Operator nhận đầu vào là một function, giống như Array <code class="highlighter-rouge">map</code> chẳng hạn.</p>
 
@@ -1617,7 +1617,7 @@ Repeat khi nào Observable complete, có thể giới hạn số lần repeat.</
 
 <p><strong>scan</strong>: <code class="highlighter-rouge">scan(accumulator: function, seed: any): Observable</code></p>
 
-<p>Giống như Array <code class="highlighter-rouge">scan</code>.</p>
+<p>Giống như Array <code class="highlighter-rouge">reduce</code>.</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//emit array as a sequence of values</span>
 <span class="kd">const</span> <span class="nx">arraySource</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">from</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]);</span>
