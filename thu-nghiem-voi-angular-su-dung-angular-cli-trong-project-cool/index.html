@@ -5,8 +5,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--<title>Thử Nghiệm Với Angular Phần 10: Sử Dụng Angular CLI Trong Project Thật Cool</title>-->
-<!-- Begin Jekyll SEO tag v2.3.0 -->
+<!-- Begin Jekyll SEO tag v2.5.0 -->
 <title>Thử Nghiệm Với Angular Phần 10: Sử Dụng Angular CLI Trong Project Thật Cool | Lập Trình Thật Kỳ Diệu</title>
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Thử Nghiệm Với Angular Phần 10: Sử Dụng Angular CLI Trong Project Thật Cool" />
 <meta name="author" content="Tiep Phan" />
 <meta property="og:locale" content="en_US" />
@@ -18,10 +19,10 @@
 <meta property="og:image" content="https://www.tiepphan.com/assets/uploads/2017/02/angular2-10.jpg" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-02-19T10:36:03+00:00" />
-<meta name="google-site-verification" content="Gcn3Y0oBud7gufI1PtszF7DFNgFOifgLRIaZAoLZWWU">
-<meta name="msvalidate.01" content="F160AE523B1846CBDC431CB91CB6613A">
+<meta name="google-site-verification" content="Gcn3Y0oBud7gufI1PtszF7DFNgFOifgLRIaZAoLZWWU" />
+<meta name="msvalidate.01" content="F160AE523B1846CBDC431CB91CB6613A" />
 <script type="application/ld+json">
-{"name":null,"description":"Trong bài này, chúng ta sẽ tìm hiểu cách sử dụng CLI để phát triển một ứng dụng bằng Angular và build một ứng dụng Angular với Angular CLI.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-su-dung-angular-cli-trong-project-cool/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/02/angular2-10.jpg","headline":"Thử Nghiệm Với Angular Phần 10: Sử Dụng Angular CLI Trong Project Thật Cool","dateModified":"2017-02-19T10:36:03+00:00","datePublished":"2017-02-19T10:36:03+00:00","sameAs":null,"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-su-dung-angular-cli-trong-project-cool/"},"@context":"http://schema.org"}</script>
+{"description":"Trong bài này, chúng ta sẽ tìm hiểu cách sử dụng CLI để phát triển một ứng dụng bằng Angular và build một ứng dụng Angular với Angular CLI.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-su-dung-angular-cli-trong-project-cool/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/02/angular2-10.jpg","headline":"Thử Nghiệm Với Angular Phần 10: Sử Dụng Angular CLI Trong Project Thật Cool","dateModified":"2017-02-19T10:36:03+00:00","datePublished":"2017-02-19T10:36:03+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-su-dung-angular-cli-trong-project-cool/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -132,11 +133,11 @@
 
 <h2 id="cài-đặt-cli">Cài đặt CLI</h2>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install <span class="nt">-g</span> @angular/cli
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">-g</span> @angular/cli
 <span class="c"># or</span>
 npm i <span class="nt">-g</span> @angular/cli
 <span class="c"># or sudo if need</span>
-<span class="nb">sudo </span>npm install <span class="nt">-g</span> @angular/cli
+<span class="nb">sudo </span>npm <span class="nb">install</span> <span class="nt">-g</span> @angular/cli
 <span class="c"># or</span>
 <span class="nb">sudo </span>npm i <span class="nt">-g</span> @angular/cli
 </code></pre></div></div>
@@ -160,7 +161,7 @@ ng new contact-app <span class="nt">--style</span><span class="o">=</span>scss
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--routing</span>: tạo route
 <span class="nt">--skip-git</span>: không init và commit git
-<span class="nt">--skip-install</span>: không install package
+<span class="nt">--skip-install</span>: không <span class="nb">install </span>package
 <span class="nt">--skip-commit</span>: init git nhưng không commit
 <span class="nt">--source-dir</span>: thư mục của <span class="nb">source </span>code, mặc định là src
 <span class="nt">--prefix</span>: prefix khi generate component, directive, mặc đinh là app
