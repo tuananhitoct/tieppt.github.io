@@ -5,9 +5,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--<title>Thử Nghiệm Với Angular 2 Phần 8: Component Event Với EventEmitter Và @Output</title>-->
-<!-- Begin Jekyll SEO tag v2.5.0 -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Thử Nghiệm Với Angular 2 Phần 8: Component Event Với EventEmitter Và @Output | Lập Trình Thật Kỳ Diệu</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.8.6" />
 <meta property="og:title" content="Thử Nghiệm Với Angular 2 Phần 8: Component Event Với EventEmitter Và @Output" />
 <meta name="author" content="Tiep Phan" />
 <meta property="og:locale" content="en_US" />
@@ -22,7 +22,7 @@
 <meta name="google-site-verification" content="Gcn3Y0oBud7gufI1PtszF7DFNgFOifgLRIaZAoLZWWU" />
 <meta name="msvalidate.01" content="F160AE523B1846CBDC431CB91CB6613A" />
 <script type="application/ld+json">
-{"description":"Bài học sẽ giới thiệu cách để Component phát sinh Event để tương tác từ Component con với Component cha.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-component-event-voi-eventemitter-output/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/01/angular2-PHAN8-Componen-Event-Voi-EventEmitter-Va-Output.jpg","headline":"Thử Nghiệm Với Angular 2 Phần 8: Component Event Với EventEmitter Và @Output","dateModified":"2017-01-06T16:53:27+00:00","datePublished":"2017-01-06T16:53:27+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-component-event-voi-eventemitter-output/"},"@context":"http://schema.org"}</script>
+{"description":"Bài học sẽ giới thiệu cách để Component phát sinh Event để tương tác từ Component con với Component cha.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-component-event-voi-eventemitter-output/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/01/angular2-PHAN8-Componen-Event-Voi-EventEmitter-Va-Output.jpg","headline":"Thử Nghiệm Với Angular 2 Phần 8: Component Event Với EventEmitter Và @Output","dateModified":"2017-01-06T16:53:27+00:00","datePublished":"2017-01-06T16:53:27+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-component-event-voi-eventemitter-output/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -133,16 +133,16 @@
   <span class="nx">Input</span><span class="p">,</span> 
   <span class="nx">Output</span><span class="p">,</span> 
   <span class="nx">EventEmitter</span> 
-<span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'tp-switches'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./switches.component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./switches.component.scss'</span><span class="p">]</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">tp-switches</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./switches.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./switches.component.scss</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">SwitchesComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
   <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">checked</span><span class="p">:</span> <span class="nb">Boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-  <span class="p">@</span><span class="nd">Output</span><span class="p">(</span><span class="s1">'checkedChange'</span><span class="p">)</span> <span class="nx">change</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="kr">boolean</span><span class="o">&gt;</span><span class="p">();</span>
+  <span class="p">@</span><span class="nd">Output</span><span class="p">(</span><span class="dl">'</span><span class="s1">checkedChange</span><span class="dl">'</span><span class="p">)</span> <span class="nx">change</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">boolean</span><span class="o">&gt;</span><span class="p">();</span>
 
   <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
 
@@ -167,8 +167,8 @@
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"tp-toggle tp-toggle--round tp-toggle--flat"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span>
     <span class="na">class=</span><span class="s">"tp-toggle__checkbox"</span>
-    <span class="err">[</span><span class="na">checked</span><span class="err">]="</span><span class="na">checked</span><span class="err">"</span>
-    <span class="err">(</span><span class="na">change</span><span class="err">)="</span><span class="na">emitChangeValue</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">/&gt;</span>
+    <span class="na">[checked]=</span><span class="s">"checked"</span>
+    <span class="na">(change)=</span><span class="s">"emitChangeValue($event)"</span><span class="nt">/&gt;</span>
   <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"tp-toggle__icon"</span><span class="nt">&gt;&lt;/span&gt;</span>
 <span class="nt">&lt;/label&gt;</span>
 </code></pre></div></div>
@@ -178,8 +178,8 @@
 <p>Ở Component cha, bạn lắng nghe event như các event thông thường được bao đóng bởi cặp dấu <code class="highlighter-rouge">()</code>.</p>
 
 <p><strong>contact-list.component.html</strong></p>
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tp-switches</span> <span class="err">[</span><span class="na">checked</span><span class="err">]="</span><span class="na">contact</span><span class="err">.</span><span class="na">avatar</span><span class="err">?.</span><span class="na">round</span><span class="err">"</span>
-  <span class="err">(</span><span class="na">checkedChange</span><span class="err">)="</span><span class="na">switchesValueChange</span><span class="err">($</span><span class="na">event</span><span class="err">,</span> <span class="na">i</span><span class="err">)"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tp-switches</span> <span class="na">[checked]=</span><span class="s">"contact.avatar?.round"</span>
+  <span class="na">(checkedChange)=</span><span class="s">"switchesValueChange($event, i)"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/tp-switches&gt;</span>
 </code></pre></div></div>
 
@@ -188,7 +188,7 @@
 
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">ContactListComponent</span> <span class="p">{</span>
   <span class="p">...</span>
-  <span class="nx">switchesValueChange</span><span class="p">(</span><span class="nx">event</span><span class="p">:</span> <span class="kr">boolean</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">switchesValueChange</span><span class="p">(</span><span class="nx">event</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">contacts</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">avatar</span><span class="p">.</span><span class="nx">round</span> <span class="o">=</span> <span class="nx">event</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -207,17 +207,17 @@
   <span class="nx">Input</span><span class="p">,</span> 
   <span class="nx">Output</span><span class="p">,</span> 
   <span class="nx">EventEmitter</span> 
-<span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'tp-switches'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./switches.component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./switches.component.scss'</span><span class="p">],</span>
-  <span class="na">outputs</span><span class="p">:</span> <span class="p">[</span><span class="s1">'change:checkedChange'</span><span class="p">]</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">tp-switches</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./switches.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./switches.component.scss</span><span class="dl">'</span><span class="p">],</span>
+  <span class="na">outputs</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">change:checkedChange</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">SwitchesComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
-  <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">checked</span><span class="p">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-  <span class="kr">public</span> <span class="nx">change</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="kr">boolean</span><span class="o">&gt;</span><span class="p">();</span>
+  <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">checked</span><span class="p">:</span> <span class="nx">boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="kr">public</span> <span class="nx">change</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">boolean</span><span class="o">&gt;</span><span class="p">();</span>
 
   <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
 

@@ -5,9 +5,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--<title>Thử Nghiệm Với Angular Phần 17 &#8211; Template-Driven Forms Trong Angular</title>-->
-<!-- Begin Jekyll SEO tag v2.5.0 -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Thử Nghiệm Với Angular Phần 17 – Template-Driven Forms Trong Angular | Lập Trình Thật Kỳ Diệu</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.8.6" />
 <meta property="og:title" content="Thử Nghiệm Với Angular Phần 17 – Template-Driven Forms Trong Angular" />
 <meta name="author" content="Tiep Phan" />
 <meta property="og:locale" content="en_US" />
@@ -22,7 +22,7 @@
 <meta name="google-site-verification" content="Gcn3Y0oBud7gufI1PtszF7DFNgFOifgLRIaZAoLZWWU" />
 <meta name="msvalidate.01" content="F160AE523B1846CBDC431CB91CB6613A" />
 <script type="application/ld+json">
-{"description":"Template-driven forms là phương pháp mà chúng ta sẽ tạo forms dựa vào template. Chúng ta thực hiện việc thêm các directives và hành vi vào template.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-template-driven-forms-trong-angular/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/05/angular-p17.jpg","headline":"Thử Nghiệm Với Angular Phần 17 – Template-Driven Forms Trong Angular","dateModified":"2017-05-21T09:47:50+00:00","datePublished":"2017-05-21T09:47:50+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-template-driven-forms-trong-angular/"},"@context":"http://schema.org"}</script>
+{"description":"Template-driven forms là phương pháp mà chúng ta sẽ tạo forms dựa vào template. Chúng ta thực hiện việc thêm các directives và hành vi vào template.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-template-driven-forms-trong-angular/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/05/angular-p17.jpg","headline":"Thử Nghiệm Với Angular Phần 17 – Template-Driven Forms Trong Angular","dateModified":"2017-05-21T09:47:50+00:00","datePublished":"2017-05-21T09:47:50+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-template-driven-forms-trong-angular/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -132,7 +132,7 @@
 
 <p>Giả sử chúng ta có template form như sau:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">novalidate</span> <span class="err">(</span><span class="na">submit</span><span class="err">)="</span><span class="na">onSubmit</span><span class="err">()"</span> <span class="na">class=</span><span class="s">"row justify-content-md-center"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">novalidate</span> <span class="na">(submit)=</span><span class="s">"onSubmit()"</span> <span class="na">class=</span><span class="s">"row justify-content-md-center"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-8"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"example-text-input"</span> <span class="na">class=</span><span class="s">"col-md-2 col-form-label"</span><span class="nt">&gt;</span>Name:<span class="nt">&lt;/label&gt;</span>
@@ -187,7 +187,7 @@
 
 <p>Để có thể sử dụng các APIs mà Angular cung cấp cho việc thao tác với Template-driven forms, chúng ta cần import NgModule là <code class="highlighter-rouge">FormsModule</code> từ package <code class="highlighter-rouge">@angular/forms</code> như sau:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">FormsModule</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/forms'</span><span class="p">;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">FormsModule</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/forms</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
   <span class="na">declarations</span><span class="p">:</span> <span class="p">[...],</span>
@@ -205,7 +205,7 @@
 
 <p>Nhiệm vụ đầu tiên chúng ta cần làm là truy cập vào form instance và gán các control vào form. Chúng ta sẽ lần lượt sử dụng <code class="highlighter-rouge">ngForm</code> và <code class="highlighter-rouge">ngModel</code> directives như sau:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">novalidate</span> <span class="err">#</span><span class="na">form=</span><span class="s">"ngForm"</span> <span class="err">...</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">novalidate</span> <span class="na">#form</span><span class="err">="</span><span class="na">ngForm</span><span class="err">"</span> <span class="err">...</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/form&gt;</span>
 </code></pre></div></div>
 
@@ -215,8 +215,8 @@
 
 <p>Giờ đây chúng ta có thể sử dụng form value cho việc submit form chẳng hạn.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">novalidate</span> <span class="err">#</span><span class="na">form=</span><span class="s">"ngForm"</span>
-  <span class="err">(</span><span class="na">submit</span><span class="err">)="</span><span class="na">onSubmit</span><span class="err">(</span><span class="na">form</span><span class="err">.</span><span class="na">value</span><span class="err">)"</span> <span class="err">...</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">novalidate</span> <span class="na">#form</span><span class="err">="</span><span class="na">ngForm</span><span class="err">"</span>
+  <span class="na">(submit)=</span><span class="s">"onSubmit(form.value)"</span> <span class="err">...</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/form&gt;</span>
  
 <span class="nt">&lt;p&gt;</span>Form value:<span class="nt">&lt;/p&gt;</span>
@@ -250,7 +250,7 @@
 <p>Bây giờ quan sát form value chúng ta sẽ có một object có key <code class="highlighter-rouge">contact-name</code> chẳng hạn:</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
-  <span class="s2">"contact-name"</span><span class="p">:</span> <span class="s2">""</span>
+  <span class="dl">"</span><span class="s2">contact-name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -262,7 +262,7 @@
 <p>Kết quả nhận được:</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
-  <span class="s2">"contactName"</span><span class="p">:</span> <span class="s2">""</span>
+  <span class="dl">"</span><span class="s2">contactName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -271,12 +271,12 @@
 <p>Và khi bạn nhập giá trị cho các control thì Angular sẽ tự cập nhật cho các control của form tương ứng, chẳng hạn sau khi nhập xong và submit thì form sẽ có value như sau:</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
-  <span class="s2">"contactName"</span><span class="p">:</span> <span class="s2">"Tiep Phan"</span><span class="p">,</span>
-  <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"abc@deg.com"</span><span class="p">,</span>
-  <span class="s2">"facebook"</span><span class="p">:</span> <span class="s2">"facebook.com"</span><span class="p">,</span>
-  <span class="s2">"twitter"</span><span class="p">:</span> <span class="s2">"twitter.com"</span><span class="p">,</span>
-  <span class="s2">"website"</span><span class="p">:</span> <span class="s2">"tiepphan.com"</span><span class="p">,</span>
-  <span class="s2">"tel"</span><span class="p">:</span> <span class="s2">"1234-5678-90"</span>
+  <span class="dl">"</span><span class="s2">contactName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Tiep Phan</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">abc@deg.com</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">facebook</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">facebook.com</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">twitter</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">twitter.com</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">website</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">tiepphan.com</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">tel</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1234-5678-90</span><span class="dl">"</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -290,25 +290,25 @@
 <p>Giả sử object mà chúng ta có ở đây có dạng:</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">contact</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"contactName"</span><span class="p">:</span> <span class="s2">"Tiep Phan"</span><span class="p">,</span>
-  <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"abc@deg.com"</span><span class="p">,</span>
-  <span class="s2">"facebook"</span><span class="p">:</span> <span class="s2">"facebook.com"</span><span class="p">,</span>
-  <span class="s2">"twitter"</span><span class="p">:</span> <span class="s2">"twitter.com"</span><span class="p">,</span>
-  <span class="s2">"website"</span><span class="p">:</span> <span class="s2">"tiepphan.com"</span><span class="p">,</span>
-  <span class="s2">"tel"</span><span class="p">:</span> <span class="s2">"1234-5678-90"</span>
+  <span class="dl">"</span><span class="s2">contactName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Tiep Phan</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">abc@deg.com</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">facebook</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">facebook.com</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">twitter</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">twitter.com</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">website</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">tiepphan.com</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">tel</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1234-5678-90</span><span class="dl">"</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>Template của chúng ta sẽ thay đổi như sau:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="err">[</span><span class="na">ngModel</span><span class="err">]="</span><span class="na">contact</span><span class="err">.</span><span class="na">contactName</span><span class="err">"</span> <span class="na">name=</span><span class="s">"contactName"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="err">...</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">[ngModel]=</span><span class="s">"contact.contactName"</span> <span class="na">name=</span><span class="s">"contactName"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="err">...</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 
 <p>Mọi thứ đều bắt nguồn từ những điều cơ bản nhất, <code class="highlighter-rouge">[ngModel]</code> chính là one-way binding mà chúng ta vẫn thường dùng.</p>
 
 <p>Lưu ý rằng, khi bạn update form control, bản thân control được form quản lý sẽ thay đổi – <code class="highlighter-rouge">form.value</code>, nhưng object contact ở trên sẽ không hề hấn gì, vì chúng ta không hề đụng chạm gì tới nó, chúng ta chỉ binding một chiều, mà không binding ngược trở lại. Điều này dẫn đến chúng ta có thêm một dạng khác của <code class="highlighter-rouge">ngModel</code> đó là cú pháp two-way binding <code class="highlighter-rouge">[(ngModel)]</code>.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="err">[(</span><span class="na">ngModel</span><span class="err">)]="</span><span class="na">contact</span><span class="err">.</span><span class="na">contactName</span><span class="err">"</span> <span class="na">name=</span><span class="s">"contactName"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="err">...</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">[(ngModel)]=</span><span class="s">"contact.contactName"</span> <span class="na">name=</span><span class="s">"contactName"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="err">...</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 
 <p>Như vậy, nếu bạn không cần binding thì chỉ cần thêm <code class="highlighter-rouge">ngModel</code> là đủ, nếu bạn muốn one-way binding thì sử dung <code class="highlighter-rouge">[ngModel]</code>, cuối cùng là muốn dùng two-way binding với <code class="highlighter-rouge">[(ngModel)]</code>. Mặc dù vậy, khi bạn thay đổi form control value, thì Angular sẽ cập nhật lại giá trị của các control của form mà nó đang quản lý.</p>
@@ -353,14 +353,14 @@
 <p>Kết quả thu được chúng ta có form value với cấu trúc:</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
-  <span class="s2">"contactName"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
-  <span class="s2">"email"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
-  <span class="s2">"social"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"facebook"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
-    <span class="s2">"twitter"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
-    <span class="s2">"website"</span><span class="p">:</span> <span class="s2">""</span>
+  <span class="dl">"</span><span class="s2">contactName</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">social</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">facebook</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">twitter</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">website</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span>
   <span class="p">},</span>
-  <span class="s2">"tel"</span><span class="p">:</span> <span class="s2">""</span>
+  <span class="dl">"</span><span class="s2">tel</span><span class="dl">"</span><span class="p">:</span> <span class="dl">""</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -377,7 +377,7 @@
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">onSubmit</span><span class="p">(</span><span class="nx">formValue</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Do something awesome</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">formValue</span><span class="p">);</span>
-  <span class="k">throw</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'something go wrong'</span><span class="p">);</span>
+  <span class="k">throw</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">something go wrong</span><span class="dl">'</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -411,7 +411,7 @@
 <p>Khi không nhập gì vào input contactName, chúng ta có thể thấy một thông báo lỗi như sau:</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
-  <span class="s2">"required"</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="dl">"</span><span class="s2">required</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -420,7 +420,7 @@
 <p>Công việc của chúng ta bây giờ là sử dụng <code class="highlighter-rouge">ngIf</code> chẳng hạn để show/hide error cho người dùng được biết.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col alert alert-danger"</span> <span class="na">role=</span><span class="s">"alert"</span>
-  <span class="err">*</span><span class="na">ngIf=</span><span class="s">"form.controls.contactName?.errors?.required"</span><span class="nt">&gt;</span>
+  <span class="na">*ngIf=</span><span class="s">"form.controls.contactName?.errors?.required"</span><span class="nt">&gt;</span>
   Name is required!
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
@@ -428,7 +428,7 @@
 <p>Và có thể thêm việc không cho người dùng nhấn button submit khi trạng thái của form là invalid như sau:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">type=</span><span class="s">"submit"</span>
-  <span class="err">[</span><span class="na">disabled</span><span class="err">]="</span><span class="na">form</span><span class="err">.</span><span class="na">invalid</span><span class="err">"</span><span class="nt">&gt;</span>
+  <span class="na">[disabled]=</span><span class="s">"form.invalid"</span><span class="nt">&gt;</span>
   Submit
 <span class="nt">&lt;/button&gt;</span>
 </code></pre></div></div>
@@ -447,7 +447,7 @@
 <p>Chúng ta sẽ thay đổi một chút form validation:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col alert alert-danger"</span> <span class="na">role=</span><span class="s">"alert"</span>
-  <span class="err">*</span><span class="na">ngIf=</span><span class="s">"form.controls.contactName?.errors?.required &amp;&amp; form.controls.contactName?.touched"</span><span class="nt">&gt;</span>
+  <span class="na">*ngIf=</span><span class="s">"form.controls.contactName?.errors?.required &amp;&amp; form.controls.contactName?.touched"</span><span class="nt">&gt;</span>
   Name is required!
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
@@ -460,13 +460,13 @@
   <p>– Câu trả lời là có, chúng ta hoàn toàn có thể dùng template variable như sau:</p>
 </blockquote>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">ngModel</span> <span class="na">name=</span><span class="s">"contactName"</span> <span class="na">required</span> <span class="err">#</span><span class="na">contactName=</span><span class="s">"ngModel"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="err">...</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">ngModel</span> <span class="na">name=</span><span class="s">"contactName"</span> <span class="na">required</span> <span class="na">#contactName</span><span class="err">="</span><span class="na">ngModel</span><span class="err">"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="err">...</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 
 <p>Và sử dụng như một template variable thông thường:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col alert alert-danger"</span> <span class="na">role=</span><span class="s">"alert"</span>
-  <span class="err">*</span><span class="na">ngIf=</span><span class="s">"contactName?.errors?.required &amp;&amp; contactName?.touched"</span><span class="nt">&gt;</span>
+  <span class="na">*ngIf=</span><span class="s">"contactName?.errors?.required &amp;&amp; contactName?.touched"</span><span class="nt">&gt;</span>
   Name is required!
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>

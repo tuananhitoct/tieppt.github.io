@@ -5,9 +5,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--<title>Thử Nghiệm Với Angular Phần 14 &#8211; QueryList Changes Event Trong Angular</title>-->
-<!-- Begin Jekyll SEO tag v2.5.0 -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Thử Nghiệm Với Angular Phần 14 – QueryList Changes Event Trong Angular | Lập Trình Thật Kỳ Diệu</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.8.6" />
 <meta property="og:title" content="Thử Nghiệm Với Angular Phần 14 – QueryList Changes Event Trong Angular" />
 <meta name="author" content="Tiep Phan" />
 <meta property="og:locale" content="en_US" />
@@ -22,7 +22,7 @@
 <meta name="google-site-verification" content="Gcn3Y0oBud7gufI1PtszF7DFNgFOifgLRIaZAoLZWWU" />
 <meta name="msvalidate.01" content="F160AE523B1846CBDC431CB91CB6613A" />
 <script type="application/ld+json">
-{"description":"Bài học này sẽ giải quyết vấn đề chúng ta gặp phải khi cần phải hook vào QueryList Changes Event Trong Angular nhằm theo dõi khi nào đối tượng này thay đổi để áp dụng các logic liên quan.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-querylist-changes-event-trong-angular/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/03/angular2-14.jpg","headline":"Thử Nghiệm Với Angular Phần 14 – QueryList Changes Event Trong Angular","dateModified":"2017-03-19T16:06:57+00:00","datePublished":"2017-03-19T16:06:57+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-querylist-changes-event-trong-angular/"},"@context":"http://schema.org"}</script>
+{"description":"Bài học này sẽ giải quyết vấn đề chúng ta gặp phải khi cần phải hook vào QueryList Changes Event Trong Angular nhằm theo dõi khi nào đối tượng này thay đổi để áp dụng các logic liên quan.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-querylist-changes-event-trong-angular/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/03/angular2-14.jpg","headline":"Thử Nghiệm Với Angular Phần 14 – QueryList Changes Event Trong Angular","dateModified":"2017-03-19T16:06:57+00:00","datePublished":"2017-03-19T16:06:57+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-querylist-changes-event-trong-angular/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -123,9 +123,9 @@
 
 <p>Với phiên bản code từ bài học trước liệu rằng khi chúng ta làm việc với dữ liệu async thì app của chúng ta sẽ chạy đúng. Lúc này, chúng ta gặp phải một vấn đề đó là mặc dù chúng ta đã để <code class="highlighter-rouge">[multiple]="false"</code> nhưng app lại chạy không như chúng ta mong muốn.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tp-collapse-group</span> <span class="err">[</span><span class="na">multiple</span><span class="err">]="</span><span class="na">false</span><span class="err">"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tp-collapse-group</span> <span class="na">[multiple]=</span><span class="s">"false"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;tp-collapse</span>
-    <span class="err">*</span><span class="na">ngFor=</span><span class="s">"let post of posts"</span> <span class="err">[</span><span class="na">title</span><span class="err">]="</span><span class="na">post</span><span class="err">.</span><span class="na">title</span><span class="err">"</span> <span class="err">[</span><span class="na">selected</span><span class="err">]="</span><span class="na">false</span><span class="err">"</span><span class="nt">&gt;</span>
+    <span class="na">*ngFor=</span><span class="s">"let post of posts"</span> <span class="na">[title]=</span><span class="s">"post.title"</span> <span class="na">[selected]=</span><span class="s">"false"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div&gt;</span>
       {{ post.body }}
     <span class="nt">&lt;/div&gt;</span>
@@ -133,12 +133,12 @@
 <span class="nt">&lt;/tp-collapse-group&gt;</span>
 </code></pre></div></div>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">POSTS</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./services/post'</span><span class="p">;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">POSTS</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./services/post</span><span class="dl">'</span><span class="p">;</span>
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'app-root'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./app.component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./app.component.scss'</span><span class="p">]</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">app-root</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./app.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./app.component.scss</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
   <span class="nl">posts</span><span class="p">:</span> <span class="nx">any</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
@@ -187,18 +187,18 @@
 
 <p>Và code hoàn thiện của <strong>CollapseGroupComponent</strong> như sau:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">AfterContentInit</span><span class="p">,</span> <span class="nx">Input</span><span class="p">,</span> <span class="nx">ContentChildren</span><span class="p">,</span> <span class="nx">QueryList</span><span class="p">,</span> <span class="nx">OnDestroy</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">CollapseComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"../collapse/collapse.component"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Subscription</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"rxjs/Subscription"</span><span class="p">;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">AfterContentInit</span><span class="p">,</span> <span class="nx">Input</span><span class="p">,</span> <span class="nx">ContentChildren</span><span class="p">,</span> <span class="nx">QueryList</span><span class="p">,</span> <span class="nx">OnDestroy</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">CollapseComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../collapse/collapse.component</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Subscription</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">rxjs/Subscription</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'tp-collapse-group'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./collapse-group.component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./collapse-group.component.scss'</span><span class="p">]</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">tp-collapse-group</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./collapse-group.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./collapse-group.component.scss</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">CollapseGroupComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">AfterContentInit</span><span class="p">,</span> <span class="nx">OnDestroy</span> <span class="p">{</span>
   <span class="p">@</span><span class="nd">ContentChildren</span><span class="p">(</span><span class="nx">CollapseComponent</span><span class="p">)</span> <span class="nx">collapses</span><span class="p">:</span> <span class="nx">QueryList</span><span class="o">&lt;</span><span class="nx">CollapseComponent</span><span class="o">&gt;</span><span class="p">;</span>
-  <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">multiple</span><span class="p">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">multiple</span><span class="p">:</span> <span class="nx">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 
   <span class="kr">private</span> <span class="nx">_subscriptions</span><span class="p">:</span> <span class="nx">Subscription</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
   <span class="kr">private</span> <span class="nx">_changeSubs</span><span class="p">:</span> <span class="nx">Subscription</span><span class="p">;</span>

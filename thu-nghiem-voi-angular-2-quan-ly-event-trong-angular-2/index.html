@@ -5,9 +5,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--<title>Thử Nghiệm Với Angular 2 Phần 6: Quản Lý Event Trong Angular 2</title>-->
-<!-- Begin Jekyll SEO tag v2.5.0 -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Thử Nghiệm Với Angular 2 Phần 6: Quản Lý Event Trong Angular 2 | Lập Trình Thật Kỳ Diệu</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.8.6" />
 <meta property="og:title" content="Thử Nghiệm Với Angular 2 Phần 6: Quản Lý Event Trong Angular 2" />
 <meta name="author" content="Tiep Phan" />
 <meta property="og:locale" content="en_US" />
@@ -22,7 +22,7 @@
 <meta name="google-site-verification" content="Gcn3Y0oBud7gufI1PtszF7DFNgFOifgLRIaZAoLZWWU" />
 <meta name="msvalidate.01" content="F160AE523B1846CBDC431CB91CB6613A" />
 <script type="application/ld+json">
-{"description":"Bài học này sẽ củng cố một số kiến thức về Event trong Angular 2 như $event object hay key event filtering.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-quan-ly-event-trong-angular-2/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/01/angular2-PHAN6.jpg","headline":"Thử Nghiệm Với Angular 2 Phần 6: Quản Lý Event Trong Angular 2","dateModified":"2017-01-03T17:08:05+00:00","datePublished":"2017-01-03T17:08:05+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-quan-ly-event-trong-angular-2/"},"@context":"http://schema.org"}</script>
+{"description":"Bài học này sẽ củng cố một số kiến thức về Event trong Angular 2 như $event object hay key event filtering.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-quan-ly-event-trong-angular-2/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/01/angular2-PHAN6.jpg","headline":"Thử Nghiệm Với Angular 2 Phần 6: Quản Lý Event Trong Angular 2","dateModified":"2017-01-03T17:08:05+00:00","datePublished":"2017-01-03T17:08:05+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-quan-ly-event-trong-angular-2/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -128,7 +128,7 @@
 
 <p>Ví dụ:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="err">(</span><span class="na">click</span><span class="err">)="</span><span class="na">onClickMe</span><span class="err">()"</span><span class="nt">&gt;</span>Click me!<span class="nt">&lt;/button&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">(click)=</span><span class="s">"onClickMe()"</span><span class="nt">&gt;</span>Click me!<span class="nt">&lt;/button&gt;</span>
 </code></pre></div></div>
 
 <h2 id="thao-tác-với-event-object">Thao tác với <code class="highlighter-rouge">$event</code> object</h2>
@@ -137,7 +137,7 @@
 
 <p>Ví dụ:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="err">(</span><span class="na">keyup</span><span class="err">)="</span><span class="na">onKey</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">(keyup)=</span><span class="s">"onKey($event)"</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">LoggerKeyUpComponent</span> <span class="p">{</span>
@@ -151,7 +151,7 @@
 
 <p>Hoặc có thể có type của event:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="err">(</span><span class="na">keyup</span><span class="err">)="</span><span class="na">onKey</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">(keyup)=</span><span class="s">"onKey($event)"</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">LoggerKeyUpTypeComponent</span> <span class="p">{</span>
 
@@ -168,11 +168,11 @@
 
 <p>Ví dụ:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="err">(</span><span class="na">keyup</span><span class="err">.</span><span class="na">enter</span><span class="err">)="</span><span class="na">onEnter</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">(keyup.enter)=</span><span class="s">"onEnter($event)"</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">KeyUpFilteringComponent</span> <span class="p">{</span>
-  <span class="nx">value</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+  <span class="nx">value</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
   <span class="nx">onEnter</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span> 
     <span class="c1">// do something</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>

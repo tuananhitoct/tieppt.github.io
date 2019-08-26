@@ -5,9 +5,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--<title>Thử Nghiệm Với Angular Phần 11: Template Variable Trong Angular</title>-->
-<!-- Begin Jekyll SEO tag v2.5.0 -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Thử Nghiệm Với Angular Phần 11: Template Variable Trong Angular | Lập Trình Thật Kỳ Diệu</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.8.6" />
 <meta property="og:title" content="Thử Nghiệm Với Angular Phần 11: Template Variable Trong Angular" />
 <meta name="author" content="Tiep Phan" />
 <meta property="og:locale" content="en_US" />
@@ -22,7 +22,7 @@
 <meta name="google-site-verification" content="Gcn3Y0oBud7gufI1PtszF7DFNgFOifgLRIaZAoLZWWU" />
 <meta name="msvalidate.01" content="F160AE523B1846CBDC431CB91CB6613A" />
 <script type="application/ld+json">
-{"description":"Bài học này sẽ giới thiệu cho các bạn về cách sử dụng Template Variable trong Angular và ngOnInit, ngAfterViewInit lifecycle.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-template-variable-trong-angular/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/02/angular2-11.jpg","headline":"Thử Nghiệm Với Angular Phần 11: Template Variable Trong Angular","dateModified":"2017-02-19T16:39:00+00:00","datePublished":"2017-02-19T16:39:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-template-variable-trong-angular/"},"@context":"http://schema.org"}</script>
+{"description":"Bài học này sẽ giới thiệu cho các bạn về cách sử dụng Template Variable trong Angular và ngOnInit, ngAfterViewInit lifecycle.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-template-variable-trong-angular/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/02/angular2-11.jpg","headline":"Thử Nghiệm Với Angular Phần 11: Template Variable Trong Angular","dateModified":"2017-02-19T16:39:00+00:00","datePublished":"2017-02-19T16:39:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-template-variable-trong-angular/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -124,9 +124,9 @@
 <p>Template variable trong Angular có thể tạo bằng cách đặt tên kèm theo dấu # vào trước như sau:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tp-app__content"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="err">#</span><span class="na">nameInput</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;button</span> <span class="err">(</span><span class="na">click</span><span class="err">)="</span><span class="na">sayHello</span><span class="err">()"</span><span class="nt">&gt;</span>Click me<span class="nt">&lt;/button&gt;</span>
-  <span class="nt">&lt;tp-switches</span> <span class="err">#</span><span class="na">switches</span><span class="nt">&gt;&lt;/tp-switches&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">#nameInput</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">(click)=</span><span class="s">"sayHello()"</span><span class="nt">&gt;</span>Click me<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;tp-switches</span> <span class="na">#switches</span><span class="nt">&gt;&lt;/tp-switches&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
 
@@ -139,18 +139,18 @@
 
 <p>Hoặc sử dụng ở trong Component:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">ViewChild</span><span class="p">,</span> <span class="nx">ElementRef</span><span class="p">,</span> <span class="nx">AfterViewInit</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">SwitchesComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"./presentation/switches/switches.component"</span><span class="p">;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">ViewChild</span><span class="p">,</span> <span class="nx">ElementRef</span><span class="p">,</span> <span class="nx">AfterViewInit</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">SwitchesComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./presentation/switches/switches.component</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'app-root'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./app.component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./app.component.scss'</span><span class="p">]</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">app-root</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./app.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./app.component.scss</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">AfterViewInit</span> <span class="p">{</span>
-  <span class="nx">title</span> <span class="o">=</span> <span class="s1">'app works!'</span><span class="p">;</span>
-  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="s1">'nameInput'</span><span class="p">)</span> <span class="nx">name</span><span class="p">:</span> <span class="nx">ElementRef</span><span class="p">;</span>
-  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="s1">'switches'</span><span class="p">)</span> <span class="nx">switches</span><span class="p">:</span> <span class="nx">SwitchesComponent</span><span class="p">;</span>
+  <span class="nx">title</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">app works!</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">nameInput</span><span class="dl">'</span><span class="p">)</span> <span class="nx">name</span><span class="p">:</span> <span class="nx">ElementRef</span><span class="p">;</span>
+  <span class="p">@</span><span class="nd">ViewChild</span><span class="p">(</span><span class="dl">'</span><span class="s1">switches</span><span class="dl">'</span><span class="p">)</span> <span class="nx">switches</span><span class="p">:</span> <span class="nx">SwitchesComponent</span><span class="p">;</span>
   <span class="nx">sayHello</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">switches</span><span class="p">.</span><span class="nx">toggle</span><span class="p">();</span>
   <span class="p">}</span>

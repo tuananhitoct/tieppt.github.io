@@ -5,9 +5,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--<title>Thử Nghiệm Với Angular 2 Phần 5: NgFor Và Các Thuộc Tính Index, First, Last, Even, Odd, TrackBy</title>-->
-<!-- Begin Jekyll SEO tag v2.5.0 -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Thử Nghiệm Với Angular 2 Phần 5: NgFor Và Các Thuộc Tính Index, First, Last, Even, Odd, TrackBy | Lập Trình Thật Kỳ Diệu</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.8.6" />
 <meta property="og:title" content="Thử Nghiệm Với Angular 2 Phần 5: NgFor Và Các Thuộc Tính Index, First, Last, Even, Odd, TrackBy" />
 <meta name="author" content="Tiep Phan" />
 <meta property="og:locale" content="en_US" />
@@ -22,7 +22,7 @@
 <meta name="google-site-verification" content="Gcn3Y0oBud7gufI1PtszF7DFNgFOifgLRIaZAoLZWWU" />
 <meta name="msvalidate.01" content="F160AE523B1846CBDC431CB91CB6613A" />
 <script type="application/ld+json">
-{"description":"Trong bài học này chúng ta sẽ tìm hiểu một số thuộc tính mà Angular 2 NgFor cung cấp như các biến cục bộ: index, first, last, even, odd hay việc tối ưu performance với trackBy function.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-ngfor-index-first-last-even-odd-trackby/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/01/angular2-PHAN5.jpg","headline":"Thử Nghiệm Với Angular 2 Phần 5: NgFor Và Các Thuộc Tính Index, First, Last, Even, Odd, TrackBy","dateModified":"2017-01-03T16:27:03+00:00","datePublished":"2017-01-03T16:27:03+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-ngfor-index-first-last-even-odd-trackby/"},"@context":"http://schema.org"}</script>
+{"description":"Trong bài học này chúng ta sẽ tìm hiểu một số thuộc tính mà Angular 2 NgFor cung cấp như các biến cục bộ: index, first, last, even, odd hay việc tối ưu performance với trackBy function.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-ngfor-index-first-last-even-odd-trackby/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/01/angular2-PHAN5.jpg","headline":"Thử Nghiệm Với Angular 2 Phần 5: NgFor Và Các Thuộc Tính Index, First, Last, Even, Odd, TrackBy","dateModified":"2017-01-03T16:27:03+00:00","datePublished":"2017-01-03T16:27:03+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-ngfor-index-first-last-even-odd-trackby/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -138,7 +138,7 @@
 
 <p>Cú pháp:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;li</span> <span class="err">*</span><span class="na">ngFor=</span><span class="s">"let item of items; let i = index; trackBy: trackByFn"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;li</span> <span class="na">*ngFor=</span><span class="s">"let item of items; let i = index; trackBy: trackByFn"</span><span class="nt">&gt;</span>
   // do something
 <span class="nt">&lt;/li&gt;</span>
 <span class="nt">&lt;li</span> <span class="na">template=</span><span class="s">"ngFor let item of items; let i = index; trackBy: trackByFn"</span><span class="nt">&gt;</span>
@@ -148,7 +148,7 @@
 
 <p>Sử dụng với cú pháp thẻ <code class="highlighter-rouge">template</code> (sẽ có bài giới thiệu sau):</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;template</span> <span class="na">ngFor</span> <span class="na">let-item</span> <span class="err">[</span><span class="na">ngForOf</span><span class="err">]="</span><span class="na">items</span><span class="err">"</span> <span class="na">let-i=</span><span class="s">"index"</span> <span class="err">[</span><span class="na">ngForTrackBy</span><span class="err">]="</span><span class="na">trackByFn</span><span class="err">"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;template</span> <span class="na">ngFor</span> <span class="na">let-item</span> <span class="na">[ngForOf]=</span><span class="s">"items"</span> <span class="na">let-i=</span><span class="s">"index"</span> <span class="na">[ngForTrackBy]=</span><span class="s">"trackByFn"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;li&gt;</span>...<span class="nt">&lt;/li&gt;</span>
 <span class="nt">&lt;/template&gt;</span>
 </code></pre></div></div>
@@ -157,13 +157,13 @@
 
 <p>Cho phép sử dụng <code class="highlighter-rouge">as</code>:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;li</span> <span class="err">*</span><span class="na">ngFor=</span><span class="s">"let item of items; index as i; trackBy: trackByFn"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/li&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;li</span> <span class="na">*ngFor=</span><span class="s">"let item of items; index as i; trackBy: trackByFn"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/li&gt;</span>
 <span class="nt">&lt;li</span> <span class="na">template=</span><span class="s">"ngFor let item of items; index as i; trackBy: trackByFn"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/li&gt;</span>
 </code></pre></div></div>
 
 <p>Thay <code class="highlighter-rouge">template</code> bằng <code class="highlighter-rouge">ng-template</code>:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ng-template</span> <span class="na">ngFor</span> <span class="na">let-item</span> <span class="err">[</span><span class="na">ngForOf</span><span class="err">]="</span><span class="na">items</span><span class="err">"</span> <span class="na">let-i=</span><span class="s">"index"</span> <span class="err">[</span><span class="na">ngForTrackBy</span><span class="err">]="</span><span class="na">trackByFn</span><span class="err">"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ng-template</span> <span class="na">ngFor</span> <span class="na">let-item</span> <span class="na">[ngForOf]=</span><span class="s">"items"</span> <span class="na">let-i=</span><span class="s">"index"</span> <span class="na">[ngForTrackBy]=</span><span class="s">"trackByFn"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;li&gt;</span>...<span class="nt">&lt;/li&gt;</span>
 <span class="nt">&lt;/ng-template&gt;</span>
 </code></pre></div></div>

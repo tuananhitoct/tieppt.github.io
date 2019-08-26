@@ -5,9 +5,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--<title>Thử Nghiệm Với Angular Phần 13: Thực Hành Content Projection Và Lifecycle Liên Quan Trong Angular</title>-->
-<!-- Begin Jekyll SEO tag v2.5.0 -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Thử Nghiệm Với Angular Phần 13: Thực Hành Content Projection Và Lifecycle Liên Quan Trong Angular | Lập Trình Thật Kỳ Diệu</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.8.6" />
 <meta property="og:title" content="Thử Nghiệm Với Angular Phần 13: Thực Hành Content Projection Và Lifecycle Liên Quan Trong Angular" />
 <meta name="author" content="Tiep Phan" />
 <meta property="og:locale" content="en_US" />
@@ -22,7 +22,7 @@
 <meta name="google-site-verification" content="Gcn3Y0oBud7gufI1PtszF7DFNgFOifgLRIaZAoLZWWU" />
 <meta name="msvalidate.01" content="F160AE523B1846CBDC431CB91CB6613A" />
 <script type="application/ld+json">
-{"description":"Content Projection là một concept khá hay trong Angular, giúp chúng ta có thể dễ dàng tạo các component có khả năng tái sử dụng cao. Bài học này chúng ta sẽ tạo các Component để tìm hiểu chi tiết hơn về Content Projection.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-thuc-hanh-content-projection-va-lifecycle-angular/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/03/angular13.jpg","headline":"Thử Nghiệm Với Angular Phần 13: Thực Hành Content Projection Và Lifecycle Liên Quan Trong Angular","dateModified":"2017-03-12T08:13:55+00:00","datePublished":"2017-03-12T08:13:55+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-thuc-hanh-content-projection-va-lifecycle-angular/"},"@context":"http://schema.org"}</script>
+{"description":"Content Projection là một concept khá hay trong Angular, giúp chúng ta có thể dễ dàng tạo các component có khả năng tái sử dụng cao. Bài học này chúng ta sẽ tạo các Component để tìm hiểu chi tiết hơn về Content Projection.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-thuc-hanh-content-projection-va-lifecycle-angular/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/03/angular13.jpg","headline":"Thử Nghiệm Với Angular Phần 13: Thực Hành Content Projection Và Lifecycle Liên Quan Trong Angular","dateModified":"2017-03-12T08:13:55+00:00","datePublished":"2017-03-12T08:13:55+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-thuc-hanh-content-projection-va-lifecycle-angular/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -131,14 +131,14 @@
 
 <p>Trong bài học này chúng ta sẽ tạo mới hai component là <strong>CollapseGroupComponent</strong> và <strong>CollapseComponent. </strong>Trong đó <strong>CollapseGroupComponent</strong> sẽ chịu trách nhiệm quản lý các component <strong>CollapseComponent</strong> như sau:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tp-collapse-group</span> <span class="err">[</span><span class="na">multiple</span><span class="err">]="</span><span class="na">false</span><span class="err">"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;tp-collapse</span> <span class="err">[</span><span class="na">title</span><span class="err">]="'</span><span class="na">First</span> <span class="na">block</span><span class="err">'"</span> <span class="err">[</span><span class="na">selected</span><span class="err">]="</span><span class="na">true</span><span class="err">"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tp-collapse-group</span> <span class="na">[multiple]=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;tp-collapse</span> <span class="na">[title]=</span><span class="s">"'First block'"</span> <span class="na">[selected]=</span><span class="s">"true"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;span&gt;</span>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
     <span class="nt">&lt;/span&gt;</span>
   <span class="nt">&lt;/tp-collapse&gt;</span>
-  <span class="nt">&lt;tp-collapse</span> <span class="err">[</span><span class="na">title</span><span class="err">]="'</span><span class="na">Second</span> <span class="na">block</span><span class="err">'"</span> <span class="err">[</span><span class="na">selected</span><span class="err">]="</span><span class="na">false</span><span class="err">"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;tp-collapse</span> <span class="na">[title]=</span><span class="s">"'Second block'"</span> <span class="na">[selected]=</span><span class="s">"false"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;span&gt;</span>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -162,18 +162,18 @@
 
 <p><strong>collapse-group.component.ts</strong></p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">AfterContentInit</span><span class="p">,</span> <span class="nx">Input</span><span class="p">,</span> <span class="nx">ContentChildren</span><span class="p">,</span> <span class="nx">QueryList</span><span class="p">,</span> <span class="nx">OnDestroy</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">CollapseComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"../collapse/collapse.component"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Subscription</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"rxjs/Subscription"</span><span class="p">;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">AfterContentInit</span><span class="p">,</span> <span class="nx">Input</span><span class="p">,</span> <span class="nx">ContentChildren</span><span class="p">,</span> <span class="nx">QueryList</span><span class="p">,</span> <span class="nx">OnDestroy</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">CollapseComponent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../collapse/collapse.component</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Subscription</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">rxjs/Subscription</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'tp-collapse-group'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./collapse-group.component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./collapse-group.component.scss'</span><span class="p">]</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">tp-collapse-group</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./collapse-group.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./collapse-group.component.scss</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">CollapseGroupComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">AfterContentInit</span><span class="p">,</span> <span class="nx">OnDestroy</span> <span class="p">{</span>
   <span class="p">@</span><span class="nd">ContentChildren</span><span class="p">(</span><span class="nx">CollapseComponent</span><span class="p">)</span> <span class="nx">collapses</span><span class="p">:</span> <span class="nx">QueryList</span><span class="o">&lt;</span><span class="nx">CollapseComponent</span><span class="o">&gt;</span><span class="p">;</span>
-  <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">multiple</span><span class="p">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">multiple</span><span class="p">:</span> <span class="nx">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 
   <span class="kr">private</span> <span class="nx">_subscriptions</span><span class="p">:</span> <span class="nx">Subscription</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
   <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
@@ -224,34 +224,34 @@
 
 <p><strong>collapse.component.html</strong></p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"collapsible-header"</span> <span class="err">(</span><span class="na">click</span><span class="err">)="</span><span class="na">toggleSelected</span><span class="err">()"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"collapsible-header"</span> <span class="na">(click)=</span><span class="s">"toggleSelected()"</span><span class="nt">&gt;</span>
   {{ title }}
 <span class="nt">&lt;/header&gt;</span>
-<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"collapsible-body"</span> <span class="err">[</span><span class="na">class</span><span class="err">.</span><span class="na">active</span><span class="err">]="</span><span class="na">selected</span><span class="err">"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"collapsible-body"</span> <span class="na">[class.active]=</span><span class="s">"selected"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;ng-content&gt;&lt;/ng-content&gt;</span>
 <span class="nt">&lt;/section&gt;</span>
 </code></pre></div></div>
 
 <p><strong>collapse.component.ts</strong></p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Input</span><span class="p">,</span> <span class="nx">ViewEncapsulation</span><span class="p">,</span> <span class="nx">Output</span><span class="p">,</span> <span class="nx">EventEmitter</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Input</span><span class="p">,</span> <span class="nx">ViewEncapsulation</span><span class="p">,</span> <span class="nx">Output</span><span class="p">,</span> <span class="nx">EventEmitter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="k">export</span> <span class="kr">interface</span> <span class="nx">DataCollapseChange</span> <span class="p">{</span>
   <span class="nl">collapseId</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
-  <span class="nl">selected</span><span class="p">:</span> <span class="kr">boolean</span><span class="p">;</span>
+  <span class="nl">selected</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kd">let</span> <span class="nx">uuid</span><span class="p">:</span> <span class="nx">number</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'tp-collapse'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./collapse.component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./collapse.component.scss'</span><span class="p">],</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">tp-collapse</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./collapse.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./collapse.component.scss</span><span class="dl">'</span><span class="p">],</span>
   <span class="na">encapsulation</span><span class="p">:</span> <span class="nx">ViewEncapsulation</span><span class="p">.</span><span class="nx">None</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">CollapseComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
-  <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">title</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
-  <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">selected</span><span class="p">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">title</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+  <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">selected</span><span class="p">:</span> <span class="nx">boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
   <span class="p">@</span><span class="nd">Output</span><span class="p">()</span> <span class="nx">selectedChange</span><span class="p">:</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">DataCollapseChange</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventEmitter</span><span class="o">&lt;</span><span class="nx">DataCollapseChange</span><span class="o">&gt;</span><span class="p">();</span>
   <span class="kr">private</span> <span class="nx">_id</span><span class="p">:</span> <span class="nx">number</span><span class="p">;</span>
   <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
@@ -261,7 +261,7 @@
   <span class="p">}</span>
 
   <span class="kd">get</span> <span class="nx">collapseId</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="s1">'tp-collapse-'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">_id</span><span class="p">;</span>
+    <span class="k">return</span> <span class="dl">'</span><span class="s1">tp-collapse-</span><span class="dl">'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">_id</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="nx">toggleSelected</span><span class="p">()</span> <span class="p">{</span>

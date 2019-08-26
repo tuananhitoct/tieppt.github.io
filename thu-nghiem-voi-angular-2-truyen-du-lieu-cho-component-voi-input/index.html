@@ -5,9 +5,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--<title>Thử Nghiệm Với Angular 2 Phần 7: Truyền Dữ Liệu Cho Component Với @Input</title>-->
-<!-- Begin Jekyll SEO tag v2.5.0 -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Thử Nghiệm Với Angular 2 Phần 7: Truyền Dữ Liệu Cho Component Với @Input | Lập Trình Thật Kỳ Diệu</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.8.6" />
 <meta property="og:title" content="Thử Nghiệm Với Angular 2 Phần 7: Truyền Dữ Liệu Cho Component Với @Input" />
 <meta name="author" content="Tiep Phan" />
 <meta property="og:locale" content="en_US" />
@@ -22,7 +22,7 @@
 <meta name="google-site-verification" content="Gcn3Y0oBud7gufI1PtszF7DFNgFOifgLRIaZAoLZWWU" />
 <meta name="msvalidate.01" content="F160AE523B1846CBDC431CB91CB6613A" />
 <script type="application/ld+json">
-{"description":"Trong bài học này chúng ta sẽ tìm hiểu việc truyền dữ liệu cho Component trong Angular với @Input decorator.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-truyen-du-lieu-cho-component-voi-input/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/01/angular2-PHAN7.jpg","headline":"Thử Nghiệm Với Angular 2 Phần 7: Truyền Dữ Liệu Cho Component Với @Input","dateModified":"2017-01-05T11:32:34+00:00","datePublished":"2017-01-05T11:32:34+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-truyen-du-lieu-cho-component-voi-input/"},"@context":"http://schema.org"}</script>
+{"description":"Trong bài học này chúng ta sẽ tìm hiểu việc truyền dữ liệu cho Component trong Angular với @Input decorator.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-truyen-du-lieu-cho-component-voi-input/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/01/angular2-PHAN7.jpg","headline":"Thử Nghiệm Với Angular 2 Phần 7: Truyền Dữ Liệu Cho Component Với @Input","dateModified":"2017-01-05T11:32:34+00:00","datePublished":"2017-01-05T11:32:34+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-truyen-du-lieu-cho-component-voi-input/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -126,16 +126,16 @@
 
 <p>Đầu tiên, để có thể nhận được dữ liệu từ bên ngoài truyền vào cho một Component chúng ta cần thực hiện khai báo tên của property và gán nó với <code class="highlighter-rouge">@Input</code> decorator như sau:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'tp-contact-image-detail'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./contact-image-detail.component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./contact-image-detail.component.scss'</span><span class="p">]</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">tp-contact-image-detail</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./contact-image-detail.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./contact-image-detail.component.scss</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">ContactImageDetailComponent</span> <span class="p">{</span>
   <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">round</span><span class="p">:</span> <span class="nb">Boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-  <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">avatarUrl</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+  <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">avatarUrl</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
 
   <span class="kd">constructor</span><span class="p">()</span> <span class="p">{}</span>
 <span class="p">}</span>
@@ -144,24 +144,24 @@
 <p>Sau đó khi sử dụng ở trong một template của một Component khác chúng ta có thể truyền dữ liệu như sau:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tp-contact-image-detail</span>
-  <span class="err">[</span><span class="na">avatarUrl</span><span class="err">]="</span><span class="na">contact</span><span class="err">.</span><span class="na">avatar</span><span class="err">?.</span><span class="na">url</span><span class="err">"</span>
-  <span class="err">[</span><span class="na">round</span><span class="err">]="</span><span class="na">contact</span><span class="err">.</span><span class="na">avatar</span><span class="err">?.</span><span class="na">round</span><span class="err">"</span>
+  <span class="na">[avatarUrl]=</span><span class="s">"contact.avatar?.url"</span>
+  <span class="na">[round]=</span><span class="s">"contact.avatar?.round"</span>
 <span class="nt">&gt;</span>
 <span class="nt">&lt;/tp-contact-image-detail&gt;</span>
 </code></pre></div></div>
 
 <p>Hoặc sử dụng get/set để thực thi một số hành động như chuẩn hóa dữ liệu đầu vào cho property của Component.</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'tp-contact-image-detail'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./contact-image-detail.component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./contact-image-detail.component.scss'</span><span class="p">]</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">tp-contact-image-detail</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./contact-image-detail.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./contact-image-detail.component.scss</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">ContactImageDetailComponent</span> <span class="p">{</span>
   <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">round</span><span class="p">:</span> <span class="nb">Boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-  <span class="nl">_avatarUrl</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+  <span class="nl">_avatarUrl</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
 
   <span class="kd">constructor</span><span class="p">()</span> <span class="p">{}</span>
 
@@ -182,16 +182,16 @@
 
 <p>Bạn có thể kiểm tra property trong life-cycle là OnInit hoặc OnChange.</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'tp-contact-image-detail'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./contact-image-detail.component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./contact-image-detail.component.scss'</span><span class="p">]</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">tp-contact-image-detail</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./contact-image-detail.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./contact-image-detail.component.scss</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">ContactImageDetailComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
-  <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">round</span><span class="p">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-  <span class="nl">_avatarUrl</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+  <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">round</span><span class="p">:</span> <span class="nx">boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+  <span class="nl">_avatarUrl</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
 
   <span class="kd">constructor</span><span class="p">()</span> <span class="p">{}</span>
 
@@ -206,7 +206,7 @@
 
   <span class="nx">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">avatarUrl</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'avatarUrl is required!'</span><span class="p">);</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">avatarUrl is required!</span><span class="dl">'</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -216,16 +216,16 @@
 
 <p>Bạn có thể tạo ra một alias cho một property với cú pháp như sau:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'tp-contact-image-detail'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./contact-image-detail.component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./contact-image-detail.component.scss'</span><span class="p">]</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">tp-contact-image-detail</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./contact-image-detail.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./contact-image-detail.component.scss</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">ContactImageDetailComponent</span> <span class="p">{</span>
   <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">round</span><span class="p">:</span> <span class="nb">Boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-  <span class="p">@</span><span class="nd">Input</span><span class="p">(</span><span class="s1">'avatar-url'</span><span class="p">)</span> <span class="nx">avatarUrl</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+  <span class="p">@</span><span class="nd">Input</span><span class="p">(</span><span class="dl">'</span><span class="s1">avatar-url</span><span class="dl">'</span><span class="p">)</span> <span class="nx">avatarUrl</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
 
   <span class="kd">constructor</span><span class="p">()</span> <span class="p">{}</span>
 <span class="p">}</span>
@@ -233,16 +233,16 @@
 
 <p>Hoặc:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'tp-contact-image-detail'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./contact-image-detail.component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./contact-image-detail.component.scss'</span><span class="p">]</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">tp-contact-image-detail</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./contact-image-detail.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./contact-image-detail.component.scss</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">ContactImageDetailComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
   <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">round</span><span class="p">:</span> <span class="nb">Boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-  <span class="nl">_avatarUrl</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+  <span class="nl">_avatarUrl</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
 
   <span class="kd">constructor</span><span class="p">()</span> <span class="p">{}</span>
 
@@ -250,14 +250,14 @@
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_avatarUrl</span><span class="p">;</span>
   <span class="p">}</span>
   
-  <span class="p">@</span><span class="nd">Input</span><span class="p">(</span><span class="s1">'avatar-url'</span><span class="p">)</span>
+  <span class="p">@</span><span class="nd">Input</span><span class="p">(</span><span class="dl">'</span><span class="s1">avatar-url</span><span class="dl">'</span><span class="p">)</span>
   <span class="kd">set</span> <span class="nx">avatarUrl</span><span class="p">(</span><span class="nx">value</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">_avatarUrl</span> <span class="o">=</span> <span class="nx">value</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span>
   <span class="p">}</span>
 
   <span class="nx">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">avatarUrl</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'avatarUrl is required!'</span><span class="p">);</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">avatarUrl is required!</span><span class="dl">'</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -266,8 +266,8 @@
 <p>Khi sử dụng binding data, bạn sẽ bind cho alias:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tp-contact-image-detail</span>
-  <span class="err">[</span><span class="na">avatar-url</span><span class="err">]="</span><span class="na">contact</span><span class="err">.</span><span class="na">avatar</span><span class="err">?.</span><span class="na">url</span><span class="err">"</span>
-  <span class="err">[</span><span class="na">round</span><span class="err">]="</span><span class="na">contact</span><span class="err">.</span><span class="na">avatar</span><span class="err">?.</span><span class="na">round</span><span class="err">"</span>
+  <span class="na">[avatar-url]=</span><span class="s">"contact.avatar?.url"</span>
+  <span class="na">[round]=</span><span class="s">"contact.avatar?.round"</span>
 <span class="nt">&gt;</span>
 <span class="nt">&lt;/tp-contact-image-detail&gt;</span>
 </code></pre></div></div>
@@ -280,17 +280,17 @@
   <p>Lưu ý: cách này thường không được khuyến cáo sử dụng như @Input.</p>
 </blockquote>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'tp-contact-image-detail'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./contact-image-detail.component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./contact-image-detail.component.scss'</span><span class="p">],</span>
-  <span class="na">inputs</span><span class="p">:</span> <span class="p">[</span><span class="s1">'avatarUrl'</span><span class="p">]</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">tp-contact-image-detail</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./contact-image-detail.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./contact-image-detail.component.scss</span><span class="dl">'</span><span class="p">],</span>
+  <span class="na">inputs</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">avatarUrl</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">ContactImageDetailComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
   <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">round</span><span class="p">:</span> <span class="nb">Boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-  <span class="nl">_avatarUrl</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+  <span class="nl">_avatarUrl</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
 
   <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
 
@@ -306,7 +306,7 @@
 
   <span class="nx">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">avatarUrl</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'avatarUrl is required!'</span><span class="p">);</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">avatarUrl is required!</span><span class="dl">'</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -314,17 +314,17 @@
 
 <p>Khai báo trong inputs array có sử dụng alias:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span><span class="p">,</span> <span class="nx">Input</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'tp-contact-image-detail'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./contact-image-detail.component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./contact-image-detail.component.scss'</span><span class="p">],</span>
-  <span class="na">inputs</span><span class="p">:</span> <span class="p">[</span><span class="s1">'avatarUrl:avatar-url'</span><span class="p">]</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">tp-contact-image-detail</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./contact-image-detail.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./contact-image-detail.component.scss</span><span class="dl">'</span><span class="p">],</span>
+  <span class="na">inputs</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">avatarUrl:avatar-url</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">ContactImageDetailComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
   <span class="p">@</span><span class="nd">Input</span><span class="p">()</span> <span class="nx">round</span><span class="p">:</span> <span class="nb">Boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-  <span class="nl">_avatarUrl</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+  <span class="nl">_avatarUrl</span><span class="p">:</span> <span class="nx">string</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
 
   <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
 
@@ -340,7 +340,7 @@
 
   <span class="nx">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">avatarUrl</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'avatarUrl is required!'</span><span class="p">);</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">avatarUrl is required!</span><span class="dl">'</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>

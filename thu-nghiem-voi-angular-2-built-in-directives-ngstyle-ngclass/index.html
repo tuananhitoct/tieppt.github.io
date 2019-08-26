@@ -5,9 +5,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--<title>Thử Nghiệm Với Angular 2 Phần 4: Built-in Directives NgStyle, NgClass</title>-->
-<!-- Begin Jekyll SEO tag v2.5.0 -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Thử Nghiệm Với Angular 2 Phần 4: Built-in Directives NgStyle, NgClass | Lập Trình Thật Kỳ Diệu</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.8.6" />
 <meta property="og:title" content="Thử Nghiệm Với Angular 2 Phần 4: Built-in Directives NgStyle, NgClass" />
 <meta name="author" content="Tiep Phan" />
 <meta property="og:locale" content="en_US" />
@@ -22,7 +22,7 @@
 <meta name="google-site-verification" content="Gcn3Y0oBud7gufI1PtszF7DFNgFOifgLRIaZAoLZWWU" />
 <meta name="msvalidate.01" content="F160AE523B1846CBDC431CB91CB6613A" />
 <script type="application/ld+json">
-{"description":"Trong bài học này, chúng ta sẽ tìm hiểu về những Attribute Directives như NgStyle NgClass và property binding cho class, style","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-built-in-directives-ngstyle-ngclass/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2016/12/angular2-PHAN4.jpg","headline":"Thử Nghiệm Với Angular 2 Phần 4: Built-in Directives NgStyle, NgClass","dateModified":"2016-12-29T06:38:51+00:00","datePublished":"2016-12-29T06:38:51+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-built-in-directives-ngstyle-ngclass/"},"@context":"http://schema.org"}</script>
+{"description":"Trong bài học này, chúng ta sẽ tìm hiểu về những Attribute Directives như NgStyle NgClass và property binding cho class, style","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-built-in-directives-ngstyle-ngclass/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2016/12/angular2-PHAN4.jpg","headline":"Thử Nghiệm Với Angular 2 Phần 4: Built-in Directives NgStyle, NgClass","dateModified":"2016-12-29T06:38:51+00:00","datePublished":"2016-12-29T06:38:51+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-built-in-directives-ngstyle-ngclass/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -137,10 +137,10 @@
 
 <p>Example:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="err">[</span><span class="na">style</span><span class="err">.</span><span class="na">color</span><span class="err">]="</span><span class="na">isSpecial</span> <span class="err">?</span> <span class="err">'</span><span class="na">red</span><span class="err">'</span><span class="na">:</span> <span class="err">'</span><span class="na">green</span><span class="err">'"</span><span class="nt">&gt;</span>Some button<span class="nt">&lt;/button&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">[style.color]=</span><span class="s">"isSpecial ? 'red': 'green'"</span><span class="nt">&gt;</span>Some button<span class="nt">&lt;/button&gt;</span>
 
-<span class="nt">&lt;button</span> <span class="err">[</span><span class="na">style</span><span class="err">.</span><span class="na">font-size</span><span class="err">.</span><span class="na">em</span><span class="err">]="</span><span class="na">isSpecial</span> <span class="err">?</span> <span class="na">3</span> <span class="na">:</span> <span class="na">1</span><span class="err">"</span> <span class="nt">&gt;</span>Yes, another button<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="err">[</span><span class="na">style</span><span class="err">.</span><span class="na">font-size</span><span class="err">.%]="!</span><span class="na">isSpecial</span> <span class="err">?</span> <span class="na">150</span> <span class="na">:</span> <span class="na">50</span><span class="err">"</span> <span class="nt">&gt;</span>Huh, button again<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">[style.font-size.em]=</span><span class="s">"isSpecial ? 3 : 1"</span> <span class="nt">&gt;</span>Yes, another button<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="err">[</span><span class="na">style</span><span class="err">.</span><span class="na">font-size</span><span class="err">.%</span><span class="na">]=</span><span class="s">"!isSpecial ? 150 : 50"</span> <span class="nt">&gt;</span>Huh, button again<span class="nt">&lt;/button&gt;</span>
 </code></pre></div></div>
 
 <p>Tương tự cho camel case và unit px, rem, vh, vw, …</p>
@@ -149,35 +149,35 @@
 
 <p>Cú pháp:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;some-element</span> <span class="err">[</span><span class="na">ngStyle</span><span class="err">]="{'</span><span class="na">font-style</span><span class="err">'</span><span class="na">:</span> <span class="na">styleExp</span><span class="err">}"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/some-element&gt;</span>
-<span class="nt">&lt;some-element</span> <span class="err">[</span><span class="na">ngStyle</span><span class="err">]="{'</span><span class="na">max-width</span><span class="err">.</span><span class="na">px</span><span class="err">'</span><span class="na">:</span> <span class="na">widthExp</span><span class="err">}"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/some-element&gt;</span>
-<span class="nt">&lt;some-element</span> <span class="err">[</span><span class="na">ngStyle</span><span class="err">]="</span><span class="na">objExp</span><span class="err">"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/some-element&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;some-element</span> <span class="na">[ngStyle]=</span><span class="s">"{'font-style': styleExp}"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/some-element&gt;</span>
+<span class="nt">&lt;some-element</span> <span class="na">[ngStyle]=</span><span class="s">"{'max-width.px': widthExp}"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/some-element&gt;</span>
+<span class="nt">&lt;some-element</span> <span class="na">[ngStyle]=</span><span class="s">"objExp"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/some-element&gt;</span>
 </code></pre></div></div>
 
 <p>Example:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="err">[</span><span class="na">ngStyle</span><span class="err">]="{</span>
-    <span class="err">//</span> <span class="na">CSS</span> <span class="na">property</span> <span class="na">names</span>
-    <span class="err">'</span><span class="na">font-style</span><span class="err">'</span><span class="na">:</span> <span class="na">canSave</span> <span class="err">?</span> <span class="err">'</span><span class="na">italic</span><span class="err">'</span> <span class="na">:</span> <span class="err">'</span><span class="na">normal</span><span class="err">',</span>        <span class="err">//</span> <span class="na">italic</span>
-    <span class="err">'</span><span class="na">font-weight</span><span class="err">'</span><span class="na">:</span> <span class="err">!</span><span class="na">isUnchanged</span> <span class="err">?</span> <span class="err">'</span><span class="na">bold</span><span class="err">'</span> <span class="na">:</span> <span class="err">'</span><span class="na">normal</span><span class="err">',</span>    <span class="err">//</span> <span class="na">normal</span>
-    <span class="err">'</span><span class="na">font-size</span><span class="err">.</span><span class="na">px</span><span class="err">'</span><span class="na">:</span> <span class="na">isSpecial</span> <span class="err">?</span> <span class="na">24</span> <span class="na">:</span> <span class="na">8</span><span class="err">,</span>                 <span class="err">//</span> <span class="na">with</span> <span class="na">unit</span>
-  <span class="err">}"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">[ngStyle]=</span><span class="s">"{
+    // CSS property names
+    'font-style': canSave ? 'italic' : 'normal',        // italic
+    'font-weight': !isUnchanged ? 'bold' : 'normal',    // normal
+    'font-size.px': isSpecial ? 24 : 8,                 // with unit
+  }"</span><span class="nt">&gt;</span>
   This div is cool.
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
 
 <p>Hoặc:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="err">[</span><span class="na">ngStyle</span><span class="err">]="</span><span class="na">objStyle</span><span class="err">"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">[ngStyle]=</span><span class="s">"objStyle"</span><span class="nt">&gt;</span>
   This div is cool.
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">objStyle</span> <span class="o">=</span> <span class="p">{</span>
   <span class="c1">// CSS property names</span>
-  <span class="s1">'font-style'</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">canSave</span> <span class="p">?</span> <span class="s1">'italic'</span> <span class="p">:</span> <span class="s1">'normal'</span><span class="p">,</span>        <span class="c1">// italic</span>
-  <span class="s1">'font-weight'</span><span class="p">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">isUnchanged</span> <span class="p">?</span> <span class="s1">'bold'</span> <span class="p">:</span> <span class="s1">'normal'</span><span class="p">,</span>    <span class="c1">// normal</span>
-  <span class="s1">'font-size.px'</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">isSpecial</span> <span class="p">?</span> <span class="mi">24</span> <span class="p">:</span> <span class="mi">8</span><span class="p">,</span>                 <span class="c1">// with unit</span>
+  <span class="dl">'</span><span class="s1">font-style</span><span class="dl">'</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">canSave</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">italic</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">normal</span><span class="dl">'</span><span class="p">,</span>        <span class="c1">// italic</span>
+  <span class="dl">'</span><span class="s1">font-weight</span><span class="dl">'</span><span class="p">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">isUnchanged</span> <span class="p">?</span> <span class="dl">'</span><span class="s1">bold</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">normal</span><span class="dl">'</span><span class="p">,</span>    <span class="c1">// normal</span>
+  <span class="dl">'</span><span class="s1">font-size.px</span><span class="dl">'</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">isSpecial</span> <span class="p">?</span> <span class="mi">24</span> <span class="p">:</span> <span class="mi">8</span><span class="p">,</span>                 <span class="c1">// with unit</span>
 <span class="p">};</span>
 </code></pre></div></div>
 
@@ -190,11 +190,11 @@
 
 <p>Example:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="err">[</span><span class="na">class</span><span class="err">.</span><span class="na">active</span><span class="err">]="</span><span class="na">isActive</span><span class="err">"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">[class.active]=</span><span class="s">"isActive"</span><span class="nt">&gt;</span>
     Some button need toggle class active base on isActive variable
 <span class="nt">&lt;/button&gt;</span>
 
-<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="err">[</span><span class="na">class</span><span class="err">.</span><span class="na">active</span><span class="err">]="</span><span class="na">tabIndex =</span><span class="s">=</span> <span class="na">1</span><span class="err">"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">[class.active]=</span><span class="s">"tabIndex == 1"</span><span class="nt">&gt;</span>
     Some button need toggle class active base on conditional tabIndex == 1
 <span class="nt">&lt;/button&gt;</span>
 </code></pre></div></div>
@@ -204,16 +204,16 @@
 <p>Cú pháp:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;some-element</span> <span class="na">ngClass=</span><span class="s">"first second"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/some-element&gt;</span>     // bind string
-<span class="nt">&lt;some-element</span> <span class="err">[</span><span class="na">ngClass</span><span class="err">]="'</span><span class="na">first</span> <span class="na">second</span><span class="err">'"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/some-element&gt;</span> // bind string value
-<span class="nt">&lt;some-element</span> <span class="err">[</span><span class="na">ngClass</span><span class="err">]="['</span><span class="na">first</span><span class="err">',</span> <span class="err">'</span><span class="na">second</span><span class="err">']"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/some-element&gt;</span> // bind array
-<span class="nt">&lt;some-element</span> <span class="err">[</span><span class="na">ngClass</span><span class="err">]="{</span>    <span class="err">//</span> <span class="na">bind</span> <span class="na">object</span>
-    <span class="err">'</span><span class="na">first</span><span class="err">'</span><span class="na">:</span> <span class="na">true</span><span class="err">,</span>
-    <span class="err">'</span><span class="na">second</span><span class="err">'</span><span class="na">:</span> <span class="na">true</span><span class="err">,</span>
-    <span class="err">'</span><span class="na">third</span><span class="err">'</span><span class="na">:</span> <span class="na">false</span>
-    <span class="err">}"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;some-element</span> <span class="na">[ngClass]=</span><span class="s">"'first second'"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/some-element&gt;</span> // bind string value
+<span class="nt">&lt;some-element</span> <span class="na">[ngClass]=</span><span class="s">"['first', 'second']"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/some-element&gt;</span> // bind array
+<span class="nt">&lt;some-element</span> <span class="na">[ngClass]=</span><span class="s">"{    // bind object
+    'first': true,
+    'second': true,
+    'third': false
+    }"</span><span class="nt">&gt;</span>
     ...
 <span class="nt">&lt;/some-element&gt;</span>
-<span class="nt">&lt;some-element</span> <span class="err">[</span><span class="na">ngClass</span><span class="err">]="</span><span class="na">stringExp</span><span class="err">|</span><span class="na">arrayExp</span><span class="err">|</span><span class="na">objExp</span><span class="err">"</span><span class="nt">&gt;</span>    // variable
+<span class="nt">&lt;some-element</span> <span class="na">[ngClass]=</span><span class="s">"stringExp|arrayExp|objExp"</span><span class="nt">&gt;</span>    // variable
     ...
 <span class="nt">&lt;/some-element&gt;</span>
 </code></pre></div></div>
@@ -234,7 +234,7 @@
 
 <p>Example:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="err">[</span><span class="na">ngClass</span><span class="err">]="'</span><span class="na">active</span> <span class="na">btn-primary</span><span class="err">'"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">[ngClass]=</span><span class="s">"'active btn-primary'"</span><span class="nt">&gt;</span>
     String binding
 <span class="nt">&lt;/button&gt;</span>
 // or
@@ -242,11 +242,11 @@
     String binding
 <span class="nt">&lt;/button&gt;</span>
 // or
-<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="err">[</span><span class="na">ngClass</span><span class="err">]="['</span><span class="na">active</span><span class="err">',</span> <span class="err">'</span><span class="na">btn-primary</span><span class="err">']"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">[ngClass]=</span><span class="s">"['active', 'btn-primary']"</span><span class="nt">&gt;</span>
     Array binding
 <span class="nt">&lt;/button&gt;</span>
 // or
-<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="err">[</span><span class="na">ngClass</span><span class="err">]="{</span><span class="na">active:</span> <span class="na">tabIndex =</span><span class="s">=</span> <span class="na">1</span><span class="err">}"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">[ngClass]=</span><span class="s">"{active: tabIndex == 1}"</span><span class="nt">&gt;</span>
     Object binding
 <span class="nt">&lt;/button&gt;</span>
 </code></pre></div></div>

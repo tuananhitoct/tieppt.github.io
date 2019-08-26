@@ -5,9 +5,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--<title>Thử Nghiệm Với Angular Phần 18 &#8211; Reactive Forms Trong Angular</title>-->
-<!-- Begin Jekyll SEO tag v2.5.0 -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Thử Nghiệm Với Angular Phần 18 – Reactive Forms Trong Angular | Lập Trình Thật Kỳ Diệu</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.8.6" />
 <meta property="og:title" content="Thử Nghiệm Với Angular Phần 18 – Reactive Forms Trong Angular" />
 <meta name="author" content="Tiep Phan" />
 <meta property="og:locale" content="en_US" />
@@ -22,7 +22,7 @@
 <meta name="google-site-verification" content="Gcn3Y0oBud7gufI1PtszF7DFNgFOifgLRIaZAoLZWWU" />
 <meta name="msvalidate.01" content="F160AE523B1846CBDC431CB91CB6613A" />
 <script type="application/ld+json">
-{"description":"Reactive Forms hay Model-Driven Forms, là một phương pháp để tạo form trong Angular, phương pháp này tránh việc sử dụng các directive ví dụ như ngModel, required, etc, thay vào đó tạo các Object Model ở trong các Component.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-reactive-forms-trong-angular/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/05/angular-p18.jpg","headline":"Thử Nghiệm Với Angular Phần 18 – Reactive Forms Trong Angular","dateModified":"2017-05-29T10:00:00+00:00","datePublished":"2017-05-29T10:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-reactive-forms-trong-angular/"},"@context":"http://schema.org"}</script>
+{"description":"Reactive Forms hay Model-Driven Forms, là một phương pháp để tạo form trong Angular, phương pháp này tránh việc sử dụng các directive ví dụ như ngModel, required, etc, thay vào đó tạo các Object Model ở trong các Component.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-reactive-forms-trong-angular/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/05/angular-p18.jpg","headline":"Thử Nghiệm Với Angular Phần 18 – Reactive Forms Trong Angular","dateModified":"2017-05-29T10:00:00+00:00","datePublished":"2017-05-29T10:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-reactive-forms-trong-angular/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -155,7 +155,7 @@ Một điều lưu ý đó là Template-Driven là async còn Reactive là sync.
 
 <p>Cũng giống như trong <a href="/thu-nghiem-voi-angular-template-driven-forms-trong-angular/" target="_blank" rel="noopener noreferrer">Template-driven forms</a>, chúng ta sẽ sử dụng một template giống thế.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">novalidate</span> <span class="err">(</span><span class="na">ngSubmit</span><span class="err">)="</span><span class="na">onSubmit</span><span class="err">()"</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">novalidate</span> <span class="na">(ngSubmit)=</span><span class="s">"onSubmit()"</span>
   <span class="na">class=</span><span class="s">"row justify-content-md-center"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-8"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
@@ -234,7 +234,7 @@ Một điều lưu ý đó là Template-Driven là async còn Reactive là sync.
   <p>Lưu ý rằng bạn có thể import cả Reactive form và Template-driven form modules.</p>
 </blockquote>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ReactiveFormsModule</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/forms'</span><span class="p">;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ReactiveFormsModule</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/forms</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
   <span class="na">declarations</span><span class="p">:</span> <span class="p">[...],</span>
@@ -254,13 +254,13 @@ Một điều lưu ý đó là Template-Driven là async còn Reactive là sync.
 
 <p>Giả sử chúng ta tạo một component như sau:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">FormGroup</span><span class="p">,</span> <span class="nx">FormControl</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/forms'</span><span class="p">;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">FormGroup</span><span class="p">,</span> <span class="nx">FormControl</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/forms</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'tpc-contact-reactive-form'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./contact-reactive-form.component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./contact-reactive-form.component.scss'</span><span class="p">]</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">tpc-contact-reactive-form</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./contact-reactive-form.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./contact-reactive-form.component.scss</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">ContactReactiveFormComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
   <span class="nl">rfContact</span><span class="p">:</span> <span class="nx">FormGroup</span><span class="p">;</span>
@@ -290,7 +290,7 @@ Một điều lưu ý đó là Template-Driven là async còn Reactive là sync.
 
 <p>Ở top-level (form), chúng ta sẽ bind một <code class="highlighter-rouge">formGroup</code> như sau:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">novalidate</span> <span class="err">(</span><span class="na">ngSubmit</span><span class="err">)="</span><span class="na">onSubmit</span><span class="err">()"</span> <span class="err">[</span><span class="na">formGroup</span><span class="err">]="</span><span class="na">rfContact</span><span class="err">"</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">novalidate</span> <span class="na">(ngSubmit)=</span><span class="s">"onSubmit()"</span> <span class="na">[formGroup]=</span><span class="s">"rfContact"</span>
   <span class="na">class=</span><span class="s">"row justify-content-md-center"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/form&gt;</span>
 </code></pre></div></div>
@@ -355,14 +355,14 @@ Một điều lưu ý đó là Template-Driven là async còn Reactive là sync.
 
 <p>Giả sử chúng ta thêm required cho form control <code class="highlighter-rouge">contactName</code> ở trên, chúng ta chỉ cần thêm vào constructor như sau:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">contactName</span><span class="p">:</span> <span class="k">new</span> <span class="nx">FormControl</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">)</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">contactName</span><span class="p">:</span> <span class="k">new</span> <span class="nx">FormControl</span><span class="p">(</span><span class="dl">''</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Với Validators.required là một validator function.</p>
 
 <p>Hoặc có thể thêm nhiều validator với <code class="highlighter-rouge">Validators.compose</code>, hoặc truyền vào là một mảng các validator functions:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">contactName</span><span class="p">:</span> <span class="k">new</span> <span class="nx">FormControl</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">contactName</span><span class="p">:</span> <span class="k">new</span> <span class="nx">FormControl</span><span class="p">(</span><span class="dl">''</span><span class="p">,</span>
                  <span class="p">[</span><span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">minLength</span><span class="p">(</span><span class="mi">3</span><span class="p">)])</span>
 </code></pre></div></div>
 <p>Ở đoạn code trên, chúng ta gộp <code class="highlighter-rouge">required</code> và <code class="highlighter-rouge">minLength(3)</code> cho control <code class="highlighter-rouge">contactName</code>, hoặc bạn có thể thêm nhiều các validator function nữa theo ý muốn.</p>
@@ -370,7 +370,7 @@ Một điều lưu ý đó là Template-Driven là async còn Reactive là sync.
 <p>Để hiển thị thông báo cho người dùng biết về lỗi, chúng ta có thể sử dụng phương pháp như đã đề cập trong phần Template-driven form.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col alert alert-danger"</span> <span class="na">role=</span><span class="s">"alert"</span>
-  <span class="err">*</span><span class="na">ngIf=</span><span class="s">"rfContact.controls.contactName?.errors?.required
+  <span class="na">*ngIf=</span><span class="s">"rfContact.controls.contactName?.errors?.required
          &amp;&amp; rfContact.controls.contactName?.touched"</span><span class="nt">&gt;</span>
   Name is required!
 <span class="nt">&lt;/div&gt;</span>
@@ -379,7 +379,7 @@ Một điều lưu ý đó là Template-Driven là async còn Reactive là sync.
 <p>Hoặc sử dụng <a href="https://github.com/angular/angular/blob/4.1.x/packages/forms/src/model.ts#L488" target="_blank"><code class="highlighter-rouge">hasError</code></a>:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col alert alert-danger"</span> <span class="na">role=</span><span class="s">"alert"</span>
-  <span class="err">*</span><span class="na">ngIf=</span><span class="s">"rfContact.controls.contactName?.hasError('required')
+  <span class="na">*ngIf=</span><span class="s">"rfContact.controls.contactName?.hasError('required')
          &amp;&amp; rfContact.controls.contactName?.touched"</span><span class="nt">&gt;</span>
   Name is required!
 <span class="nt">&lt;/div&gt;</span>
@@ -387,14 +387,14 @@ Một điều lưu ý đó là Template-Driven là async còn Reactive là sync.
 
 <p>Không những thế, Reactive form còn cho phép chúng ta lấy ra một control theo path đến nó một cách dễ dàng, ví dụ để lấy về <code class="highlighter-rouge">contactName</code>:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">rfContact</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'contactName'</span><span class="p">)</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">rfContact</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">contactName</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Hoặc với control <code class="highlighter-rouge">facebook</code>:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">rfContact</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'social.facebook'</span><span class="p">)</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">rfContact</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">social.facebook</span><span class="dl">'</span><span class="p">)</span>
 <span class="c1">// or</span>
-<span class="nx">rfContact</span><span class="p">.</span><span class="kd">get</span><span class="p">([</span><span class="s1">'social'</span><span class="p">,</span> <span class="s1">'facebook'</span><span class="p">])</span>
+<span class="nx">rfContact</span><span class="p">.</span><span class="kd">get</span><span class="p">([</span><span class="dl">'</span><span class="s1">social</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">facebook</span><span class="dl">'</span><span class="p">])</span>
 </code></pre></div></div>
 
 <p>Với phương pháp này chúng ta không cần tạo nhiều template variable nữa.</p>
@@ -406,14 +406,14 @@ Một điều lưu ý đó là Template-Driven là async còn Reactive là sync.
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">fb</span><span class="p">:</span> <span class="nx">FormBuilder</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
 <span class="nx">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">rfContact</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span>
-    <span class="na">contactName</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">control</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="p">[</span><span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">minLength</span><span class="p">(</span><span class="mi">3</span><span class="p">)]),</span>
-    <span class="na">email</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">control</span><span class="p">(</span><span class="s1">''</span><span class="p">),</span>
+    <span class="na">contactName</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">control</span><span class="p">(</span><span class="dl">''</span><span class="p">,</span> <span class="p">[</span><span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">minLength</span><span class="p">(</span><span class="mi">3</span><span class="p">)]),</span>
+    <span class="na">email</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">control</span><span class="p">(</span><span class="dl">''</span><span class="p">),</span>
     <span class="na">social</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span>
-      <span class="na">facebook</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">control</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="p">[</span><span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">minLength</span><span class="p">(</span><span class="mi">3</span><span class="p">)]),</span>
-      <span class="na">twitter</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">control</span><span class="p">(</span><span class="s1">''</span><span class="p">),</span>
-      <span class="na">website</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">control</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span>
+      <span class="na">facebook</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">control</span><span class="p">(</span><span class="dl">''</span><span class="p">,</span> <span class="p">[</span><span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">minLength</span><span class="p">(</span><span class="mi">3</span><span class="p">)]),</span>
+      <span class="na">twitter</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">control</span><span class="p">(</span><span class="dl">''</span><span class="p">),</span>
+      <span class="na">website</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">control</span><span class="p">(</span><span class="dl">''</span><span class="p">)</span>
     <span class="p">}),</span>
-    <span class="na">tel</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">control</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span>
+    <span class="na">tel</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">control</span><span class="p">(</span><span class="dl">''</span><span class="p">)</span>
   <span class="p">});</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -421,14 +421,14 @@ Một điều lưu ý đó là Template-Driven là async còn Reactive là sync.
 <p>Hoặc một cách rút gọn hơn nữa:</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">rfContact</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span>
-  <span class="na">contactName</span><span class="p">:</span> <span class="p">[</span><span class="s1">''</span><span class="p">,</span> <span class="p">[</span><span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">minLength</span><span class="p">(</span><span class="mi">3</span><span class="p">)]],</span>
-  <span class="na">email</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+  <span class="na">contactName</span><span class="p">:</span> <span class="p">[</span><span class="dl">''</span><span class="p">,</span> <span class="p">[</span><span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">minLength</span><span class="p">(</span><span class="mi">3</span><span class="p">)]],</span>
+  <span class="na">email</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
   <span class="na">social</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span>
-    <span class="na">facebook</span><span class="p">:</span> <span class="p">[</span><span class="s1">''</span><span class="p">,</span> <span class="p">[</span><span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">minLength</span><span class="p">(</span><span class="mi">3</span><span class="p">)]],</span>
-    <span class="na">twitter</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
-    <span class="na">website</span><span class="p">:</span> <span class="s1">''</span>
+    <span class="na">facebook</span><span class="p">:</span> <span class="p">[</span><span class="dl">''</span><span class="p">,</span> <span class="p">[</span><span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">minLength</span><span class="p">(</span><span class="mi">3</span><span class="p">)]],</span>
+    <span class="na">twitter</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
+    <span class="na">website</span><span class="p">:</span> <span class="dl">''</span>
   <span class="p">}),</span>
-  <span class="na">tel</span><span class="p">:</span> <span class="s1">''</span>
+  <span class="na">tel</span><span class="p">:</span> <span class="dl">''</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
@@ -442,17 +442,17 @@ Một điều lưu ý đó là Template-Driven là async còn Reactive là sync.
   <span class="k">this</span><span class="p">.</span><span class="nx">rfContact</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span>
     <span class="c1">// ...</span>
     <span class="na">tels</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">array</span><span class="p">([</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">control</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">control</span><span class="p">(</span><span class="dl">''</span><span class="p">)</span>
     <span class="p">])</span>
   <span class="p">});</span>
 <span class="p">}</span>
 
 <span class="kd">get</span> <span class="nx">tels</span><span class="p">():</span> <span class="nx">FormArray</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">rfContact</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'tels'</span><span class="p">)</span> <span class="k">as</span> <span class="nx">FormArray</span><span class="p">;</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">rfContact</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">tels</span><span class="dl">'</span><span class="p">)</span> <span class="k">as</span> <span class="nx">FormArray</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nx">addTel</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">tels</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">control</span><span class="p">(</span><span class="s1">''</span><span class="p">));</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">tels</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">control</span><span class="p">(</span><span class="dl">''</span><span class="p">));</span>
 <span class="p">}</span>
 
 <span class="nx">removeTel</span><span class="p">(</span><span class="nx">index</span><span class="p">:</span> <span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
@@ -461,14 +461,14 @@ Một điều lưu ý đó là Template-Driven là async còn Reactive là sync.
 </code></pre></div></div>
 
 <p>Và template của chúng ta sẽ có:</p>
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">formArrayName</span><span class="o">=</span><span class="s2">"tels"</span> <span class="o">*</span><span class="nx">ngIf</span><span class="o">=</span><span class="s2">"tels.controls.length"</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="s2">"form-group row"</span> <span class="o">*</span><span class="nx">ngFor</span><span class="o">=</span><span class="s2">"let c of tels.controls; index as i"</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">label</span> <span class="k">for</span><span class="o">=</span><span class="s2">"example-tel-input"</span> <span class="kd">class</span><span class="o">=</span><span class="s2">"col-md-2 col-form-label"</span><span class="o">&gt;</span><span class="nx">Tel</span><span class="p">:</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="s2">"col-md-10"</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">input</span> <span class="kd">class</span><span class="o">=</span><span class="s2">"form-control"</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"tel"</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"example-tel-input"</span> <span class="p">[</span><span class="nx">formControlName</span><span class="p">]</span><span class="o">=</span><span class="s2">"i"</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="s2">"text-right"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">button</span> <span class="kd">class</span><span class="o">=</span><span class="s2">"btn btn-info"</span> <span class="p">(</span><span class="nx">click</span><span class="p">)</span><span class="o">=</span><span class="s2">"addTel()"</span><span class="o">&gt;+&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">button</span> <span class="kd">class</span><span class="o">=</span><span class="s2">"btn btn-danger"</span> <span class="p">(</span><span class="nx">click</span><span class="p">)</span><span class="o">=</span><span class="s2">"removeTel(i)"</span> <span class="o">*</span><span class="nx">ngIf</span><span class="o">=</span><span class="s2">"tels.controls.length &gt; 1"</span><span class="o">&gt;-&lt;</span><span class="sr">/button</span><span class="err">&gt;
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">formArrayName</span><span class="o">=</span><span class="dl">"</span><span class="s2">tels</span><span class="dl">"</span> <span class="o">*</span><span class="nx">ngIf</span><span class="o">=</span><span class="dl">"</span><span class="s2">tels.controls.length</span><span class="dl">"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">form-group row</span><span class="dl">"</span> <span class="o">*</span><span class="nx">ngFor</span><span class="o">=</span><span class="dl">"</span><span class="s2">let c of tels.controls; index as i</span><span class="dl">"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">label</span> <span class="k">for</span><span class="o">=</span><span class="dl">"</span><span class="s2">example-tel-input</span><span class="dl">"</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">col-md-2 col-form-label</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Tel</span><span class="p">:</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">col-md-10</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">input</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">form-control</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">tel</span><span class="dl">"</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">example-tel-input</span><span class="dl">"</span> <span class="p">[</span><span class="nx">formControlName</span><span class="p">]</span><span class="o">=</span><span class="dl">"</span><span class="s2">i</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">text-right</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">button</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">btn btn-info</span><span class="dl">"</span> <span class="p">(</span><span class="nx">click</span><span class="p">)</span><span class="o">=</span><span class="dl">"</span><span class="s2">addTel()</span><span class="dl">"</span><span class="o">&gt;+&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">button</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">btn btn-danger</span><span class="dl">"</span> <span class="p">(</span><span class="nx">click</span><span class="p">)</span><span class="o">=</span><span class="dl">"</span><span class="s2">removeTel(i)</span><span class="dl">"</span> <span class="o">*</span><span class="nx">ngIf</span><span class="o">=</span><span class="dl">"</span><span class="s2">tels.controls.length &gt; 1</span><span class="dl">"</span><span class="o">&gt;-&lt;</span><span class="sr">/button</span><span class="err">&gt;
 </span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
 </span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
 </span>  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
@@ -490,7 +490,7 @@ Khi thực hiện việc lặp, chúng ta tạo ra biến index có tên là <co
 
 <p>Đây là lúc <code class="highlighter-rouge">formControl</code> directive phát huy tác dụng. Chúng ta hãy xem xét search form sau đây.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"search"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="err">[</span><span class="na">formControl</span><span class="err">]="</span><span class="na">searchControl</span><span class="err">"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"search"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">[formControl]=</span><span class="s">"searchControl"</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 
 <p>Còn đây là component code:</p>

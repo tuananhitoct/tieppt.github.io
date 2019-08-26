@@ -5,9 +5,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--<title>Thử Nghiệm Với Angular Phần 16 &#8211; Dependency Injection Trong Angular</title>-->
-<!-- Begin Jekyll SEO tag v2.5.0 -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Thử Nghiệm Với Angular Phần 16 – Dependency Injection Trong Angular | Lập Trình Thật Kỳ Diệu</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.8.6" />
 <meta property="og:title" content="Thử Nghiệm Với Angular Phần 16 – Dependency Injection Trong Angular" />
 <meta name="author" content="Tiep Phan" />
 <meta property="og:locale" content="en_US" />
@@ -22,7 +22,7 @@
 <meta name="google-site-verification" content="Gcn3Y0oBud7gufI1PtszF7DFNgFOifgLRIaZAoLZWWU" />
 <meta name="msvalidate.01" content="F160AE523B1846CBDC431CB91CB6613A" />
 <script type="application/ld+json">
-{"description":"Bài viết này sẽ giới thiệu về Dependency Injection trong Angular – một trong những tính năng quan trọng của Angular – cho đến thời điểm hiện tại chỉ có Angular là framework duy nhất phía client cung cấp DI.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-dependency-injection-trong-angular/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/04/angular-16-Dependency-Injection.jpg","headline":"Thử Nghiệm Với Angular Phần 16 – Dependency Injection Trong Angular","dateModified":"2017-04-23T09:59:27+00:00","datePublished":"2017-04-23T09:59:27+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-dependency-injection-trong-angular/"},"@context":"http://schema.org"}</script>
+{"description":"Bài viết này sẽ giới thiệu về Dependency Injection trong Angular – một trong những tính năng quan trọng của Angular – cho đến thời điểm hiện tại chỉ có Angular là framework duy nhất phía client cung cấp DI.","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-dependency-injection-trong-angular/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/04/angular-16-Dependency-Injection.jpg","headline":"Thử Nghiệm Với Angular Phần 16 – Dependency Injection Trong Angular","dateModified":"2017-04-23T09:59:27+00:00","datePublished":"2017-04-23T09:59:27+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-dependency-injection-trong-angular/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -148,7 +148,7 @@
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">CPU</span> <span class="p">{</span>
   <span class="kd">constructor</span><span class="p">()</span> <span class="p">{}</span>
   <span class="nx">start</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'CPU speed 3.2GHz'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">CPU speed 3.2GHz</span><span class="dl">'</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
@@ -225,7 +225,7 @@
 
 <p>Angular giúp chúng ta dễ dàng sử dụng DI trong ứng dụng, giả sử với đoạn code phía trên, chúng ta có thể biến đổi để sử dụng Angular DI như sau:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ReflectiveInjector</span><span class="p">,</span> <span class="nx">Inject</span><span class="p">,</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">ReflectiveInjector</span><span class="p">,</span> <span class="nx">Inject</span><span class="p">,</span> <span class="nx">Injectable</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
 <span class="kd">class</span> <span class="nx">Computer</span> <span class="p">{</span>
@@ -301,7 +301,7 @@
     <span class="k">super</span><span class="p">();</span>
   <span class="p">}</span>
   <span class="nx">start</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'CPU speed 3.7GHz'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">CPU speed 3.7GHz</span><span class="dl">'</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
@@ -322,7 +322,7 @@
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">CPU</span> <span class="p">{</span>
   <span class="kd">constructor</span><span class="p">()</span> <span class="p">{}</span>
   <span class="nx">start</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'CPU speed 3.2GHz'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">CPU speed 3.2GHz</span><span class="dl">'</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -348,7 +348,7 @@
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
 <span class="kd">class</span> <span class="nx">CPU</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">(@</span><span class="nd">Inject</span><span class="p">(</span><span class="s1">'CPU Speed'</span><span class="p">)</span> <span class="kr">public</span> <span class="nx">speed</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="kd">constructor</span><span class="p">(@</span><span class="nd">Inject</span><span class="p">(</span><span class="dl">'</span><span class="s1">CPU Speed</span><span class="dl">'</span><span class="p">)</span> <span class="kr">public</span> <span class="nx">speed</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
   <span class="nx">start</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`CPU speed </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">speed</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
   <span class="p">}</span>
@@ -381,8 +381,8 @@
 <p>Nếu bạn sử dụng token như sau, value sẽ được truyền vào thay vì tạo instance của class.</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
-  <span class="nl">provide</span><span class="p">:</span> <span class="s1">'API_ENDPOINT'</span><span class="p">,</span>
-  <span class="nx">useValue</span><span class="p">:</span> <span class="s1">'http://tiepphan.com/blog/'</span>
+  <span class="nl">provide</span><span class="p">:</span> <span class="dl">'</span><span class="s1">API_ENDPOINT</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">useValue</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://tiepphan.com/blog/</span><span class="dl">'</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -418,7 +418,7 @@
 <span class="p">{</span>
   <span class="nl">provide</span><span class="p">:</span> <span class="nx">CPU</span><span class="p">,</span>
   <span class="nx">useFactory</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="nx">CPU</span><span class="p">(</span><span class="s1">'3.5GHz'</span><span class="p">);</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">CPU</span><span class="p">(</span><span class="dl">'</span><span class="s1">3.5GHz</span><span class="dl">'</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -438,24 +438,24 @@
 
 <p>Khi có nhiều providers có cùng giá trị của key <strong>provide</strong> và không sử dụng config multi: true thì provider nào thêm vào sau cùng sẽ win.</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span> <span class="nl">provide</span><span class="p">:</span> <span class="s1">'API_ENDPOINT'</span><span class="p">,</span><span class="err"> </span> <span class="nx">useValue</span><span class="p">:</span> <span class="s1">'http://tiepphan.com/blog/'</span> <span class="p">},</span>
-<span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="s1">'API_ENDPOINT'</span><span class="p">,</span><span class="err"> </span> <span class="na">useValue</span><span class="p">:</span> <span class="s1">'http://tiepphan.com/thu-nghiem-voi-angular-dependency-injection-trong-angular/'</span> <span class="p">}</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span> <span class="nl">provide</span><span class="p">:</span> <span class="dl">'</span><span class="s1">API_ENDPOINT</span><span class="dl">'</span><span class="p">,</span><span class="err"> </span> <span class="nx">useValue</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://tiepphan.com/blog/</span><span class="dl">'</span> <span class="p">},</span>
+<span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="dl">'</span><span class="s1">API_ENDPOINT</span><span class="dl">'</span><span class="p">,</span><span class="err"> </span> <span class="na">useValue</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://tiepphan.com/thu-nghiem-voi-angular-dependency-injection-trong-angular/</span><span class="dl">'</span> <span class="p">}</span>
 </code></pre></div></div>
 
 <p>Kết quả cuối cùng của API_ENDPOINT sẽ là <code class="highlighter-rouge">http://tiepphan.com/thu-nghiem-voi-angular-dependency-injection-trong-angular/</code>.</p>
 
 <p>Để tránh nhập nhằng token, chúng ta sử dụng OpaqueToken (Angular 2) hoặc InjectionToken (chỉ có trong Angular 4+) để tạo các unique token.</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">TOKEN_A</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OpaqueToken</span><span class="p">(</span><span class="s1">'token'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">TOKEN_B</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OpaqueToken</span><span class="p">(</span><span class="s1">'token'</span><span class="p">);</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">TOKEN_A</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OpaqueToken</span><span class="p">(</span><span class="dl">'</span><span class="s1">token</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">TOKEN_B</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OpaqueToken</span><span class="p">(</span><span class="dl">'</span><span class="s1">token</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">TOKEN_A</span> <span class="o">===</span> <span class="nx">TOKEN_B</span><span class="p">;</span> <span class="c1">// false</span>
 </code></pre></div></div>
 
 <p>Từ Angular 4 trở đi chúng ta sử dụng InjectionToken thay vì OpaqueToken (có thể bị bỏ đi trong Angular phiên bản &gt; 4).</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">TOKEN_A</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">InjectionToken</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">(</span><span class="s1">'token'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">TOKEN_B</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">InjectionToken</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">(</span><span class="s1">'token'</span><span class="p">);</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">TOKEN_A</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">InjectionToken</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">(</span><span class="dl">'</span><span class="s1">token</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">TOKEN_B</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">InjectionToken</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">(</span><span class="dl">'</span><span class="s1">token</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">TOKEN_A</span> <span class="o">===</span> <span class="nx">TOKEN_B</span><span class="p">;</span> <span class="c1">// false</span>
 </code></pre></div></div>
@@ -465,13 +465,13 @@
 <p>Trong trường hợp bạn muốn một token có thể có nhiều value, lúc này bạn có thể sử dụng multiple như sau:</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
-  <span class="nl">provide</span><span class="p">:</span> <span class="s1">'API_ENDPOINT'</span><span class="p">,</span>
-  <span class="nx">useValue</span><span class="p">:</span> <span class="s1">'http://tiepphan.com/blog/'</span><span class="p">,</span>
+  <span class="nl">provide</span><span class="p">:</span> <span class="dl">'</span><span class="s1">API_ENDPOINT</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">useValue</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://tiepphan.com/blog/</span><span class="dl">'</span><span class="p">,</span>
   <span class="nx">multi</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">},</span>
 <span class="p">{</span>
-  <span class="na">provide</span><span class="p">:</span> <span class="s1">'API_ENDPOINT'</span><span class="p">,</span>
-  <span class="na">useValue</span><span class="p">:</span> <span class="s1">'http://tiepphan.com/thu-nghiem-voi-angular-dependency-injection-trong-angular/'</span><span class="p">,</span>
+  <span class="na">provide</span><span class="p">:</span> <span class="dl">'</span><span class="s1">API_ENDPOINT</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">useValue</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://tiepphan.com/thu-nghiem-voi-angular-dependency-injection-trong-angular/</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">multi</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">},</span>
 </code></pre></div></div>
@@ -484,28 +484,28 @@
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">Computer</span> <span class="p">{</span>
   <span class="nx">run</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Computer Running...'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Computer Running...</span><span class="dl">'</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'tp-root'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./app.component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./app.component.scss'</span><span class="p">],</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">tp-root</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./app.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./app.component.scss</span><span class="dl">'</span><span class="p">],</span>
   <span class="na">providers</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="s1">'COMP'</span><span class="p">,</span> <span class="na">useClass</span><span class="p">:</span> <span class="nx">Computer</span><span class="p">,</span> <span class="na">multi</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
-    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="s1">'COMP'</span><span class="p">,</span> <span class="na">useClass</span><span class="p">:</span> <span class="nx">Laptop</span><span class="p">,</span> <span class="na">multi</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="dl">'</span><span class="s1">COMP</span><span class="dl">'</span><span class="p">,</span> <span class="na">useClass</span><span class="p">:</span> <span class="nx">Computer</span><span class="p">,</span> <span class="na">multi</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="dl">'</span><span class="s1">COMP</span><span class="dl">'</span><span class="p">,</span> <span class="na">useClass</span><span class="p">:</span> <span class="nx">Laptop</span><span class="p">,</span> <span class="na">multi</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">(@</span><span class="nd">Inject</span><span class="p">(</span><span class="s1">'COMP'</span><span class="p">)</span> <span class="nx">comps</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(@</span><span class="nd">Inject</span><span class="p">(</span><span class="dl">'</span><span class="s1">COMP</span><span class="dl">'</span><span class="p">)</span> <span class="nx">comps</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">comps</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">comp</span> <span class="o">=&gt;</span> <span class="nx">comp</span><span class="p">.</span><span class="nx">run</span><span class="p">());</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">Laptop</span> <span class="p">{</span>
   <span class="nx">run</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Laptop Running...'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Laptop Running...</span><span class="dl">'</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -518,8 +518,8 @@
 
 <p>Cách giải quyết lúc này, chúng ta sẽ sử dụng <strong>Forward References</strong> như sau:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span> <span class="nl">provide</span><span class="p">:</span> <span class="s1">'COMP'</span><span class="p">,</span> <span class="nx">useClass</span><span class="p">:</span> <span class="nx">Computer</span><span class="p">,</span> <span class="nx">multi</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
-<span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="s1">'COMP'</span><span class="p">,</span> <span class="na">useClass</span><span class="p">:</span> <span class="nx">forwardRef</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">Laptop</span><span class="p">),</span> <span class="na">multi</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span> <span class="nl">provide</span><span class="p">:</span> <span class="dl">'</span><span class="s1">COMP</span><span class="dl">'</span><span class="p">,</span> <span class="nx">useClass</span><span class="p">:</span> <span class="nx">Computer</span><span class="p">,</span> <span class="nx">multi</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+<span class="p">{</span> <span class="na">provide</span><span class="p">:</span> <span class="dl">'</span><span class="s1">COMP</span><span class="dl">'</span><span class="p">,</span> <span class="na">useClass</span><span class="p">:</span> <span class="nx">forwardRef</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">Laptop</span><span class="p">),</span> <span class="na">multi</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
 </code></pre></div></div>
 
 <p>Trường hợp này bạn thường gặp phải khi tạo custom validator directive cho form. Dưới đây là một đoạn code trích ra từ Angular Forms module để validate một field là <strong>required</strong>:</p>
@@ -531,9 +531,9 @@
 <span class="p">};</span>
 
 <span class="p">@</span><span class="nd">Directive</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'…'</span><span class="p">,</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">…</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">providers</span><span class="p">:</span> <span class="p">[</span><span class="nx">REQUIRED_VALIDATOR</span><span class="p">],</span>
-  <span class="na">host</span><span class="p">:</span> <span class="p">{</span><span class="s1">'[attr.required]'</span><span class="p">:</span> <span class="s1">'required ? "" : null'</span><span class="p">}</span>
+  <span class="na">host</span><span class="p">:</span> <span class="p">{</span><span class="dl">'</span><span class="s1">[attr.required]</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">required ? "" : null</span><span class="dl">'</span><span class="p">}</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">RequiredValidator</span> <span class="kr">implements</span> <span class="nx">Validator</span> <span class="p">{</span>
 <span class="p">}</span>
@@ -551,7 +551,7 @@
 
 <p>Hãy quan sát các ví dụ sau:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">PostService</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./services/post'</span><span class="p">;</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">PostService</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./services/post</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">NgModule</span><span class="p">({</span>
   <span class="na">declarations</span><span class="p">:</span> <span class="p">[</span>
@@ -585,7 +585,7 @@
 <span class="p">}</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">CollapseComponent</span> <span class="p">{</span>
   <span class="kd">constructor</span><span class="p">(</span><span class="kr">private</span> <span class="nx">ps</span><span class="p">:</span> <span class="nx">PostService</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'========Collapse========'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">========Collapse========</span><span class="dl">'</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -593,9 +593,9 @@
 <p>Khi sử dụng ở các components khác nhau nhưng chúng ta chỉ có một instance duy nhất. Các bạn có thể xem ở console chỉ có 1 lần duy nhất log ra counter là 1.Nếu chúng ta đặt providers ở Component, mỗi lần component được tạo ra sẽ sinh ra một instance khác.</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'tp-collapse'</span><span class="p">,</span>
-  <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./collapse.component.html'</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./collapse.component.scss'</span><span class="p">],</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">tp-collapse</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">templateUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./collapse.component.html</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./collapse.component.scss</span><span class="dl">'</span><span class="p">],</span>
   <span class="na">encapsulation</span><span class="p">:</span> <span class="nx">ViewEncapsulation</span><span class="p">.</span><span class="nx">None</span><span class="p">,</span>
   <span class="na">providers</span><span class="p">:</span> <span class="p">[</span><span class="nx">PostService</span><span class="p">]</span>
 <span class="p">})</span>

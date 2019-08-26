@@ -5,9 +5,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--<title>Thử Nghiệm Với Angular 2 Phần 2: Built-in Directives NgIf, NgFor, NgSwitchCase</title>-->
-<!-- Begin Jekyll SEO tag v2.5.0 -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Thử Nghiệm Với Angular 2 Phần 2: Built-in Directives NgIf, NgFor, NgSwitchCase | Lập Trình Thật Kỳ Diệu</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.8.6" />
 <meta property="og:title" content="Thử Nghiệm Với Angular 2 Phần 2: Built-in Directives NgIf, NgFor, NgSwitchCase" />
 <meta name="author" content="Tiep Phan" />
 <meta property="og:locale" content="en_US" />
@@ -22,7 +22,7 @@
 <meta name="google-site-verification" content="Gcn3Y0oBud7gufI1PtszF7DFNgFOifgLRIaZAoLZWWU" />
 <meta name="msvalidate.01" content="F160AE523B1846CBDC431CB91CB6613A" />
 <script type="application/ld+json">
-{"description":"Thử Nghiệm Với Angular 2 Phần 2: Built-in Directives NgIf, NgFor, NgSwitchCase","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-built-in-directives-ngif-ngfor-ngswitchcase/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2016/12/angular2-PHAN2.jpg","headline":"Thử Nghiệm Với Angular 2 Phần 2: Built-in Directives NgIf, NgFor, NgSwitchCase","dateModified":"2016-12-25T16:38:39+00:00","datePublished":"2016-12-25T16:38:39+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-built-in-directives-ngif-ngfor-ngswitchcase/"},"@context":"http://schema.org"}</script>
+{"description":"Thử Nghiệm Với Angular 2 Phần 2: Built-in Directives NgIf, NgFor, NgSwitchCase","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-built-in-directives-ngif-ngfor-ngswitchcase/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2016/12/angular2-PHAN2.jpg","headline":"Thử Nghiệm Với Angular 2 Phần 2: Built-in Directives NgIf, NgFor, NgSwitchCase","dateModified":"2016-12-25T16:38:39+00:00","datePublished":"2016-12-25T16:38:39+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/thu-nghiem-voi-angular-2-built-in-directives-ngif-ngfor-ngswitchcase/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -131,7 +131,7 @@
 
 <p>Cú pháp:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h2</span> <span class="err">*</span><span class="na">ngIf=</span><span class="s">"printable"</span><span class="nt">&gt;</span>{{ message }}<span class="nt">&lt;/h2&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h2</span> <span class="na">*ngIf=</span><span class="s">"printable"</span><span class="nt">&gt;</span>{{ message }}<span class="nt">&lt;/h2&gt;</span>
 </code></pre></div></div>
 
 <blockquote>
@@ -144,10 +144,10 @@
 
 <p>Cú pháp:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="err">*</span><span class="na">ngFor=</span><span class="s">"let contact of contacts"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">*ngFor=</span><span class="s">"let contact of contacts"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;h3&gt;</span>{{ contact.name }}<span class="nt">&lt;/h3&gt;</span>
   <span class="nt">&lt;div&gt;</span>
-    <span class="nt">&lt;img</span> <span class="err">*</span><span class="na">ngIf=</span><span class="s">"contact.avatar?.url"</span> <span class="err">[</span><span class="na">src</span><span class="err">]="</span><span class="na">contact</span><span class="err">.</span><span class="na">avatar</span><span class="err">?.</span><span class="na">url</span><span class="err">"</span> <span class="na">alt=</span><span class="s">"Avatar of {{ contact.name }}"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">*ngIf=</span><span class="s">"contact.avatar?.url"</span> <span class="na">[src]=</span><span class="s">"contact.avatar?.url"</span> <span class="na">alt=</span><span class="s">"Avatar of {{ contact.name }}"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
@@ -162,8 +162,8 @@
 
 <p>Cú pháp:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="err">[</span><span class="na">ngSwitch</span><span class="err">]="</span><span class="na">conditionExpression</span><span class="err">"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;template</span> <span class="err">[</span><span class="na">ngSwitchCase</span><span class="err">]="</span><span class="na">case1Exp</span><span class="err">"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/template&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">[ngSwitch]=</span><span class="s">"conditionExpression"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;template</span> <span class="na">[ngSwitchCase]=</span><span class="s">"case1Exp"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/template&gt;</span>
   <span class="nt">&lt;template</span> <span class="na">ngSwitchCase=</span><span class="s">"case2LiteralString"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/template&gt;</span>
   <span class="nt">&lt;template</span> <span class="na">ngSwitchDefault</span><span class="nt">&gt;</span>...<span class="nt">&lt;/template&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
@@ -171,8 +171,8 @@
 
 <p>Hoặc:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="err">[</span><span class="na">ngSwitch</span><span class="err">]="</span><span class="na">tabIndex</span><span class="err">"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="err">*</span><span class="na">ngSwitchCase=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">[ngSwitch]=</span><span class="s">"tabIndex"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">*ngSwitchCase=</span><span class="s">"1"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div&gt;</span>
       Tab content 1
     <span class="nt">&lt;/div&gt;</span>
@@ -180,7 +180,7 @@
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, rerum.
     <span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="err">*</span><span class="na">ngSwitchCase=</span><span class="s">"2"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">*ngSwitchCase=</span><span class="s">"2"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div&gt;</span>
       Tab content 2
     <span class="nt">&lt;/div&gt;</span>
@@ -188,7 +188,7 @@
       Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
     <span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
-  <span class="nt">&lt;div</span> <span class="err">*</span><span class="na">ngSwitchCase=</span><span class="s">"3"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">*ngSwitchCase=</span><span class="s">"3"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div&gt;</span>
       Tab content 3
     <span class="nt">&lt;/div&gt;</span>

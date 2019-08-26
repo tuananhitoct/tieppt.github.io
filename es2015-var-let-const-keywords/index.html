@@ -5,9 +5,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--<title>ES2015 var, let và const keywords</title>-->
-<!-- Begin Jekyll SEO tag v2.5.0 -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>ES2015 var, let và const keywords | Lập Trình Thật Kỳ Diệu</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.8.6" />
 <meta property="og:title" content="ES2015 var, let và const keywords" />
 <meta name="author" content="Tiep Phan" />
 <meta property="og:locale" content="en_US" />
@@ -22,7 +22,7 @@
 <meta name="google-site-verification" content="Gcn3Y0oBud7gufI1PtszF7DFNgFOifgLRIaZAoLZWWU" />
 <meta name="msvalidate.01" content="F160AE523B1846CBDC431CB91CB6613A" />
 <script type="application/ld+json">
-{"description":"Giới thiệu chi tiết về đặc điểm của let, var, const trong ES2015","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/es2015-var-let-const-keywords/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2016/09/es2015-logo.png","headline":"ES2015 var, let và const keywords","dateModified":"2016-09-23T01:59:20+00:00","datePublished":"2016-09-23T01:59:20+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/es2015-var-let-const-keywords/"},"@context":"http://schema.org"}</script>
+{"description":"Giới thiệu chi tiết về đặc điểm của let, var, const trong ES2015","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/es2015-var-let-const-keywords/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2016/09/es2015-logo.png","headline":"ES2015 var, let và const keywords","dateModified":"2016-09-23T01:59:20+00:00","datePublished":"2016-09-23T01:59:20+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/es2015-var-let-const-keywords/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -123,7 +123,7 @@
 
 <p>Ví dụ:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'use strict'</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="kd">function</span> <span class="nx">addWithDoubleValue</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">doubleA</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
@@ -142,7 +142,7 @@
 
 <p>Trong Javascript không có biến cục bộ của khối lệnh và biến có thể sử dụng trước khi nó khai báo mà không sinh ra lỗi. Chẳng hạn, trong đoạn code sau:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'use strict'</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">doubleA</span><span class="p">);</span>
 
@@ -157,7 +157,7 @@
 
 <p>Tại sao lại có sự khác biệt như thế. Tất cả phải chăng là magic. Ở đây Javascript có 1 khái niệm là variable hoisting. Các biến dù được khai báo ở bất kỳ đâu trong hàm, đều được di chuyển lên đầu tiên. Chúng ta có thể viết lại đoạn code trên như sau:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'use strict'</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">doubleA</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">doubleA</span><span class="p">);</span>
@@ -169,12 +169,12 @@
 
 <p>Hay trong 1 ví dụ khác, trong ví dụ dưới đây, tôi sẽ minh họa cả vấn đề biến cục bộ trong Javascript.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'use strict'</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="kd">var</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nx">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="s1">'Bạn đã đủ tuổi xem phim 18+'</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Bạn đã đủ tuổi xem phim 18+</span><span class="dl">'</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="c1">// sử dụng đến biến message, chúng ta mong muốn nó sinh ra lỗi.</span>
@@ -192,7 +192,7 @@
 <p>Hẳn là trong 1 số ứng dụng, có thể chúng ta gặp tình trạng như sau:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">blockScope</span><span class="p">()</span> <span class="p">{</span>
-  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
   <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
 
   <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
@@ -220,7 +220,7 @@
 <p>Khi đó chúng ta cần 1 loại biến đặc biệt, là biến cục bộ. Chẳng hạn trong ví dụ trên, nếu tôi thay <code class="highlighter-rouge">var i</code> thành <code class="highlighter-rouge">let i</code> – có trong ES2015, chúng ta sẽ có kết quả mong muốn.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">blockScope</span><span class="p">()</span> <span class="p">{</span>
-  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
   <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
 
   <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
@@ -244,7 +244,7 @@
 <p>Hoặc như đoạn code sau:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">blockScope</span><span class="p">()</span> <span class="p">{</span>
-  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
   <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// do something</span>
@@ -266,7 +266,7 @@
 <p>Như các bạn cũng đã biết trong JS thường, chúng ta không có khái niệm hằng số, các biến của JS đều có thể gán đi mất tiêu luôn. Nhưng trong ES2015 có thêm hằng số. Vậy hằng số có đặc điểm gì. Chính xác là bạn không thể gán 1 hằng khi nó đã được khai báo với 1 giá trị khác. (không dùng phép gán trên hằng được)</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">constant</span><span class="p">()</span> <span class="p">{</span>
-  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
   <span class="kd">const</span> <span class="nx">PI</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
   <span class="nx">PI</span> <span class="o">=</span> <span class="mf">3.5</span><span class="p">;</span>
 <span class="p">}</span>
@@ -285,10 +285,10 @@
 <p>Hãy xem ví dụ sau nhé:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">constant</span><span class="p">()</span> <span class="p">{</span>
-  <span class="s1">'use strict'</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'name'</span><span class="p">:</span> <span class="s1">'constant'</span><span class="p">};</span>
+  <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">constant</span><span class="dl">'</span><span class="p">};</span>
   
-  <span class="nx">obj</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">'Something go wrong!'</span><span class="p">;</span>
+  <span class="nx">obj</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Something go wrong!</span><span class="dl">'</span><span class="p">;</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -298,19 +298,19 @@
 <p>Kết quả nhận được như sau:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">object</span> <span class="nb">Object</span><span class="p">]</span> <span class="p">{</span>
-  <span class="nl">name</span><span class="p">:</span> <span class="s2">"constant"</span><span class="p">,</span>
-  <span class="nx">type</span><span class="p">:</span> <span class="s2">"Something go wrong!"</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">constant</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Something go wrong!</span><span class="dl">"</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <p>Tương tự như thế cho Array, với các đoạn xử lý không thay đổi con trỏ của biến thì không bị lỗi khi sử dụng _const, _chỉ khi nào chúng ta gán biến đó bằng 1 biến khác thì mới bị lỗi.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">constant</span><span class="p">()</span> <span class="p">{</span>
-  <span class="s1">'use strict'</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'name'</span><span class="p">:</span> <span class="s1">'constant'</span><span class="p">};</span>
+  <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+  <span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">constant</span><span class="dl">'</span><span class="p">};</span>
 
   <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'another object name'</span>
+    <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">another object name</span><span class="dl">'</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
@@ -322,7 +322,7 @@
 <p>1 số method trên Array như splice, push, … không làm thay đổi con trỏ của biến kiểu Array, nên nó cũng hợp lệ.</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">constant</span><span class="p">()</span> <span class="p">{</span>
-  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
   <span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
   <span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
   

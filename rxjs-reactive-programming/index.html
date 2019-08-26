@@ -5,9 +5,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--<title>Rxjs Và Reactive Programming</title>-->
-<!-- Begin Jekyll SEO tag v2.5.0 -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Rxjs Và Reactive Programming | Lập Trình Thật Kỳ Diệu</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.8.6" />
 <meta property="og:title" content="Rxjs Và Reactive Programming" />
 <meta name="author" content="Tiep Phan" />
 <meta property="og:locale" content="en_US" />
@@ -22,7 +22,7 @@
 <meta name="google-site-verification" content="Gcn3Y0oBud7gufI1PtszF7DFNgFOifgLRIaZAoLZWWU" />
 <meta name="msvalidate.01" content="F160AE523B1846CBDC431CB91CB6613A" />
 <script type="application/ld+json">
-{"description":"Giới thiệu Rxjs và Reactive Programming và ứng dụng trong Angular","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/rxjs-reactive-programming/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/09/rxjs-reactive-programming.jpg","headline":"Rxjs Và Reactive Programming","dateModified":"2017-09-16T10:00:00+00:00","datePublished":"2017-09-16T10:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/rxjs-reactive-programming/"},"@context":"http://schema.org"}</script>
+{"description":"Giới thiệu Rxjs và Reactive Programming và ứng dụng trong Angular","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/rxjs-reactive-programming/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2017/09/rxjs-reactive-programming.jpg","headline":"Rxjs Và Reactive Programming","dateModified":"2017-09-16T10:00:00+00:00","datePublished":"2017-09-16T10:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/rxjs-reactive-programming/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -219,18 +219,18 @@ Dễ thấy nhất ở đây chính là EventEmitter, hay Reactive Forms mà ch�
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
 
 <span class="nx">arr</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span> <span class="o">+</span> <span class="s1">' =&gt; '</span> <span class="o">+</span> <span class="nx">item</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> =&gt; </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">item</span><span class="p">);</span>
 <span class="p">});</span>
 
 </code></pre></div></div>
 
 <p>Kết quả nhận được của chúng ta như sau:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"0 =&gt; 1"</span>
-<span class="s2">"1 =&gt; 2"</span>
-<span class="s2">"2 =&gt; 3"</span>
-<span class="s2">"3 =&gt; 4"</span>
-<span class="s2">"4 =&gt; 5"</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">0 =&gt; 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">1 =&gt; 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">2 =&gt; 3</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">3 =&gt; 4</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">4 =&gt; 5</span><span class="dl">"</span>
 </code></pre></div></div>
 
 <p>Ngoại trừ một điểm chúng ta cần lưu ý khi các phần tử là kiểu reference thay vì kiểu primitive, thì <code class="highlighter-rouge">forEach</code> có thể khiến các phần tử của array ban đầu thay đổi giá trị.</p>
@@ -254,7 +254,7 @@ Dễ thấy nhất ở đây chính là EventEmitter, hay Reactive Forms mà ch�
 <span class="p">});</span>
 
 <span class="nx">ref</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">item</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span> <span class="o">+</span> <span class="s1">' =&gt; '</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">index</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> =&gt; </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">item</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
@@ -420,8 +420,8 @@ Dễ thấy nhất ở đây chính là EventEmitter, hay Reactive Forms mà ch�
 
 <p><strong>Push</strong></p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'button'</span><span class="p">);</span>
-<span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Clicked!'</span><span class="p">));</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">button</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Clicked!</span><span class="dl">'</span><span class="p">));</span>
 
 </code></pre></div></div>
 
@@ -453,12 +453,12 @@ Dễ thấy nhất ở đây chính là EventEmitter, hay Reactive Forms mà ch�
 <p>Tạm thời bỏ qua các chi tiết về hàm <code class="highlighter-rouge">create</code> dưới đây, chúng ta sẽ gặp lại nó khi tìm hiểu về <strong>Operator</strong>:</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getDetail</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'tiepphan.com'</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">tiepphan.com</span><span class="dl">'</span><span class="p">);</span>
   <span class="k">return</span> <span class="mi">100</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kd">const</span> <span class="nx">observable</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">observer</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Rxjs và Reactive Programming'</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Rxjs và Reactive Programming</span><span class="dl">'</span><span class="p">);</span>
   <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
   <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
   <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
@@ -480,28 +480,28 @@ Dễ thấy nhất ở đây chính là EventEmitter, hay Reactive Forms mà ch�
 
 <span class="c1">// and</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'before subscribe'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">before subscribe</span><span class="dl">'</span><span class="p">);</span>
 <span class="nx">observable</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="na">next</span><span class="p">:</span> <span class="nx">val</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'next: '</span> <span class="o">+</span> <span class="nx">val</span><span class="p">),</span>
-  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'error: '</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'done'</span><span class="p">),</span>
+  <span class="na">next</span><span class="p">:</span> <span class="nx">val</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">next: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">val</span><span class="p">),</span>
+  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">error: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">done</span><span class="dl">'</span><span class="p">),</span>
 <span class="p">});</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'after subscribe'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">after subscribe</span><span class="dl">'</span><span class="p">);</span>
 
 </code></pre></div></div>
 
 <p>Và sau đây là kết quả chúng ta nhận được:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"tiepphan.com"</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">tiepphan.com</span><span class="dl">"</span>
 <span class="mi">100</span>
-<span class="s2">"before subscribe"</span>
-<span class="s2">"Rxjs và Reactive Programming"</span>
-<span class="s2">"next: 1"</span>
-<span class="s2">"next: 2"</span>
-<span class="s2">"next: 3"</span>
-<span class="s2">"after subscribe"</span>
-<span class="s2">"next: 4"</span>
-<span class="s2">"done"</span>
+<span class="dl">"</span><span class="s2">before subscribe</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">Rxjs và Reactive Programming</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">next: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">next: 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">next: 3</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">after subscribe</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">next: 4</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">done</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -531,7 +531,7 @@ Dễ thấy nhất ở đây chính là EventEmitter, hay Reactive Forms mà ch�
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">observable</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">(</span><span class="kd">function</span> <span class="nx">subscribe</span><span class="p">(</span><span class="nx">observer</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">id</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s1">'Hello Rxjs'</span><span class="p">);</span>
+    <span class="nx">observer</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello Rxjs</span><span class="dl">'</span><span class="p">);</span>
   <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
 <span class="p">});</span>
 
@@ -613,14 +613,14 @@ Lưu ý rằng, chỉ có 1 trong 2 loại tín hiệu trên được gửi đi,
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">observable</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
   <span class="nx">val</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">val</span><span class="p">),</span>
   <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
-  <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'done'</span><span class="p">)</span>
+  <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">done</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="c1">// result</span>
 <span class="mi">1</span>
 <span class="mi">2</span>
 <span class="mi">3</span>
-<span class="s2">"done"</span>
+<span class="dl">"</span><span class="s2">done</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -630,7 +630,7 @@ Lưu ý rằng, chỉ có 1 trong 2 loại tín hiệu trên được gửi đi,
 <span class="kd">const</span> <span class="nx">observer</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">next</span><span class="p">:</span> <span class="nx">val</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">val</span><span class="p">),</span>
   <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'done'</span><span class="p">)</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">done</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="c1">// sử dụng để subscribe</span>
@@ -681,9 +681,9 @@ Lưu ý rằng, chỉ có 1 trong 2 loại tín hiệu trên được gửi đi,
 <p>Một Observer có dạng như sau:</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">observer</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Observer got a next value: '</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
-  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'Observer got an error: '</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Observer got a complete notification'</span><span class="p">),</span>
+  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Observer got a next value: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
+  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Observer got an error: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Observer got a complete notification</span><span class="dl">'</span><span class="p">),</span>
 <span class="p">};</span>
 
 </code></pre></div></div>
@@ -703,17 +703,17 @@ Lưu ý rằng, chỉ có 1 trong 2 loại tín hiệu trên được gửi đi,
 <p>Như tôi đã đề cập từ trước, <code class="highlighter-rouge">observable.subscribe</code> sẽ chuẩn hóa các callbacks thành Observer object tương ứng, <strong>bạn có thể truyền vào các hàm rời rạc nhau, nhưng cần lưu ý truyền đúng thứ tự callback</strong>.</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">observable</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
-  <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Observer got a next value: '</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
-  <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'Observer got an error: '</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
-  <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Observer got a complete notification'</span><span class="p">)</span>
+  <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Observer got a next value: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
+  <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Observer got an error: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
+  <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Observer got a complete notification</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="c1">// tương đương với</span>
 
 <span class="kd">const</span> <span class="nx">observer</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Observer got a next value: '</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
-  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'Observer got an error: '</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Observer got a complete notification'</span><span class="p">),</span>
+  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Observer got a next value: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
+  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="dl">'</span><span class="s1">Observer got an error: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Observer got a complete notification</span><span class="dl">'</span><span class="p">),</span>
 <span class="p">};</span>
 
 <span class="nx">observable</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">observer</span><span class="p">);</span>
@@ -723,9 +723,9 @@ Lưu ý rằng, chỉ có 1 trong 2 loại tín hiệu trên được gửi đi,
 <p>Lưu ý: Nếu bạn không muốn truyền error handler function vào, hãy truyền <code class="highlighter-rouge">null</code>/<code class="highlighter-rouge">undefined</code>:</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">observable</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
-  <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Observer got a next value: '</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
+  <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Observer got a next value: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
   <span class="kc">null</span><span class="p">,</span>
-  <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Observer got a complete notification'</span><span class="p">)</span>
+  <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Observer got a complete notification</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">);</span>
 
 </code></pre></div></div>
@@ -756,8 +756,8 @@ Lưu ý rằng, chỉ có 1 trong 2 loại tín hiệu trên được gửi đi,
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">interval</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
 <span class="kd">const</span> <span class="nx">bar</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">interval</span><span class="p">(</span><span class="mi">700</span><span class="p">);</span>
 
-<span class="kd">const</span> <span class="nx">subscription</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'first: '</span> <span class="o">+</span> <span class="nx">x</span><span class="p">));</span>
-<span class="kd">const</span> <span class="nx">childSub</span> <span class="o">=</span> <span class="nx">bar</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'second: '</span> <span class="o">+</span> <span class="nx">x</span><span class="p">));</span>
+<span class="kd">const</span> <span class="nx">subscription</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">first: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">x</span><span class="p">));</span>
+<span class="kd">const</span> <span class="nx">childSub</span> <span class="o">=</span> <span class="nx">bar</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">second: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">x</span><span class="p">));</span>
 
 <span class="nx">subscription</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">childSub</span><span class="p">);</span>
 
@@ -792,7 +792,7 @@ Lưu ý rằng, chỉ có 1 trong 2 loại tín hiệu trên được gửi đi,
 
 <span class="kd">const</span> <span class="nx">observer</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">next</span><span class="p">:</span> <span class="nx">value</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'done'</span><span class="p">)</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">done</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">};</span>
 
 <span class="nx">observable</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">observer</span><span class="p">);</span>
@@ -821,7 +821,7 @@ Lưu ý rằng, chỉ có 1 trong 2 loại tín hiệu trên được gửi đi,
 
 <span class="kd">const</span> <span class="nx">observer</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">next</span><span class="p">:</span> <span class="nx">value</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'done'</span><span class="p">)</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">done</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">};</span>
 
 <span class="nx">observable</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">observer</span><span class="p">);</span>
@@ -850,15 +850,15 @@ Lưu ý rằng, chỉ có 1 trong 2 loại tín hiệu trên được gửi đi,
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">interval</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">take</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">observerBaz</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'first next: '</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
-  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'first error: '</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="nx">_</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'first done'</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">first next: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
+  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">first error: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="nx">_</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">first done</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">};</span>
 
 <span class="kd">const</span> <span class="nx">observerBar</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'second next: '</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
-  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'second error: '</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="nx">_</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'second done'</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">second next: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
+  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">second error: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="nx">_</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">second done</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">};</span>
 
 <span class="nx">foo</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">observerBaz</span><span class="p">);</span>
@@ -871,18 +871,18 @@ Lưu ý rằng, chỉ có 1 trong 2 loại tín hiệu trên được gửi đi,
 
 <p>Kết quả khi chạy chương trình:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"first next: 0"</span>
-<span class="s2">"first next: 1"</span>
-<span class="s2">"first next: 2"</span>
-<span class="s2">"second next: 0"</span>
-<span class="s2">"first next: 3"</span>
-<span class="s2">"second next: 1"</span>
-<span class="s2">"first next: 4"</span>
-<span class="s2">"first done"</span>
-<span class="s2">"second next: 2"</span>
-<span class="s2">"second next: 3"</span>
-<span class="s2">"second next: 4"</span>
-<span class="s2">"second done"</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">first next: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">first next: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">first next: 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">second next: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">first next: 3</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">second next: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">first next: 4</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">first done</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">second next: 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">second next: 3</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">second next: 4</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">second done</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -915,15 +915,15 @@ Lưu ý rằng, chỉ có 1 trong 2 loại tín hiệu trên được gửi đi,
 <span class="p">};</span>
 
 <span class="kd">const</span> <span class="nx">observerBaz</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'first next: '</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
-  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'first error: '</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="nx">_</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'first done'</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">first next: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
+  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">first error: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="nx">_</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">first done</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">};</span>
 
 <span class="kd">const</span> <span class="nx">observerBar</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'second next: '</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
-  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'second error: '</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="nx">_</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'second done'</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">second next: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
+  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">second error: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="nx">_</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">second done</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">};</span>
 
 <span class="nx">observerB</span><span class="p">.</span><span class="nx">addObserver</span><span class="p">(</span><span class="nx">observerBaz</span><span class="p">);</span>
@@ -941,16 +941,16 @@ Lưu ý rằng, chỉ có 1 trong 2 loại tín hiệu trên được gửi đi,
 
 <p>Giờ đây chúng ta có thể có được kết quả như mong muốn.</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"first next: 0"</span>
-<span class="s2">"first next: 1"</span>
-<span class="s2">"first next: 2"</span>
-<span class="s2">"second next: 2"</span>
-<span class="s2">"first next: 3"</span>
-<span class="s2">"second next: 3"</span>
-<span class="s2">"first next: 4"</span>
-<span class="s2">"second next: 4"</span>
-<span class="s2">"first done"</span>
-<span class="s2">"second done"</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">first next: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">first next: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">first next: 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">second next: 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">first next: 3</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">second next: 3</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">first next: 4</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">second next: 4</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">first done</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">second done</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -977,15 +977,15 @@ Lưu ý rằng, chỉ có 1 trong 2 loại tín hiệu trên được gửi đi,
 <span class="p">};</span>
 
 <span class="kd">const</span> <span class="nx">observerBaz</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'first next: '</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
-  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'first error: '</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="nx">_</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'first done'</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">first next: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
+  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">first error: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="nx">_</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">first done</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">};</span>
 
 <span class="kd">const</span> <span class="nx">observerBar</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'second next: '</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
-  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'second error: '</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="nx">_</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'second done'</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">second next: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
+  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">second error: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="nx">_</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">second done</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">};</span>
 
 <span class="nx">observerB</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">observerBaz</span><span class="p">);</span>
@@ -1016,20 +1016,20 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">subject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Subject</span><span class="p">();</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerA: '</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerA: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
 <span class="p">});</span>
 <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerB: '</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerB: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
 <span class="p">});</span>
 
-<span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s1">'Hello'</span><span class="p">);</span>
-<span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="s1">'Subject'</span><span class="p">);</span>
+<span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="dl">'</span><span class="s1">Subject</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="c1">// result</span>
-<span class="s2">"observerA: Hello"</span>
-<span class="s2">"observerB: Hello"</span>
-<span class="s2">"observerA: Subject"</span>
-<span class="s2">"observerB: Subject"</span>
+<span class="dl">"</span><span class="s2">observerA: Hello</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: Hello</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: Subject</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: Subject</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -1038,10 +1038,10 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">subject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Subject</span><span class="p">();</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerA: '</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerA: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
 <span class="p">});</span>
 <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerB: '</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerB: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
 <span class="p">});</span>
 
 <span class="c1">// subject.next('Hello');</span>
@@ -1052,12 +1052,12 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 <span class="nx">observable</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">subject</span><span class="p">);</span>
 
 <span class="c1">// result</span>
-<span class="s2">"observerA: 0"</span>
-<span class="s2">"observerB: 0"</span>
-<span class="s2">"observerA: 1"</span>
-<span class="s2">"observerB: 1"</span>
-<span class="s2">"observerA: 2"</span>
-<span class="s2">"observerB: 2"</span>
+<span class="dl">"</span><span class="s2">observerA: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: 2</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -1083,14 +1083,14 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 <span class="kd">const</span> <span class="nx">subject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">BehaviorSubject</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// 0 is the initial value</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerA: '</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerA: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
 <span class="p">});</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerB: '</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerB: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
 <span class="p">});</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
@@ -1118,7 +1118,7 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">subject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">ReplaySubject</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// buffer 3 values for new subscribers</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerA: '</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerA: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
 <span class="p">});</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
@@ -1127,21 +1127,21 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 <span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerB: '</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerB: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
 <span class="p">});</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
 
 <span class="c1">// result</span>
-<span class="s2">"observerA: 1"</span>
-<span class="s2">"observerA: 2"</span>
-<span class="s2">"observerA: 3"</span>
-<span class="s2">"observerA: 4"</span>
-<span class="s2">"observerB: 2"</span>
-<span class="s2">"observerB: 3"</span>
-<span class="s2">"observerB: 4"</span>
-<span class="s2">"observerA: 5"</span>
-<span class="s2">"observerB: 5"</span>
+<span class="dl">"</span><span class="s2">observerA: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: 3</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: 4</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: 3</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: 4</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: 5</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: 5</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -1150,7 +1150,7 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">subject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">ReplaySubject</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">500</span> <span class="cm">/* windowTime */</span><span class="p">);</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerA: '</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerA: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
 <span class="p">});</span>
 
 <span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
@@ -1158,7 +1158,7 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 
 <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-    <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerB: '</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
+    <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerB: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
   <span class="p">});</span>
 <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
 
@@ -1168,16 +1168,16 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
 
 <span class="c1">// result</span>
-<span class="s2">"observerA: 1"</span>
-<span class="s2">"observerA: 2"</span>
-<span class="s2">"observerA: 3"</span>
-<span class="s2">"observerA: 4"</span>
-<span class="s2">"observerA: 5"</span>
-<span class="s2">"observerB: 3"</span>
-<span class="s2">"observerB: 4"</span>
-<span class="s2">"observerB: 5"</span>
-<span class="s2">"observerA: 6"</span>
-<span class="s2">"observerB: 6"</span>
+<span class="dl">"</span><span class="s2">observerA: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: 3</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: 4</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: 5</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: 3</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: 4</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: 5</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: 6</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: 6</span><span class="dl">"</span>
 <span class="p">...</span>
 
 </code></pre></div></div>
@@ -1195,7 +1195,7 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">subject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">AsyncSubject</span><span class="p">();</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerA: '</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerA: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
 <span class="p">});</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
@@ -1204,15 +1204,15 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 <span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerB: '</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerB: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">v</span><span class="p">)</span>
 <span class="p">});</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
 <span class="nx">subject</span><span class="p">.</span><span class="nx">complete</span><span class="p">();</span>
 
 <span class="c1">// result</span>
-<span class="s2">"observerA: 5"</span>
-<span class="s2">"observerB: 5"</span>
+<span class="dl">"</span><span class="s2">observerA: 5</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: 5</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -1227,16 +1227,16 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">subject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">BehaviorSubject</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// 0 is the initial value</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerA: '</span> <span class="o">+</span> <span class="nx">v</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerA: done'</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerA: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">v</span><span class="p">),</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerA: done</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">});</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerB: '</span> <span class="o">+</span> <span class="nx">v</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerB: done'</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerB: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">v</span><span class="p">),</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerB: done</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">});</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
@@ -1244,27 +1244,27 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 <span class="nx">subject</span><span class="p">.</span><span class="nx">complete</span><span class="p">();</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerC: '</span> <span class="o">+</span> <span class="nx">v</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerC: done'</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerC: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">v</span><span class="p">),</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerC: done</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">});</span>
 
 <span class="c1">// result</span>
-<span class="s2">"observerA: 0"</span>
-<span class="s2">"observerA: 1"</span>
-<span class="s2">"observerA: 2"</span>
-<span class="s2">"observerB: 2"</span>
-<span class="s2">"observerA: 3"</span>
-<span class="s2">"observerB: 3"</span>
-<span class="s2">"observerA: done"</span>
-<span class="s2">"observerB: done"</span>
-<span class="s2">"observerC: done"</span>
+<span class="dl">"</span><span class="s2">observerA: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: 3</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: 3</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: done</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: done</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerC: done</span><span class="dl">"</span>
 <span class="c1">// ===========================================</span>
 
 <span class="kd">const</span> <span class="nx">subject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">ReplaySubject</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerA: '</span> <span class="o">+</span> <span class="nx">v</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerA: done'</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerA: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">v</span><span class="p">),</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerA: done</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">});</span>
 
 <span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
@@ -1274,30 +1274,30 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
   <span class="nx">subject</span><span class="p">.</span><span class="nx">complete</span><span class="p">();</span>
   <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
   <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-    <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerB: '</span> <span class="o">+</span> <span class="nx">v</span><span class="p">),</span>
-    <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerB: done'</span><span class="p">)</span>
+    <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerB: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">v</span><span class="p">),</span>
+    <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerB: done</span><span class="dl">'</span><span class="p">)</span>
   <span class="p">});</span>
 <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
 
 <span class="c1">// result</span>
-<span class="s2">"observerA: 1"</span>
-<span class="s2">"observerA: 2"</span>
-<span class="s2">"observerA: 3"</span>
-<span class="s2">"observerA: 4"</span>
-<span class="s2">"observerA: 5"</span>
-<span class="s2">"observerA: done"</span>
-<span class="s2">"observerB: 3"</span>
-<span class="s2">"observerB: 4"</span>
-<span class="s2">"observerB: 5"</span>
-<span class="s2">"observerB: done"</span>
+<span class="dl">"</span><span class="s2">observerA: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: 3</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: 4</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: 5</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: done</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: 3</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: 4</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: 5</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: done</span><span class="dl">"</span>
 
 <span class="c1">// ===========================================</span>
 
 <span class="kd">const</span> <span class="nx">subject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">AsyncSubject</span><span class="p">();</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerA: '</span> <span class="o">+</span> <span class="nx">v</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerA: done'</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerA: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">v</span><span class="p">),</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerA: done</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">});</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
@@ -1309,15 +1309,15 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 <span class="nx">subject</span><span class="p">.</span><span class="nx">complete</span><span class="p">();</span>
 
 <span class="nx">subject</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
-  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerB: '</span> <span class="o">+</span> <span class="nx">v</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'observerB: done'</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerB: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">v</span><span class="p">),</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">observerB: done</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">});</span>
 
 <span class="c1">// result</span>
-<span class="s2">"observerA: 5"</span>
-<span class="s2">"observerA: done"</span>
-<span class="s2">"observerB: 5"</span>
-<span class="s2">"observerB: done"</span>
+<span class="dl">"</span><span class="s2">observerA: 5</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerA: done</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: 5</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">observerB: done</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -1380,20 +1380,20 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 <span class="kd">const</span> <span class="nx">amap</span> <span class="o">=</span> <span class="nx">map</span><span class="p">(</span><span class="nx">foo</span><span class="p">,</span> <span class="nx">val</span> <span class="o">=&gt;</span> <span class="nx">val</span> <span class="o">*</span> <span class="mi">5</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">observerM</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'next: '</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
-  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'error: '</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="nx">_</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'done'</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">next: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
+  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="nx">_</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">done</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">};</span>
 
 <span class="nx">amap</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">observerM</span><span class="p">);</span>
 
 <span class="c1">// result</span>
-<span class="s2">"next: 0"</span>
-<span class="s2">"next: 5"</span>
-<span class="s2">"next: 10"</span>
-<span class="s2">"next: 15"</span>
-<span class="s2">"next: 20"</span>
-<span class="s2">"done"</span>
+<span class="dl">"</span><span class="s2">next: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">next: 5</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">next: 10</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">next: 15</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">next: 20</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">done</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -1425,9 +1425,9 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 <span class="kd">const</span> <span class="nx">amap</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">mmap</span><span class="p">(</span><span class="nx">val</span> <span class="o">=&gt;</span> <span class="nx">val</span> <span class="o">*</span> <span class="mi">5</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">observerM</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'next: '</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
-  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'error: '</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
-  <span class="na">complete</span><span class="p">:</span> <span class="nx">_</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'done'</span><span class="p">)</span>
+  <span class="na">next</span><span class="p">:</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">next: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">x</span><span class="p">),</span>
+  <span class="na">error</span><span class="p">:</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">err</span><span class="p">),</span>
+  <span class="na">complete</span><span class="p">:</span> <span class="nx">_</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">done</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">};</span>
 
 <span class="nx">amap</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">observerM</span><span class="p">);</span>
@@ -1498,11 +1498,11 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="kd">function</span> <span class="nx">addClickHandler</span><span class="p">(</span><span class="nx">handler</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="nx">handler</span><span class="p">);</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="nx">handler</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="nx">removeClickHandler</span><span class="p">(</span><span class="nx">handler</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="nx">handler</span><span class="p">);</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">,</span> <span class="nx">handler</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kd">var</span> <span class="nx">clicks</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEventPattern</span><span class="p">(</span>
@@ -1515,7 +1515,7 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 
 <p><strong>Để làm việc với DOM event</strong> chúng ta có <code class="highlighter-rouge">fromEvent</code> operator, nó là bản chi tiết của <code class="highlighter-rouge">fromEventPattern</code>:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">'click'</span><span class="p">);</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="nx">source</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">event</span> <span class="o">=&gt;</span> <span class="nx">event</span><span class="p">.</span><span class="nx">clientX</span><span class="p">)</span>
 
@@ -1532,8 +1532,8 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
   <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="nx">resolve</span><span class="p">({</span>
-        <span class="na">site</span><span class="p">:</span> <span class="s1">'tiepphan.com'</span><span class="p">,</span>
-        <span class="na">post</span><span class="p">:</span> <span class="s1">'Rxjs và Reactive Programming'</span>
+        <span class="na">site</span><span class="p">:</span> <span class="dl">'</span><span class="s1">tiepphan.com</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">post</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Rxjs và Reactive Programming</span><span class="dl">'</span>
       <span class="p">});</span>
     <span class="p">},</span> <span class="mi">300</span><span class="p">);</span>
   <span class="p">});</span>
@@ -1545,8 +1545,8 @@ Khi cần gửi dữ liệu cho các Observers mà Subject đang quản lý, b�
 
 <span class="c1">// result after 300ms</span>
 <span class="p">[</span><span class="nx">object</span> <span class="nb">Object</span><span class="p">]</span> <span class="p">{</span>
-  <span class="na">post</span><span class="p">:</span> <span class="s2">"Rxjs và Reactive Programming"</span><span class="p">,</span>
-  <span class="na">site</span><span class="p">:</span> <span class="s2">"tiepphan.com"</span>
+  <span class="na">post</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Rxjs và Reactive Programming</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">site</span><span class="p">:</span> <span class="dl">"</span><span class="s2">tiepphan.com</span><span class="dl">"</span>
 <span class="p">}</span>
 
 </code></pre></div></div>
@@ -1608,7 +1608,7 @@ Repeat khi nào Observable complete, có thể giới hạn số lần repeat.</
 <p>Khi bạn muốn luôn luôn trả về 1 giá trị cho các giá trị được emit, lúc này bạn có thể dùng <code class="highlighter-rouge">mapTo</code> operator.</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//emit every click on document</span>
-<span class="kd">const</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">'click'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">);</span>
 <span class="c1">//map all emissions to one value</span>
 <span class="kd">const</span> <span class="nx">example</span> <span class="o">=</span> <span class="nx">source</span><span class="p">.</span><span class="nx">mapTo</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
 <span class="c1">//output: (click) 10...10...</span>
@@ -1642,19 +1642,19 @@ Repeat khi nào Observable complete, có thể giới hạn số lần repeat.</
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">interval$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">interval</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
 
-<span class="kd">const</span> <span class="nx">click$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">'click'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">click$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">buffer$</span> <span class="o">=</span> <span class="nx">interval$</span><span class="p">.</span><span class="nx">buffer</span><span class="p">(</span><span class="nx">click$</span><span class="p">);</span>
 
 
 <span class="kd">const</span> <span class="nx">subscribe</span> <span class="o">=</span> <span class="nx">buffer$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
-  <span class="nx">val</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Buffered Values: '</span><span class="p">,</span> <span class="nx">val</span><span class="p">)</span>
+  <span class="nx">val</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Buffered Values: </span><span class="dl">'</span><span class="p">,</span> <span class="nx">val</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="c1">// output có dạng</span>
-<span class="s2">"Buffered Values: "</span>
+<span class="dl">"</span><span class="s2">Buffered Values: </span><span class="dl">"</span>
 <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="s2">"Buffered Values: "</span>
+<span class="dl">"</span><span class="s2">Buffered Values: </span><span class="dl">"</span>
 <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 
 </code></pre></div></div>
@@ -1668,14 +1668,14 @@ Repeat khi nào Observable complete, có thể giới hạn số lần repeat.</
 <span class="kd">const</span> <span class="nx">bufferTime</span> <span class="o">=</span> <span class="nx">source</span><span class="p">.</span><span class="nx">bufferTime</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">bufferTimeSub</span> <span class="o">=</span> <span class="nx">bufferTime</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
-  <span class="nx">val</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Buffered with Time:'</span><span class="p">,</span> <span class="nx">val</span><span class="p">)</span>
+  <span class="nx">val</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Buffered with Time:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">val</span><span class="p">)</span>
 <span class="p">);</span>
 <span class="c1">// output</span>
-<span class="s2">"Buffered with Time:"</span>
+<span class="dl">"</span><span class="s2">Buffered with Time:</span><span class="dl">"</span>
 <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="s2">"Buffered with Time:"</span>
+<span class="dl">"</span><span class="s2">Buffered with Time:</span><span class="dl">"</span>
 <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="s2">"Buffered with Time:"</span>
+<span class="dl">"</span><span class="s2">Buffered with Time:</span><span class="dl">"</span>
 <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="p">...</span>
 
@@ -1699,9 +1699,9 @@ Repeat khi nào Observable complete, có thể giới hạn số lần repeat.</
   <span class="nx">val</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Positive number: </span><span class="p">${</span><span class="nx">val</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
 <span class="p">);</span>
 <span class="c1">// output</span>
-<span class="s2">"Positive number: 12"</span>
-<span class="s2">"Positive number: 45"</span>
-<span class="s2">"Positive number: 52"</span>
+<span class="dl">"</span><span class="s2">Positive number: 12</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">Positive number: 45</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">Positive number: 52</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -1806,7 +1806,7 @@ Repeat khi nào Observable complete, có thể giới hạn số lần repeat.</
 <span class="p">);</span>
 
 <span class="c1">// output</span>
-<span class="s2">"First value: 1"</span>
+<span class="dl">"</span><span class="s2">First value: 1</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -1820,7 +1820,7 @@ Repeat khi nào Observable complete, có thể giới hạn số lần repeat.</
   <span class="nx">val</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Last value: </span><span class="p">${</span><span class="nx">val</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
 <span class="p">);</span>
 <span class="c1">// output</span>
-<span class="s2">"Last value: 5"</span>
+<span class="dl">"</span><span class="s2">Last value: 5</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -1849,7 +1849,7 @@ Repeat khi nào Observable complete, có thể giới hạn số lần repeat.</
 
 <p>Rất hữu ích khi làm việc với các event fire liên tục như <code class="highlighter-rouge">click</code>, hay <code class="highlighter-rouge">mousemove</code> chẳng hạn.</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mousemove$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">'mousemove'</span><span class="p">);</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mousemove$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="dl">'</span><span class="s1">mousemove</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">sub</span> <span class="o">=</span> <span class="nx">mousemove$</span>
   <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">clientX</span><span class="p">)</span>
@@ -1875,7 +1875,7 @@ Repeat khi nào Observable complete, có thể giới hạn số lần repeat.</
 
 <p>Hay dùng khi bạn muốn đảm bảo người dùng thôi thao tác sau một khoảng thời gian <code class="highlighter-rouge">dueTime</code> thì emit giá trị. Giống như đảm bảo người dùng ngừng di chuyển chuột, hay ngừng gõ vào input chẳng hạn, để tránh phát sinh nhiều hành động không cần thiết.</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mousemove$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">'mousemove'</span><span class="p">);</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mousemove$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="dl">'</span><span class="s1">mousemove</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">sub</span> <span class="o">=</span> <span class="nx">mousemove$</span>
   <span class="p">.</span><span class="nx">debounceTime</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
@@ -1887,7 +1887,7 @@ Repeat khi nào Observable complete, có thể giới hạn số lần repeat.</
 
 <p>Chỉ emit value khi giá trị hiện tại khác với giá trị đã emit trước đó. Hay dùng để đảm bảo dữ liệu phải khác nhau thì mới thực thi hành động. Kết hợp cùng <code class="highlighter-rouge">debounceTime</code> hoặc <code class="highlighter-rouge">throttleTime</code> để làm việc khi người dùng nhập vào input, sau đó xử lý giá trị, và chỉ xử lý khi dữ liệu hiện tại khác với dữ liệu đã xử lý trước đó.</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mousemove$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">'click'</span><span class="p">);</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mousemove$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">sub</span> <span class="o">=</span> <span class="nx">mousemove$</span>
   <span class="p">.</span><span class="nx">debounceTime</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
@@ -1934,16 +1934,16 @@ Repeat khi nào Observable complete, có thể giới hạn số lần repeat.</
   <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">));</span>
 
 <span class="c1">// output</span>
-<span class="s2">"s1: 0"</span>
-<span class="s2">"s2: 0"</span>
-<span class="s2">"s1: 1"</span>
-<span class="s2">"s3: 0"</span>
-<span class="s2">"s1: 2"</span>
-<span class="s2">"s2: 1"</span>
-<span class="s2">"s1: 3"</span>
-<span class="s2">"s3: 1"</span>
-<span class="s2">"s1: 4"</span>
-<span class="s2">"s2: 2"</span>
+<span class="dl">"</span><span class="s2">s1: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s2: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s3: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s2: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 3</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s3: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 4</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s2: 2</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -1979,16 +1979,16 @@ Repeat khi nào Observable complete, có thể giới hạn số lần repeat.</
 <span class="kd">const</span> <span class="nx">sub</span> <span class="o">=</span> <span class="nx">source</span>
   <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">));</span>
 <span class="c1">// output</span>
-<span class="s2">"s1: 0"</span>
-<span class="s2">"s2: 0"</span>
-<span class="s2">"s1: 1"</span>
-<span class="s2">"s1: 2"</span>
-<span class="s2">"s2: 1"</span>
-<span class="s2">"s1: 3"</span>
-<span class="s2">"s1: 4"</span>
-<span class="s2">"s2: 2"</span>
-<span class="s2">"s3: 0"</span>
-<span class="s2">"s3: 1"</span>
+<span class="dl">"</span><span class="s2">s1: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s2: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s2: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 3</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 4</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s2: 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s3: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s3: 1</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -2012,16 +2012,16 @@ Repeat khi nào Observable complete, có thể giới hạn số lần repeat.</
 <span class="p">);</span>
 
 <span class="c1">// output</span>
-<span class="s2">"s1: 0"</span>
-<span class="s2">"s1: 1"</span>
-<span class="s2">"s1: 2"</span>
-<span class="s2">"s1: 3"</span>
-<span class="s2">"s1: 4"</span>
-<span class="s2">"s2: 0"</span>
-<span class="s2">"s2: 1"</span>
-<span class="s2">"s2: 2"</span>
-<span class="s2">"s3: 0"</span>
-<span class="s2">"s3: 1"</span>
+<span class="dl">"</span><span class="s2">s1: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 3</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 4</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s2: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s2: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s2: 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s3: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s3: 1</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -2067,11 +2067,11 @@ Repeat khi nào Observable complete, có thể giới hạn số lần repeat.</
   <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">));</span>
 
 <span class="c1">// output</span>
-<span class="p">[</span><span class="s2">"s1: 2"</span><span class="p">,</span> <span class="s2">"s2: 1"</span><span class="p">,</span> <span class="s2">"s3: 0"</span><span class="p">]</span>
-<span class="p">[</span><span class="s2">"s1: 3"</span><span class="p">,</span> <span class="s2">"s2: 1"</span><span class="p">,</span> <span class="s2">"s3: 0"</span><span class="p">]</span>
-<span class="p">[</span><span class="s2">"s1: 4"</span><span class="p">,</span> <span class="s2">"s2: 1"</span><span class="p">,</span> <span class="s2">"s3: 0"</span><span class="p">]</span>
-<span class="p">[</span><span class="s2">"s1: 4"</span><span class="p">,</span> <span class="s2">"s2: 2"</span><span class="p">,</span> <span class="s2">"s3: 0"</span><span class="p">]</span>
-<span class="p">[</span><span class="s2">"s1: 4"</span><span class="p">,</span> <span class="s2">"s2: 2"</span><span class="p">,</span> <span class="s2">"s3: 1"</span><span class="p">]</span>
+<span class="p">[</span><span class="dl">"</span><span class="s2">s1: 2</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">s2: 1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">s3: 0</span><span class="dl">"</span><span class="p">]</span>
+<span class="p">[</span><span class="dl">"</span><span class="s2">s1: 3</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">s2: 1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">s3: 0</span><span class="dl">"</span><span class="p">]</span>
+<span class="p">[</span><span class="dl">"</span><span class="s2">s1: 4</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">s2: 1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">s3: 0</span><span class="dl">"</span><span class="p">]</span>
+<span class="p">[</span><span class="dl">"</span><span class="s2">s1: 4</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">s2: 2</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">s3: 0</span><span class="dl">"</span><span class="p">]</span>
+<span class="p">[</span><span class="dl">"</span><span class="s2">s1: 4</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">s2: 2</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">s3: 1</span><span class="dl">"</span><span class="p">]</span>
 
 </code></pre></div></div>
 
@@ -2081,18 +2081,18 @@ Repeat khi nào Observable complete, có thể giới hạn số lần repeat.</
   <span class="nx">s1</span><span class="p">,</span>
   <span class="nx">s2</span><span class="p">,</span>
   <span class="nx">s3</span><span class="p">,</span>
-  <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="s1">'|'</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="s1">'|'</span> <span class="o">+</span> <span class="nx">c</span><span class="p">)</span>
+  <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">|</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">|</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">c</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">sub</span> <span class="o">=</span> <span class="nx">source</span>
   <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">));</span>
 
 <span class="c1">// output</span>
-<span class="s2">"s1: 2|s2: 1|s3: 0"</span>
-<span class="s2">"s1: 3|s2: 1|s3: 0"</span>
-<span class="s2">"s1: 4|s2: 1|s3: 0"</span>
-<span class="s2">"s1: 4|s2: 2|s3: 0"</span>
-<span class="s2">"s1: 4|s2: 2|s3: 1"</span>
+<span class="dl">"</span><span class="s2">s1: 2|s2: 1|s3: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 3|s2: 1|s3: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 4|s2: 1|s3: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 4|s2: 2|s3: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 4|s2: 2|s3: 1</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -2116,21 +2116,21 @@ Repeat khi nào Observable complete, có thể giới hạn số lần repeat.</
 
 <span class="kd">const</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">s1</span><span class="p">.</span><span class="nx">withLatestFrom</span><span class="p">(</span>
   <span class="nx">s2</span><span class="p">,</span>
-  <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="s1">'|'</span> <span class="o">+</span> <span class="nx">b</span><span class="p">)</span>
+  <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">|</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">b</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">sub</span> <span class="o">=</span> <span class="nx">source</span>
   <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">));</span>
 
 <span class="c1">// output</span>
-<span class="s2">"s1: 2|s2: 0"</span>
-<span class="s2">"s1: 3|s2: 0"</span>
-<span class="s2">"s1: 4|s2: 1"</span>
-<span class="s2">"s1: 5|s2: 1"</span>
-<span class="s2">"s1: 6|s2: 1"</span>
-<span class="s2">"s1: 7|s2: 2"</span>
-<span class="s2">"s1: 8|s2: 2"</span>
-<span class="s2">"s1: 9|s2: 3"</span>
+<span class="dl">"</span><span class="s2">s1: 2|s2: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 3|s2: 0</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 4|s2: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 5|s2: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 6|s2: 1</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 7|s2: 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 8|s2: 2</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">s1: 9|s2: 3</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -2157,14 +2157,14 @@ Chẳng hạn, bạn có search box với <code class="highlighter-rouge">n</cod
 <span class="kd">const</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">forkJoin</span><span class="p">(</span>
   <span class="nx">s1</span><span class="p">,</span>
   <span class="nx">s2</span><span class="p">,</span>
-  <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="s1">'|'</span> <span class="o">+</span> <span class="nx">b</span><span class="p">)</span>
+  <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">|</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">b</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">sub</span> <span class="o">=</span> <span class="nx">source</span>
   <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">));</span>
 
 <span class="c1">// output</span>
-<span class="s2">"s1: 9|s2: 3"</span>
+<span class="dl">"</span><span class="s2">s1: 9|s2: 3</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -2182,18 +2182,18 @@ Chẳng hạn, bạn có search box với <code class="highlighter-rouge">n</cod
   <span class="nx">s1</span><span class="p">,</span>
   <span class="nx">s2</span><span class="p">,</span>
   <span class="nx">s3</span><span class="p">,</span>
-  <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="s1">'|'</span> <span class="o">+</span> <span class="nx">b</span><span class="p">)</span>
+  <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">a</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">|</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">b</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">sub</span> <span class="o">=</span> <span class="nx">source</span>
   <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
     <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">),</span>
     <span class="kc">null</span><span class="p">,</span>
-    <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'complete'</span><span class="p">)</span>
+    <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">complete</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">);</span>
 
 <span class="c1">// output</span>
-<span class="s2">"complete"</span>
+<span class="dl">"</span><span class="s2">complete</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -2223,14 +2223,14 @@ Chẳng hạn, bạn có search box với <code class="highlighter-rouge">n</cod
   <span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
     <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">),</span>
     <span class="kc">null</span><span class="p">,</span>
-    <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'complete'</span><span class="p">)</span>
+    <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">complete</span><span class="dl">'</span><span class="p">)</span>
   <span class="p">);</span>
 
 <span class="c1">// output</span>
-<span class="p">[</span><span class="s2">"s1: 0"</span><span class="p">,</span> <span class="s2">"s2: 0"</span><span class="p">]</span>
-<span class="p">[</span><span class="s2">"s1: 1"</span><span class="p">,</span> <span class="s2">"s2: 1"</span><span class="p">]</span>
-<span class="p">[</span><span class="s2">"s1: 2"</span><span class="p">,</span> <span class="s2">"s2: 2"</span><span class="p">]</span>
-<span class="s2">"complete"</span>
+<span class="p">[</span><span class="dl">"</span><span class="s2">s1: 0</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">s2: 0</span><span class="dl">"</span><span class="p">]</span>
+<span class="p">[</span><span class="dl">"</span><span class="s2">s1: 1</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">s2: 1</span><span class="dl">"</span><span class="p">]</span>
+<span class="p">[</span><span class="dl">"</span><span class="s2">s1: 2</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">s2: 2</span><span class="dl">"</span><span class="p">]</span>
+<span class="dl">"</span><span class="s2">complete</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -2245,14 +2245,14 @@ Chẳng hạn, bạn có search box với <code class="highlighter-rouge">n</cod
 <p>Ví dụ:</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//emit error</span>
-<span class="kd">const</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">throw</span><span class="p">(</span><span class="s1">'This is an error!'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">throw</span><span class="p">(</span><span class="dl">'</span><span class="s1">This is an error!</span><span class="dl">'</span><span class="p">);</span>
 <span class="c1">//gracefully handle error, returning observable with error message</span>
 <span class="kd">const</span> <span class="nx">example</span> <span class="o">=</span> <span class="nx">source</span><span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">val</span> <span class="o">=&gt;</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="s2">`I caught: </span><span class="p">${</span><span class="nx">val</span><span class="p">}</span><span class="s2">`</span><span class="p">));</span>
 
 <span class="kd">const</span> <span class="nx">subscribe</span> <span class="o">=</span> <span class="nx">example</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">val</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">val</span><span class="p">));</span>
 
 <span class="c1">//output:</span>
-<span class="s1">'I caught: This is an error'</span>
+<span class="dl">'</span><span class="s1">I caught: This is an error</span><span class="dl">'</span>
 
 </code></pre></div></div>
 
@@ -2268,7 +2268,7 @@ Chẳng hạn, bạn có search box với <code class="highlighter-rouge">n</cod
   <span class="p">.</span><span class="nx">mergeMap</span><span class="p">(</span><span class="nx">val</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="c1">//throw error for demonstration</span>
     <span class="k">if</span><span class="p">(</span><span class="nx">val</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">){</span>
-      <span class="k">return</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">throw</span><span class="p">(</span><span class="s1">'Error!'</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">throw</span><span class="p">(</span><span class="dl">'</span><span class="s1">Error!</span><span class="dl">'</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="k">of</span><span class="p">(</span><span class="nx">val</span><span class="p">);</span>
   <span class="p">})</span>
@@ -2281,10 +2281,10 @@ Chẳng hạn, bạn có search box với <code class="highlighter-rouge">n</cod
 <span class="p">});</span>
 
 <span class="c1">// output: </span>
-<span class="s2">"0..1..2..3..4..5..."</span>
-<span class="s2">"0..1..2..3..4..5..."</span>
-<span class="s2">"0..1..2..3..4..5..."</span>
-<span class="s2">"Error!: Retried 2 times then quit!"</span>
+<span class="dl">"</span><span class="s2">0..1..2..3..4..5...</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">0..1..2..3..4..5...</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">0..1..2..3..4..5...</span><span class="dl">"</span>
+<span class="dl">"</span><span class="s2">Error!: Retried 2 times then quit!</span><span class="dl">"</span>
 
 </code></pre></div></div>
 
@@ -2346,11 +2346,11 @@ Chẳng hạn, bạn có search box với <code class="highlighter-rouge">n</cod
 <span class="kd">const</span> <span class="nx">subscribe</span> <span class="o">=</span> <span class="nx">foo$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">val</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">val</span><span class="p">));</span>
 
 <span class="c1">// output</span>
-<span class="s2">"BEFORE MAP: 1"</span>
+<span class="dl">"</span><span class="s2">BEFORE MAP: 1</span><span class="dl">"</span>
 <span class="mi">11</span>
-<span class="s2">"BEFORE MAP: 2"</span>
+<span class="dl">"</span><span class="s2">BEFORE MAP: 2</span><span class="dl">"</span>
 <span class="mi">12</span>
-<span class="s2">"BEFORE MAP: 3"</span>
+<span class="dl">"</span><span class="s2">BEFORE MAP: 3</span><span class="dl">"</span>
 <span class="mi">13</span>
 
 </code></pre></div></div>
@@ -2414,7 +2414,7 @@ Chẳng hạn, bạn có search box với <code class="highlighter-rouge">n</cod
 
 <p>Bây giờ chúng ta thay đổi 1 chút, cứ mỗi lần click vào <code class="highlighter-rouge">document</code>, chúng ta sẽ start stream <code class="highlighter-rouge">interval</code>:</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">click$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">'click'</span><span class="p">);</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">click$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">interval</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">interval</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">take</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
 
@@ -2429,7 +2429,7 @@ Chẳng hạn, bạn có search box với <code class="highlighter-rouge">n</cod
 
 <p>Ví dụ chúng ta giới hạn có 2 stream chạy đồng thời.</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">click$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">'click'</span><span class="p">);</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">click$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">interval</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">interval</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">take</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
 
@@ -2476,7 +2476,7 @@ Chẳng hạn, bạn có search box với <code class="highlighter-rouge">n</cod
 
 <p>Khi chỉ cho phép 1 stream được chạy, các stream khác phải đợi stream trước complete mới được chạy - tương tự <code class="highlighter-rouge">concat</code> thì chúng ta có operator <code class="highlighter-rouge">concatMap</code>.</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">click$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">'click'</span><span class="p">);</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">click$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">interval</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">interval</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">take</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
 
@@ -2497,7 +2497,7 @@ Chẳng hạn, bạn có search box với <code class="highlighter-rouge">n</cod
 
 <p><code class="highlighter-rouge">switchMap</code> rất hữu ích khi làm việc với HTTP request, giả sử request cũ chưa trả về giá trị mà người dùng đã request dữ liệu mới thì chúng ta có thể cancel để tránh việc dư thừa hoặc xử lý sai dữ liệu (dữ liệu cũ hơn response sau dữ liệu mới hơn). Khi cần đảm bảo chỉ có stream mới nhất đang chạy.</p>
 
-<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">click$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">'click'</span><span class="p">);</span>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">click$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">interval</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">interval</span><span class="p">(</span><span class="mi">500</span><span class="p">).</span><span class="nx">take</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
 
@@ -2513,7 +2513,7 @@ Chẳng hạn, bạn có search box với <code class="highlighter-rouge">n</cod
 <p>Ngoài ra nó còn hữu ích để tránh việc bị leak. Giả sử stream <code class="highlighter-rouge">interval</code> kia chạy vô hạn, nếu bạn không cancel trước đó thì chẳng mấy chốc ứng dụng của bạn sẽ crash khi người dùng click càng ngày càng nhiều lần.</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="kd">const</span> <span class="nx">click$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">'click'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">click$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">interval</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">interval</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
 
@@ -2524,7 +2524,7 @@ Chẳng hạn, bạn có search box với <code class="highlighter-rouge">n</cod
 
 <span class="c1">// vs mergeMap</span>
 
-<span class="kd">const</span> <span class="nx">click$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="s1">'click'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">click$</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">fromEvent</span><span class="p">(</span><span class="nb">document</span><span class="p">,</span> <span class="dl">'</span><span class="s1">click</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">interval</span> <span class="o">=</span> <span class="nx">Rx</span><span class="p">.</span><span class="nx">Observable</span><span class="p">.</span><span class="nx">interval</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
 
@@ -2553,7 +2553,7 @@ Chẳng hạn, bạn có search box với <code class="highlighter-rouge">n</cod
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="c1">// `decorators.ts`</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Subject</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'rxjs/Subject'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Subject</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rxjs/Subject</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="k">export</span> <span class="kd">function</span> <span class="nx">Destroy</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">target</span><span class="p">:</span> <span class="nx">any</span><span class="p">,</span> <span class="nx">key</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
@@ -2571,17 +2571,17 @@ Chẳng hạn, bạn có search box với <code class="highlighter-rouge">n</cod
 
 <span class="c1">// `app.component.ts`</span>
 
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnDestroy</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Destroy</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'./decorators'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnDestroy</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@angular/core</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Destroy</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./decorators</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="c1">// alway import Observable, Subject, etc this way</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Subject</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'rxjs/Subject'</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">Observable</span> <span class="p">}</span> <span class="k">from</span> <span class="s1">'rxjs/Observable'</span><span class="p">;</span>
-<span class="k">import</span> <span class="s1">'rxjs/add/observable/interval'</span><span class="p">;</span>
-<span class="k">import</span> <span class="s1">'rxjs/add/operator/takeUntil'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Subject</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rxjs/Subject</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Observable</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">rxjs/Observable</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">rxjs/add/observable/interval</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">'</span><span class="s1">rxjs/add/operator/takeUntil</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'some-component'</span><span class="p">,</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">some-component</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">template</span><span class="p">:</span> <span class="s2">`Tick: {{ tick }}`</span><span class="p">,</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">SomeComponent</span> <span class="p">{</span>
@@ -2599,16 +2599,16 @@ Chẳng hạn, bạn có search box với <code class="highlighter-rouge">n</cod
 <span class="p">}</span>
 
 <span class="p">@</span><span class="nd">Component</span><span class="p">({</span>
-  <span class="na">selector</span><span class="p">:</span> <span class="s1">'app-root'</span><span class="p">,</span>
+  <span class="na">selector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">app-root</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">template</span><span class="p">:</span> <span class="s2">`
     &lt;button (click)="show = !show"&gt;Toggle&lt;/button&gt;
 
     &lt;some-component *ngIf="show"&gt;&lt;/some-component&gt;
   `</span><span class="p">,</span>
-  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="s1">'./app.component.scss'</span><span class="p">]</span>
+  <span class="na">styleUrls</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./app.component.scss</span><span class="dl">'</span><span class="p">]</span>
 <span class="p">})</span>
 <span class="k">export</span> <span class="kd">class</span> <span class="nx">AppComponent</span> <span class="p">{</span>
-  <span class="nx">title</span> <span class="o">=</span> <span class="s1">'app'</span><span class="p">;</span>
+  <span class="nx">title</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">app</span><span class="dl">'</span><span class="p">;</span>
   <span class="nx">show</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 <span class="p">}</span>
 

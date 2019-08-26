@@ -5,9 +5,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!--<title>Angular 2 &#8211; Bạn Đã Sẵn Sàng Thử Nghiệm</title>-->
-<!-- Begin Jekyll SEO tag v2.5.0 -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Angular 2 – Bạn Đã Sẵn Sàng Thử Nghiệm | Lập Trình Thật Kỳ Diệu</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.8.6" />
 <meta property="og:title" content="Angular 2 – Bạn Đã Sẵn Sàng Thử Nghiệm" />
 <meta name="author" content="Tiep Phan" />
 <meta property="og:locale" content="en_US" />
@@ -22,7 +22,7 @@
 <meta name="google-site-verification" content="Gcn3Y0oBud7gufI1PtszF7DFNgFOifgLRIaZAoLZWWU" />
 <meta name="msvalidate.01" content="F160AE523B1846CBDC431CB91CB6613A" />
 <script type="application/ld+json">
-{"description":"Angular 2đã phát hành chính thức, hầu hết các blog đều có những lời đánh tiếng về nó và cũng có vô vàn các hướng dẫn để bạn có thể tiếp cận với Angular 2. Vậy bạn đã sẵn sàng để bắt đầu với nền tảng hot này chưa?","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/angular-2-ban-da-san-sang-thu-nghiem/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2016/11/angular-2.png","headline":"Angular 2 – Bạn Đã Sẵn Sàng Thử Nghiệm","dateModified":"2016-12-03T00:00:32+00:00","datePublished":"2016-12-03T00:00:32+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/angular-2-ban-da-san-sang-thu-nghiem/"},"@context":"http://schema.org"}</script>
+{"description":"Angular 2đã phát hành chính thức, hầu hết các blog đều có những lời đánh tiếng về nó và cũng có vô vàn các hướng dẫn để bạn có thể tiếp cận với Angular 2. Vậy bạn đã sẵn sàng để bắt đầu với nền tảng hot này chưa?","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/angular-2-ban-da-san-sang-thu-nghiem/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2016/11/angular-2.png","headline":"Angular 2 – Bạn Đã Sẵn Sàng Thử Nghiệm","dateModified":"2016-12-03T00:00:32+00:00","datePublished":"2016-12-03T00:00:32+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/angular-2-ban-da-san-sang-thu-nghiem/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -260,24 +260,24 @@ ng new contact-application <span class="nt">--style</span><span class="o">=</spa
 <p>Dưới đây là list đầy đủ các properties của object trên. Mình sẽ không giải thích hết ý nghĩa của các properties này, các bạn tìm hiểu xem nhé.</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
-  <span class="nl">animations</span><span class="p">:</span> <span class="s2">"list of animations of this component"</span><span class="p">,</span>
-  <span class="nx">changeDetection</span><span class="p">:</span> <span class="s2">"change detection strategy used by this component"</span><span class="p">,</span>
-  <span class="nx">encapsulation</span><span class="p">:</span> <span class="s2">"style encapsulation strategy used by this component"</span><span class="p">,</span>
-  <span class="nx">entryComponents</span><span class="p">:</span> <span class="s2">"list of components that are dynamically inserted into the view of this component"</span><span class="p">,</span>
-  <span class="nx">exportAs</span><span class="p">:</span> <span class="s2">"name under which the component instance is exported in a template"</span><span class="p">,</span>
-  <span class="nx">host</span><span class="p">:</span> <span class="s2">"map of class property to host element bindings for events, properties and attributes"</span><span class="p">,</span>
-  <span class="nx">inputs</span><span class="p">:</span> <span class="s2">"list of class property names to data-bind as component inputs"</span><span class="p">,</span>
-  <span class="nx">interpolation</span><span class="p">:</span> <span class="s2">"custom interpolation markers used in this component's template"</span><span class="p">,</span>
-  <span class="nx">moduleId</span><span class="p">:</span> <span class="s2">"ES/CommonJS module id of the file in which this component is defined"</span><span class="p">,</span>
-  <span class="nx">outputs</span><span class="p">:</span> <span class="s2">"list of class property names that expose output events that others can subscribe to"</span><span class="p">,</span>
-  <span class="nx">providers</span><span class="p">:</span> <span class="s2">"list of providers available to this component and its children"</span><span class="p">,</span>
-  <span class="nx">queries</span><span class="p">:</span> <span class="s2">" configure queries that can be injected into the component"</span><span class="p">,</span>
-  <span class="nx">selector</span><span class="p">:</span> <span class="s2">"css selector that identifies this component in a template"</span><span class="p">,</span>
-  <span class="nx">styleUrls</span><span class="p">:</span> <span class="s2">"list of urls to stylesheets to be applied to this component's view"</span><span class="p">,</span>
-  <span class="nx">styles</span><span class="p">:</span> <span class="s2">"inline-defined styles to be applied to this component's view"</span><span class="p">,</span>
-  <span class="nx">template</span><span class="p">:</span> <span class="s2">"inline-defined template for the view"</span><span class="p">,</span>
-  <span class="nx">templateUrl</span><span class="p">:</span> <span class="s2">"url to an external file containing a template for the view"</span><span class="p">,</span>
-  <span class="nx">viewProviders</span><span class="p">:</span> <span class="s2">"list of providers available to this component and its view children"</span><span class="p">,</span>
+  <span class="nl">animations</span><span class="p">:</span> <span class="dl">"</span><span class="s2">list of animations of this component</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">changeDetection</span><span class="p">:</span> <span class="dl">"</span><span class="s2">change detection strategy used by this component</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">encapsulation</span><span class="p">:</span> <span class="dl">"</span><span class="s2">style encapsulation strategy used by this component</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">entryComponents</span><span class="p">:</span> <span class="dl">"</span><span class="s2">list of components that are dynamically inserted into the view of this component</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">exportAs</span><span class="p">:</span> <span class="dl">"</span><span class="s2">name under which the component instance is exported in a template</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">host</span><span class="p">:</span> <span class="dl">"</span><span class="s2">map of class property to host element bindings for events, properties and attributes</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">inputs</span><span class="p">:</span> <span class="dl">"</span><span class="s2">list of class property names to data-bind as component inputs</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">interpolation</span><span class="p">:</span> <span class="dl">"</span><span class="s2">custom interpolation markers used in this component's template</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">moduleId</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ES/CommonJS module id of the file in which this component is defined</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">outputs</span><span class="p">:</span> <span class="dl">"</span><span class="s2">list of class property names that expose output events that others can subscribe to</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">providers</span><span class="p">:</span> <span class="dl">"</span><span class="s2">list of providers available to this component and its children</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">queries</span><span class="p">:</span> <span class="dl">"</span><span class="s2"> configure queries that can be injected into the component</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">selector</span><span class="p">:</span> <span class="dl">"</span><span class="s2">css selector that identifies this component in a template</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">styleUrls</span><span class="p">:</span> <span class="dl">"</span><span class="s2">list of urls to stylesheets to be applied to this component's view</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">styles</span><span class="p">:</span> <span class="dl">"</span><span class="s2">inline-defined styles to be applied to this component's view</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">template</span><span class="p">:</span> <span class="dl">"</span><span class="s2">inline-defined template for the view</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">templateUrl</span><span class="p">:</span> <span class="dl">"</span><span class="s2">url to an external file containing a template for the view</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">viewProviders</span><span class="p">:</span> <span class="dl">"</span><span class="s2">list of providers available to this component and its view children</span><span class="dl">"</span><span class="p">,</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
