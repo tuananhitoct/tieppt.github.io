@@ -4,25 +4,25 @@
 
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!--<title>Angular Trong 5 Phút: Deploy Angular Application Trên Apache HTTPD Sub-Directory</title>-->
+<!--<title>Angular Trong 5 Phút: Deploy Angular Application Lên Firebase Hosting</title>-->
 <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Angular Trong 5 Phút: Deploy Angular Application Trên Apache HTTPD Sub-Directory | Lập Trình Thật Kỳ Diệu</title>
+<title>Angular Trong 5 Phút: Deploy Angular Application Lên Firebase Hosting | Lập Trình Thật Kỳ Diệu</title>
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="Angular Trong 5 Phút: Deploy Angular Application Trên Apache HTTPD Sub-Directory" />
+<meta property="og:title" content="Angular Trong 5 Phút: Deploy Angular Application Lên Firebase Hosting" />
 <meta name="author" content="Tiep Phan" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Hướng Dẫn Deploy Angular Application Trên Apache HTTPD Sub-Directory" />
-<meta property="og:description" content="Hướng Dẫn Deploy Angular Application Trên Apache HTTPD Sub-Directory" />
-<link rel="canonical" href="https://www.tiepphan.com/angular-trong-5-phut-deploy-angular-application-apache-sub-directory/" />
-<meta property="og:url" content="https://www.tiepphan.com/angular-trong-5-phut-deploy-angular-application-apache-sub-directory/" />
+<meta name="description" content="Hướng Dẫn Deploy Angular Application Lên Firebase Hosting" />
+<meta property="og:description" content="Hướng Dẫn Deploy Angular Application Lên Firebase Hosting" />
+<link rel="canonical" href="https://www.tiepphan.com/angular-trong-5-phut-deploy-angular-application-firebase-hosting/" />
+<meta property="og:url" content="https://www.tiepphan.com/angular-trong-5-phut-deploy-angular-application-firebase-hosting/" />
 <meta property="og:site_name" content="Lập Trình Thật Kỳ Diệu" />
-<meta property="og:image" content="https://www.tiepphan.com/assets/uploads/2019/08/angular-5-mins-apache-httpd-sub-dir.jpg" />
+<meta property="og:image" content="https://www.tiepphan.com/assets/uploads/2019/08/angular-5-mins-deploy-firebase-hosting.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-08-25T10:00:00+00:00" />
+<meta property="article:published_time" content="2019-08-25T15:00:00+00:00" />
 <meta name="google-site-verification" content="Gcn3Y0oBud7gufI1PtszF7DFNgFOifgLRIaZAoLZWWU" />
 <meta name="msvalidate.01" content="F160AE523B1846CBDC431CB91CB6613A" />
 <script type="application/ld+json">
-{"description":"Hướng Dẫn Deploy Angular Application Trên Apache HTTPD Sub-Directory","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/angular-trong-5-phut-deploy-angular-application-apache-sub-directory/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2019/08/angular-5-mins-apache-httpd-sub-dir.jpg","headline":"Angular Trong 5 Phút: Deploy Angular Application Trên Apache HTTPD Sub-Directory","dateModified":"2019-08-25T10:00:00+00:00","datePublished":"2019-08-25T10:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/angular-trong-5-phut-deploy-angular-application-apache-sub-directory/"},"@context":"https://schema.org"}</script>
+{"description":"Hướng Dẫn Deploy Angular Application Lên Firebase Hosting","author":{"@type":"Person","name":"Tiep Phan"},"@type":"BlogPosting","url":"https://www.tiepphan.com/angular-trong-5-phut-deploy-angular-application-firebase-hosting/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.tiepphan.com/assets/logo.png"},"name":"Tiep Phan"},"image":"https://www.tiepphan.com/assets/uploads/2019/08/angular-5-mins-deploy-firebase-hosting.jpg","headline":"Angular Trong 5 Phút: Deploy Angular Application Lên Firebase Hosting","dateModified":"2019-08-25T15:00:00+00:00","datePublished":"2019-08-25T15:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tiepphan.com/angular-trong-5-phut-deploy-angular-application-firebase-hosting/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -104,54 +104,92 @@
       <div class="row">
         <div class="col-md-9">
           <div class="block">
-            <h1>Angular Trong 5 Phút: Deploy Angular Application Trên Apache HTTPD Sub-Directory</h1>
+            <h1>Angular Trong 5 Phút: Deploy Angular Application Lên Firebase Hosting</h1>
             <div class="post-info-wrapper">
               <p class="italic">By <span class="bold">Tiep Phan</span> on <span class="bold">August 25, 2019</span></p>
             </div>
             <hr />
-            <p><h1 class="no_toc" id="angular-trong-5-phút-deploy-angular-application-trên-apache-httpd-sub-directory">Angular Trong 5 Phút: Deploy Angular Application Trên Apache HTTPD Sub-Directory</h1>
+            <p><h1 class="no_toc" id="angular-trong-5-phút-deploy-angular-application-lên-firebase-hosting">Angular Trong 5 Phút: Deploy Angular Application Lên Firebase Hosting</h1>
 
-<p>Trong bài này chúng ta sẽ tìm hiểu cách để deploy ứng dụng Angular trên Apache HTTPD server có sử dụng Sub-Directory.</p>
+<p>Trong bài này chúng ta sẽ tìm hiểu cách để deploy ứng dụng Angular lên Firebase Hosting.</p>
 
 <ul class="tp__toc" id="markdown-toc">
   <li><a href="#build-app" id="markdown-toc-build-app">1. Build Angular Application</a></li>
-  <li><a href="#deploy-app" id="markdown-toc-deploy-app">2. Deploy Angular Application</a></li>
-  <li><a href="#3-video" id="markdown-toc-3-video">3. Video</a></li>
-  <li><a href="#doc-references" id="markdown-toc-doc-references">4. Link Tham Khảo</a></li>
+  <li><a href="#install-firebase-tools" id="markdown-toc-install-firebase-tools">2. Install Firebase Tools</a></li>
+  <li><a href="#login-firebase" id="markdown-toc-login-firebase">3. Login Vào Firebase</a></li>
+  <li><a href="#init-firebase" id="markdown-toc-init-firebase">4. Init Firebase</a></li>
+  <li><a href="#deploy-app" id="markdown-toc-deploy-app">5. Deploy Angular Application</a></li>
+  <li><a href="#6-video" id="markdown-toc-6-video">6. Video</a></li>
+  <li><a href="#doc-references" id="markdown-toc-doc-references">7. Link Tham Khảo</a></li>
 </ul>
 
 <h2 id="build-app">1. Build Angular Application</h2>
 
 <p>Các bạn chạy lệnh build sau để build ứng dụng đã viết:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ng build <span class="nt">--base-href</span><span class="o">=</span>./ <span class="nt">--prod</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ng build <span class="nt">--prod</span>
 </code></pre></div></div>
 
-<p>Do ứng dụng sẽ được deploy lên sub-dir, nên chúng ta cần thay đổi <code class="highlighter-rouge">base-href</code> về <code class="highlighter-rouge">./</code>.</p>
+<h2 id="install-firebase-tools">2. Install Firebase Tools</h2>
 
-<h2 id="deploy-app">2. Deploy Angular Application</h2>
+<p>Firebase cung cấp 1 CLI cho phép chúng ta thao tác từ command line. Để sử dụng CLI này, chúng ta chỉ cần install package sau:</p>
 
-<p>Để deploy chúng ta chỉ cần copy phần code đã được generated ở director <code class="highlighter-rouge">dist/&lt;app-name&gt;</code> vào thư mục deploy của Apache HTTPD server kèm theo config để rewrite <code class="highlighter-rouge">.htaccess</code> như sau:</p>
-
-<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">RewriteEngine</span> On
-<span class="c"># If an existing asset or directory is requested go to it as it is</span>
-<span class="nc">RewriteCond</span> %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
-<span class="nc">RewriteCond</span> %{DOCUMENT_ROOT}%{REQUEST_URI} -d
-<span class="nc">RewriteRule</span> ^ - [L]
-
-<span class="c"># If the requested resource doesn't exist, use index.html</span>
-<span class="nc">RewriteRule</span> ^ /&lt;app-name&gt;/index.html
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>npm i <span class="nt">-g</span> firebase-tools
 </code></pre></div></div>
 
-<p>Các bạn nhớ thay đổi <code class="highlighter-rouge">app-name</code> theo tên app của bạn.</p>
+<h2 id="login-firebase">3. Login Vào Firebase</h2>
 
-<h2 id="3-video">3. Video</h2>
+<p>Các bạn chạy lệnh sau và Login vào tài khoản tương ứng.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>firebase login
+</code></pre></div></div>
+
+<p>Nếu muốn Login vào 1 tài khoản khác, thì chỉ cần Logout bằng lệnh:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>firebase <span class="nb">logout</span>
+</code></pre></div></div>
+
+<h2 id="init-firebase">4. Init Firebase</h2>
+
+<p>Các bạn chạy lệnh sau và chọn <code class="highlighter-rouge">Hosting</code> khi được hỏi như hình.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>firebase init
+</code></pre></div></div>
+
+<p class="text-center"><img src="/assets/uploads/2019/08/firebase-cli-1.png" alt="Firebase CLI" class="img-responsive" /></p>
+
+<p>Lựa chọn tạo mới hoặc sử dụng project có sẵn:</p>
+
+<p class="text-center"><img src="/assets/uploads/2019/08/firebase-cli-2.png" alt="Firebase CLI" class="img-responsive" /></p>
+
+<p>Chọn project để deploy:</p>
+
+<p class="text-center"><img src="/assets/uploads/2019/08/firebase-cli-3.png" alt="Firebase CLI" class="img-responsive" /></p>
+
+<p>Trả lời lần lượt 3 câu hỏi:</p>
+
+<p>Câu 1: directory mà bạn muốn deploy.</p>
+
+<p>Câu 2: bạn có sử dụng rewrite khi dùng Single Page App hay ko (thường là có).</p>
+
+<p>Câu 3: bạn có muốn override file index.html không (thường là không).</p>
+
+<p class="text-center"><img src="/assets/uploads/2019/08/firebase-cli-4.png" alt="Firebase CLI" class="img-responsive" /></p>
+
+<h2 id="deploy-app">5. Deploy Angular Application</h2>
+
+<p>Để deploy chúng ta chỉ cần chạy lệnh sau:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>firebase deploy <span class="nt">--only</span> hosting
+</code></pre></div></div>
+
+<h2 id="6-video">6. Video</h2>
 
 <figure class="video_container">
-  <iframe src="https://www.youtube.com/embed/r1IuIOYK_lA" frameborder="0" allowfullscreen="true"> </iframe>
+  <iframe src="https://www.youtube.com/embed/mU6nT7SDiOM" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>
 
-<h2 id="doc-references">4. Link Tham Khảo</h2>
+<h2 id="doc-references">7. Link Tham Khảo</h2>
 
 <p><a href="https://angular.io/guide/deployment" target="_blank">Hướng dẫn deploy từ Angular.io</a></p>
 
