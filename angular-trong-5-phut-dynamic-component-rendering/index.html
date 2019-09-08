@@ -116,21 +116,9 @@
 <ul class="tp__toc" id="markdown-toc">
   <li><a href="#create-app" id="markdown-toc-create-app">1. Create Angular Application</a></li>
   <li><a href="#create-angular-components" id="markdown-toc-create-angular-components">2. Create Angular Components</a></li>
-  <li><a href="#setup-view-container" id="markdown-toc-setup-view-container">3. Thiết lập phần container</a>    <ul>
-      <li><a href="#31-viewcontainerref-là-gì" id="markdown-toc-31-viewcontainerref-là-gì">3.1 <code class="highlighter-rouge">ViewContainerRef</code> là gì?</a></li>
-      <li><a href="#32-static-property-có-ý-nghĩa-gì" id="markdown-toc-32-static-property-có-ý-nghĩa-gì">3.2 <code class="highlighter-rouge">static</code> property có ý nghĩa gì?</a></li>
-    </ul>
-  </li>
-  <li><a href="#dynamic-component-rendering" id="markdown-toc-dynamic-component-rendering">4. Tiến hành render component ở runtime</a>    <ul>
-      <li><a href="#fix-lỗi-error-no-component-factory-found-for" id="markdown-toc-fix-lỗi-error-no-component-factory-found-for">Fix lỗi Error No component factory found for</a></li>
-    </ul>
-  </li>
-  <li><a href="#dynamic-comp-communication" id="markdown-toc-dynamic-comp-communication">5. Tương tác giữa 2 component</a>    <ul>
-      <li><a href="#51-gửi-dữ-liệu-cho-dynamic-component" id="markdown-toc-51-gửi-dữ-liệu-cho-dynamic-component">5.1 Gửi dữ liệu cho dynamic component:</a></li>
-      <li><a href="#52-emit-event-để-close-bằng-service" id="markdown-toc-52-emit-event-để-close-bằng-service">5.2 Emit Event để close bằng service</a></li>
-      <li><a href="#53-fix-lỗi-error-expressionchangedafterithasbeencheckederror" id="markdown-toc-53-fix-lỗi-error-expressionchangedafterithasbeencheckederror">5.3 Fix lỗi Error ExpressionChangedAfterItHasBeenCheckedError</a></li>
-    </ul>
-  </li>
+  <li><a href="#setup-view-container" id="markdown-toc-setup-view-container">3. Thiết lập phần container</a></li>
+  <li><a href="#dynamic-component-rendering" id="markdown-toc-dynamic-component-rendering">4. Tiến hành render component ở runtime</a></li>
+  <li><a href="#dynamic-comp-communication" id="markdown-toc-dynamic-comp-communication">5. Tương tác giữa 2 component</a></li>
   <li><a href="#6-video" id="markdown-toc-6-video">6. Video</a></li>
   <li><a href="#doc-references" id="markdown-toc-doc-references">7. Link Tham Khảo</a></li>
 </ul>
@@ -179,14 +167,14 @@
 
 </code></pre></div></div>
 
-<h3 id="31-viewcontainerref-là-gì">3.1 <code class="highlighter-rouge">ViewContainerRef</code> là gì?</h3>
+<h3 class="no_toc" id="31-viewcontainerref-là-gì">3.1 <code class="highlighter-rouge">ViewContainerRef</code> là gì?</h3>
 
 <p>Nó là một cái container từ đó có thể tạo ra Host View (component khi được khởi tạo sẽ tạo ra view tương ứng), và Embedded View  (được tạo từ TemplateRef). Với các view được tạo đó sẽ có nơi để gắn vào (container).</p>
 
 <p>Container có thể chứa các container khác (<code class="highlighter-rouge">ng-container</code> chẳng hạn) tạo nên cấu trúc cây.
 Hay hiểu đơn giản thì nó giống như 1 DOM Element, khi đó có thể add thêm các view khác (<code class="highlighter-rouge">Component</code>, <code class="highlighter-rouge">Template</code>) vào đó.</p>
 
-<h3 id="32-static-property-có-ý-nghĩa-gì">3.2 <code class="highlighter-rouge">static</code> property có ý nghĩa gì?</h3>
+<h3 class="no_toc" id="32-static-property-có-ý-nghĩa-gì">3.2 <code class="highlighter-rouge">static</code> property có ý nghĩa gì?</h3>
 
 <p><code class="highlighter-rouge">static: true</code> resolve query results before change detection runs</p>
 
@@ -265,23 +253,19 @@ Hay hiểu đơn giản thì nó giống như 1 DOM Element, khi đó có thể 
 
 <p>Chúng ta cần một số bước như sau để dynamic render component:</p>
 
-<ol>
-  <li>Lấy ra <code class="highlighter-rouge">ComponentFactoryResolver</code> service để có thể tạo ra <code class="highlighter-rouge">ComponentFactory</code>.</li>
-</ol>
+<p><strong>Bước 1:</strong> Lấy ra <code class="highlighter-rouge">ComponentFactoryResolver</code> service để có thể tạo ra <code class="highlighter-rouge">ComponentFactory</code>.</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">cfr</span><span class="p">:</span> <span class="nx">ComponentFactoryResolver</span> <span class="o">=</span> <span class="nx">injector</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">ComponentFactoryResolver</span><span class="p">);</span>
 
 <span class="kd">const</span> <span class="nx">componentFactory</span> <span class="o">=</span> <span class="nx">cfr</span><span class="p">.</span><span class="nx">resolveComponentFactory</span><span class="p">(</span><span class="nx">AlertContentComponent</span><span class="p">);</span>
 </code></pre></div></div>
 
-<ol>
-  <li>Từ <code class="highlighter-rouge">ComponentFactory</code> sẽ dùng <code class="highlighter-rouge">ViewContainerRef</code> để tạo ra component.</li>
-</ol>
+<p><strong>Bước 2:</strong> Từ <code class="highlighter-rouge">ComponentFactory</code> sẽ dùng <code class="highlighter-rouge">ViewContainerRef</code> để tạo ra component.</p>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">componentRef</span> <span class="o">=</span> <span class="nx">container</span><span class="p">.</span><span class="nx">createComponent</span><span class="p">(</span><span class="nx">componentFactory</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">injector</span><span class="p">);</span>
 </code></pre></div></div>
 
-<h3 id="fix-lỗi-error-no-component-factory-found-for">Fix lỗi Error No component factory found for</h3>
+<h3 class="no_toc" id="fix-lỗi-error-no-component-factory-found-for">Fix lỗi Error No component factory found for</h3>
 
 <blockquote>
   <p>Error: No component factory found for AlertContentComponent. Did you add it to @NgModule.entryComponents?</p>
@@ -299,7 +283,7 @@ Chỉ cần add component vào array <code class="highlighter-rouge">entryCompon
 
 <h2 id="dynamic-comp-communication">5. Tương tác giữa 2 component</h2>
 
-<h3 id="51-gửi-dữ-liệu-cho-dynamic-component">5.1 Gửi dữ liệu cho dynamic component:</h3>
+<h3 class="no_toc" id="51-gửi-dữ-liệu-cho-dynamic-component">5.1 Gửi dữ liệu cho dynamic component:</h3>
 
 <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">AlertContentComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
 
@@ -312,7 +296,7 @@ Chỉ cần add component vào array <code class="highlighter-rouge">entryCompon
 <span class="nx">componentRef</span><span class="p">.</span><span class="nx">instance</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Data from container</span><span class="dl">'</span><span class="p">;</span>
 </code></pre></div></div>
 
-<h3 id="52-emit-event-để-close-bằng-service">5.2 Emit Event để close bằng service</h3>
+<h3 class="no_toc" id="52-emit-event-để-close-bằng-service">5.2 Emit Event để close bằng service</h3>
 
 <p>Tạo service và sử dụng RxJS Subject để làm Event Bus, giúp dễ dàng gửi Event qua lại giữa các componnent.</p>
 
@@ -365,7 +349,7 @@ Chỉ cần add component vào array <code class="highlighter-rouge">entryCompon
 
 <span class="p">}</span>
 </code></pre></div></div>
-<h3 id="53-fix-lỗi-error-expressionchangedafterithasbeencheckederror">5.3 Fix lỗi Error ExpressionChangedAfterItHasBeenCheckedError</h3>
+<h3 class="no_toc" id="53-fix-lỗi-error-expressionchangedafterithasbeencheckederror">5.3 Fix lỗi Error ExpressionChangedAfterItHasBeenCheckedError</h3>
 
 <blockquote>
   <p>Error: ExpressionChangedAfterItHasBeenCheckedError: Expression has changed after it was checked. Previous value: ‘XXX’. Current value: ‘YYY’. It seems like the view has been created after its parent and its children have been dirty checked. Has it been created in a change detection hook ?</p>
