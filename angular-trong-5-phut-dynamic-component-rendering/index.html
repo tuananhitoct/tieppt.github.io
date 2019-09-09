@@ -341,11 +341,18 @@ Chỉ cần add component vào array <code class="highlighter-rouge">entryCompon
 
   <span class="nx">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">alertService</span><span class="p">.</span><span class="nx">close$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">reason</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">container</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+
       <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">componentRef</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">componentRef</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
       <span class="p">}</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">container</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
     <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="nx">ngOnDestroy</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">componentRef</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">componentRef</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+    <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -388,10 +395,11 @@ Chỉ cần add component vào array <code class="highlighter-rouge">entryCompon
 
   <span class="nx">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">alertService</span><span class="p">.</span><span class="nx">close$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">reason</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">container</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+
       <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">componentRef</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">componentRef</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
       <span class="p">}</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">container</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
     <span class="p">});</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">renderComponent</span><span class="p">();</span>
   <span class="p">}</span>
@@ -417,10 +425,11 @@ Chỉ cần add component vào array <code class="highlighter-rouge">entryCompon
 
   <span class="nx">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">alertService</span><span class="p">.</span><span class="nx">close$</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">reason</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">container</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+
       <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">componentRef</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">componentRef</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
       <span class="p">}</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">container</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
     <span class="p">});</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">renderComponent</span><span class="p">();</span>
   <span class="p">}</span>
