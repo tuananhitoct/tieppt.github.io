@@ -7,7 +7,7 @@
 <!--<title>Angular Trong 5 Phút: Deploy Angular Application Trên Apache HTTPD Sub-Directory</title>-->
 <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Angular Trong 5 Phút: Deploy Angular Application Trên Apache HTTPD Sub-Directory | Lập Trình Thật Kỳ Diệu</title>
-<meta name="generator" content="Jekyll v3.8.6" />
+<meta name="generator" content="Jekyll v3.8.7" />
 <meta property="og:title" content="Angular Trong 5 Phút: Deploy Angular Application Trên Apache HTTPD Sub-Directory" />
 <meta name="author" content="Tiep Phan" />
 <meta property="og:locale" content="en_US" />
@@ -133,7 +133,7 @@
 
 <p>Để deploy chúng ta chỉ cần copy phần code đã được generated ở director <code class="highlighter-rouge">dist/&lt;app-name&gt;</code> vào thư mục deploy của Apache HTTPD server kèm theo config để rewrite <code class="highlighter-rouge">.htaccess</code> như sau:</p>
 
-<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">RewriteEngine</span> On
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">RewriteEngine</span> <span class="ss">On</span>
 <span class="c"># If an existing asset or directory is requested go to it as it is</span>
 <span class="nc">RewriteCond</span> %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
 <span class="nc">RewriteCond</span> %{DOCUMENT_ROOT}%{REQUEST_URI} -d
